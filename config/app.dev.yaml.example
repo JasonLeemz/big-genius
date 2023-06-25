@@ -1,0 +1,16 @@
+app:
+  port: 8088
+
+log:
+  path: ./logs/big-genius.log
+  log_level: 1 #info
+
+database:
+  host: mariadb.ybdx.xyz
+  port: 3306
+  username: root
+  password: root
+  db: genius
+
+openai:
+  token: 123456789
