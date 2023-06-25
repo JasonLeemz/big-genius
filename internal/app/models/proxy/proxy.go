@@ -2,6 +2,7 @@ package proxy
 
 import (
 	"big-genius/core/config"
+	"big-genius/core/log"
 	"fmt"
 	"net/http"
 	"net/url"
@@ -13,7 +14,8 @@ func Init() {
 		config.GlobalConfig.Proxy.Schema,
 		config.GlobalConfig.Proxy.Host,
 		config.GlobalConfig.Proxy.Port)
-	fmt.Println(host)
+	log.Logger.Infof("Proxy URL: %s", host)
+
 	proxyUrl, err := url.Parse(host)
 	if err != nil {
 		panic(err)

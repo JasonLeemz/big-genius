@@ -5,6 +5,7 @@ import (
 	"big-genius/core/errors"
 	"big-genius/core/log"
 	"big-genius/core/utils/wechat"
+	"big-genius/internal/app/services"
 )
 
 type RobotReq struct {
@@ -55,10 +56,20 @@ func sendMsg(ctx ctx.Context, req RobotReq, body []byte) {
 		FromUsername: userMsg.ToUsername,
 		CreateTime:   userMsg.CreateTime,
 		MsgType:      userMsg.MsgType,
-		Content:      userMsg.Content,
 		Msgid:        "",
 		Agentid:      userMsg.Agentid,
 	}
+
+	// 请求chatgpt
+	s := services.NewOpenAIService()
+	answer, err := s.CreateChatCompletion(ctx, userMsg.Content)
+	if err != nil {
+		log.Logger.Errorf("请求openai超时:%s", err.Error())
+		msgCont.Content = "请求openai超时"
+	} else {
+		msgCont.Content = answer
+	}
+
 	msg, err := wechat.GenSendMsg(msgCont, req.Timestamp, req.Nonce)
 	if err != nil {
 		log.Logger.Errorf("GenSendMsg error:%s", err.Error())

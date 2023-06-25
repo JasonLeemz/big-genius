@@ -34,7 +34,8 @@ type LogCfg struct {
 }
 
 type OpenAI struct {
-	Token string `yaml:"token"`
+	Token   string `yaml:"token"`
+	BaseURL string `yaml:"baseURL"`
 }
 
 type Proxy struct {

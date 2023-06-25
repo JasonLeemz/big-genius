@@ -7,6 +7,8 @@ import (
 	trace "big-genius/core/middleware"
 	"big-genius/internal/app/controllers"
 	"big-genius/internal/app/models/database"
+	"big-genius/internal/app/models/openai"
+	"big-genius/internal/app/models/proxy"
 	"github.com/kataras/iris/v12"
 	"github.com/kataras/iris/v12/context"
 )
@@ -67,8 +69,8 @@ func initComponents() {
 	database.Init()
 
 	// 初始化全局Proxy
-	//proxy.Init()
+	proxy.Init()
 
 	// 初始化OpenAI
-	//openai.Init()
+	openai.Init()
 }
