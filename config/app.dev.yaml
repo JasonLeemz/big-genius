@@ -11,3 +11,6 @@ database:
   username: root
   password: root
   db: genius
+
+openai:
+  token: 123456789

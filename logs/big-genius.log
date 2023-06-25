@@ -1,1 +1,3 @@
 2023-06-25T11:28:29.024+0800	INFO	big-genius/main.go:31	server is shutdown
+2023-06-25T11:50:09.893+0800	ERROR	log/logger.go:68	/Users/limingze/GolandProjects/big-genius/internal/app/models/database/mysql.go:22	ERROR failed to initialize database, got error Error 1049 (42000): Unknown database 'genius'
+2023-06-25T11:53:45.513+0800	INFO	big-genius/main.go:33	server is shutdown

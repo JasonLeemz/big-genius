@@ -6,6 +6,8 @@ import (
 	"big-genius/core/log"
 	trace "big-genius/core/middleware"
 	"big-genius/internal/app/controllers"
+	"big-genius/internal/app/models/database"
+	"big-genius/internal/app/models/openai"
 	"github.com/kataras/iris/v12"
 	"github.com/kataras/iris/v12/context"
 )
@@ -24,6 +26,18 @@ func main() {
 		})
 	})
 
+	app.Get("/ask", func(c *context.Context) {
+		controllers.Ask(ctx.Context{
+			Context: c,
+		})
+	})
+
+	app.Post("/ask", func(c *context.Context) {
+		controllers.Ask(ctx.Context{
+			Context: c,
+		})
+	})
+
 	if err := app.Listen(":" + config.GlobalConfig.App.Port); err != nil {
 		panic(err)
 	}
@@ -37,4 +51,10 @@ func initComponents() {
 
 	// 初始化日志记录器
 	log.InitLogger()
+
+	// 初始化数据库
+	database.DatabaseInit()
+
+	// 初始化数据库
+	openai.ChatGPTInit()
 }

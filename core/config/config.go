@@ -11,6 +11,7 @@ type Config struct {
 	App      AppCfg      `yaml:"app"`
 	Database DatabaseCfg `yaml:"database"`
 	Log      LogCfg      `yaml:"log"`
+	OpenAI   OpenAI      `yaml:"openai"`
 }
 
 type AppCfg struct {
@@ -28,6 +29,9 @@ type DatabaseCfg struct {
 type LogCfg struct {
 	LogLevel int    `yaml:"log_level"`
 	Path     string `yaml:"path"`
+}
+type OpenAI struct {
+	Token string `yaml:"token"`
 }
 
 func InitConfig() {
