@@ -102,8 +102,8 @@ func (glog *GormLogger) Trace(ctx context.Context, begin time.Time, fc func() (s
 	}
 }
 
-// InitLogger 日志类初始化方法
-func InitLogger() {
+// Init 日志类初始化方法
+func Init() {
 	newZapLogger()
 	// gorm logger
 	newGormLogger()

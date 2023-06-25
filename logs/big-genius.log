@@ -1,3 +1,50 @@
 2023-06-25T11:28:29.024+0800	INFO	big-genius/main.go:31	server is shutdown
 2023-06-25T11:50:09.893+0800	ERROR	log/logger.go:68	/Users/limingze/GolandProjects/big-genius/internal/app/models/database/mysql.go:22	ERROR failed to initialize database, got error Error 1049 (42000): Unknown database 'genius'
 2023-06-25T11:53:45.513+0800	INFO	big-genius/main.go:33	server is shutdown
+2023-06-25T12:39:09.196+0800	INFO	big-genius/main.go:45	server is shutdown
+2023-06-25T12:40:00.778+0800	INFO	big-genius/main.go:45	server is shutdown
+2023-06-25T12:42:06.043+0800	ERROR	dao/openai.go:33	ChatCompletion error: Post "https://api.openai.com/v1/chat/completions": dial tcp [2a03:2880:f127:283:face:b00c:0:25de]:443: i/o timeout
+
+2023-06-25T12:57:46.245+0800	INFO	big-genius/main.go:45	server is shutdown
+2023-06-25T12:59:32.440+0800	ERROR	dao/openai.go:33	ChatCompletion error: Post "https://api.openai.com/v1/chat/completions": proxyconnect tcp: EOF
+
+2023-06-25T13:00:28.885+0800	INFO	big-genius/main.go:46	server is shutdown
+2023-06-25T13:54:21.167+0800	INFO	big-genius/main.go:46	server is shutdown
+2023-06-25T14:21:36.795+0800	INFO	big-genius/main.go:50	server is shutdown
+2023-06-25T14:22:02.060+0800	INFO	big-genius/main.go:56	server is shutdown
+2023-06-25T14:24:39.120+0800	INFO	big-genius/main.go:56	server is shutdown
+2023-06-25T14:31:19.862+0800	INFO	big-genius/main.go:56	server is shutdown
+2023-06-25T15:04:47.611+0800	INFO	big-genius/main.go:56	server is shutdown
+2023-06-25T15:08:52.574+0800	INFO	big-genius/main.go:56	server is shutdown
+2023-06-25T15:13:27.863+0800	INFO	big-genius/main.go:56	server is shutdown
+2023-06-25T15:15:20.830+0800	INFO	big-genius/main.go:56	server is shutdown
+2023-06-25T15:15:48.275+0800	INFO	big-genius/main.go:56	server is shutdown
+2023-06-25T15:18:53.104+0800	ERROR	utils/wechat.go:71	base64 decrypt err:illegal base64 data at input byte 40
+2023-06-25T15:18:53.276+0800	ERROR	utils/wechat.go:71	base64 decrypt err:illegal base64 data at input byte 40
+2023-06-25T15:18:53.420+0800	ERROR	utils/wechat.go:71	base64 decrypt err:illegal base64 data at input byte 40
+2023-06-25T15:32:54.164+0800	ERROR	wechat/wechat.go:45	verifyUrl fail: &{-40001 signature not equal}
+2023-06-25T15:34:17.291+0800	ERROR	wechat/wechat.go:45	verifyUrl fail: &{-40001 signature not equal}
+2023-06-25T15:51:47.590+0800	ERROR	wechat/wechat.go:45	verifyUrl fail: &{-40001 signature not equal}
+2023-06-25T16:05:11.440+0800	ERROR	wechat/wechat.go:45	verifyUrl fail: &{-40001 signature not equal}
+2023-06-25T16:09:04.335+0800	ERROR	wechat/wechat.go:45	verifyUrl fail: &{-40001 signature not equal}
+2023-06-25T16:40:18.128+0800	ERROR	wechat/wechat.go:72	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687682417</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[1111222]]></Content><MsgId>7248540790905703468</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-25T16:41:26.405+0800	ERROR	wechat/wechat.go:72	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687682485</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[dfsgsdfg]]></Content><MsgId>7248541083242828588</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-25T16:43:17.099+0800	INFO	controllers/wechat.go:22	wxform:{89418a57e6d57dd2a0bbc6c1b06099e86bae43bb 1687682597 1687497424 }
+2023-06-25T16:43:17.100+0800	INFO	controllers/wechat.go:39	wxsend:<xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><Encrypt><![CDATA[mTZVk/7XCpAynK4bjFQ1KDFCKEekmoeE6SJXFMhaq8lLunBquuFQkoJ5fJ44UxJvfPEPiislABnSbjqHoIFn0NQ2srHqr5k1C1eSQmMZvHxcYKHBICs+66hh0dXl+LM5ejUtKLXaK1jro83EYMbX5tHqYN/pZX1Bev1rbeWTpRePH/Cd9GUbG47VZQbisAHeXnvghu86knckc2OlmWmomAcLBcQsTJQdnkbDxA23GsaV89dJGJmnabtjdmKeQoEKtoVNFB2Q0alQMXTQtxjz0ag+VecClCitm1QUoi7wyBC0qH8DJqA36ZTbmS2qWIcBhlsPNJMvdlh8srM+Qdggcp3tA55NliOQvSePa0CKzoT3cFOxYjQ+Yw3wN/zPKrvPcto7xYzjfvUWNPP42RtgHFUZSFiAYkzpxtiJl+efqdnz0Zwx8FI+MQ1PlGcWsHxdTHbrQfiO1aPelhiD4qRp+Q==]]></Encrypt><AgentID><![CDATA[1000002]]></AgentID></xml>
+2023-06-25T16:43:17.101+0800	ERROR	wechat/wechat.go:72	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687682597</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[sdgfdsfg]]></Content><MsgId>7248541560806420780</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-25T16:43:17.101+0800	INFO	controllers/wechat.go:48	userMsg:&{ww3e03cf4760de0bcd LiMingZe 1687682597 text sdgfdsfg 7248541560806420780 0},<nil>
+2023-06-25T16:44:30.521+0800	INFO	big-genius/main.go:56	server is shutdown
+2023-06-25T16:44:37.279+0800	INFO	controllers/wechat.go:22	wxform:{79498bc4e4886dec2946f729bc6072120c168826 1687682677 1687317345 }
+2023-06-25T16:44:37.280+0800	INFO	controllers/wechat.go:39	wxsend:<xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><Encrypt><![CDATA[v74MZcMApwPNLWINftKlONqkgoMHip4BEEl8Mys9/mgs18c3SLo0iWxzj2C/S2OwdotWQJiU9J1Rx21nbtPRtqbDScZKF9djAw/UWnZplEUSnJfcejTPIBebCG++UJz9XdxqZerZwiau1GDTXm8U7QiXLp/X5rXUdV5wWX0VLWhhDMH0uC9FvjQFEHwP4skKKHK5cH0zypoL+LawiF903iLctZw3NpbboBtLq5fB5oIfXnCiGzKsaAFmhQHxAg2PgV4JknkUarkyw7IyCLlvHym1tyxbz6wq0l3DamEoldz0G9jikbihFg3YzainftqG8H5uq5E1nedJ3aDwJGtXk2ALGqjfgW/KCZh3wryRkZcCpShf8TS+Y43S2BGgKSSJ2xBA6yhucDNEjZbNILgrxghfLQ9RwHevzDTRn9+peWNejs4ClV2T2xDb1JiKIfiVuHtky9e60DRCH7IikDuOdQ==]]></Encrypt><AgentID><![CDATA[1000002]]></AgentID></xml>
+2023-06-25T16:44:37.282+0800	INFO	wechat/wechat.go:72	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687682677</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[dsafasdffasdf]]></Content><MsgId>7248541904952849452</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-25T16:44:37.282+0800	INFO	wechat/wechat.go:80	Unmarshal data: {ww3e03cf4760de0bcd LiMingZe 1687682677 text dsafasdffasdf 7248541904952849452 0}
+2023-06-25T16:44:37.282+0800	INFO	controllers/wechat.go:48	userMsg:&{ww3e03cf4760de0bcd LiMingZe 1687682677 text dsafasdffasdf 7248541904952849452 0},<nil>
+2023-06-25T17:07:14.531+0800	INFO	big-genius/main.go:56	server is shutdown
+2023-06-25T17:07:28.128+0800	INFO	controllers/wechat.go:22	wxform:{7d1ff806aaa820bddf225b7bb4aecde991f20edc 1687684047 1687319390 }
+2023-06-25T17:07:28.129+0800	INFO	controllers/wechat.go:39	wxsend:<xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><Encrypt><![CDATA[eZllhVViioBMcYkI/2HZP5u8ppFs44lRoewvvTkAKFwwslu7Fe+c9FyyZSb5fCKcR9SQN0Weuv8oAT07Yn3xrqHhzMln7FHTQm7zB/MR9Kg+rzF7gEfGgHJ20xPW+B4TS04ZsuW5OTNxQVBHrB9k8ZC6zVE08K2HGJECJF86nO03ktJptK3U2rpZdCweWs9pXOLsGDEmG52zLRQ8KB8+zFz5NIsEq8/spaZwyjMCSrtARRIFNOtCzuZwBQJ0SI0uUtdHwjrGIrH/1Qxm+qXhf6Zu0AaBOgMGuWH+6p2Ju0dXV90yiznFwhhKHZAn4WgR7r9E2BNuodYkE7ax7k+nXxYJ+ZhxHo5fo2SiccUT+04t+zLLCBY5Dm4+4KwMFTA1lUToMEleT2Oapzwn6jFfpYSw0/94EaVW5p6wA8gfXHT/wn1ZD1wM4wxTo1QhLid+xGATR0gFYC09LSXQzqbGtg==]]></Encrypt><AgentID><![CDATA[1000002]]></AgentID></xml>
+2023-06-25T17:07:28.130+0800	INFO	wechat/wechat.go:85	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687684047</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[sdafsdf]]></Content><MsgId>7248547790352226348</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-25T17:07:28.130+0800	INFO	wechat/wechat.go:93	Unmarshal data: {ww3e03cf4760de0bcd LiMingZe 1687684047 text sdafsdf 7248547790352226348 0}
+2023-06-25T17:07:28.130+0800	INFO	controllers/wechat.go:51	userMsg:&{ww3e03cf4760de0bcd LiMingZe 1687684047 text sdafsdf 7248547790352226348 0},<nil>
+2023-06-25T17:07:28.130+0800	INFO	wechat/wechat.go:128	xml.Marshal: <MsgContent><ToUserName>LiMingZe</ToUserName><FromUserName>ww3e03cf4760de0bcd</FromUserName><CreateTime>1687684047</CreateTime><MsgType>text</MsgType><Content>sdafsdf</Content><MsgId></MsgId><AgentId>0</AgentId></MsgContent>
+2023-06-25T17:07:28.130+0800	INFO	wechat/wechat.go:135	after encrypt sEncryptMsg: <xml><Encrypt><![CDATA[hcvYrai7WwiVpobP07J8GuXuBkobV8JAdKEvJngko3m3GLAUYSCTn/ET+jxuldHrQ8W5IaLbYPVr58/5RzWBLALONNqlR9Q0YxPKVl8ZvpGELhYqqgpqfMbRGAwQXEvtHV6P+m8m43nwfAdO1tgJZ2HZ58cixFv7DNV/lHTDwCjK4uxLtgI/gaiBg2bskELvXOIJQXcv341w8YcO/I6e39Tur6N4nRMHdOD/DU00FD25eHSaIGFtpphg4OMGrCDnpk1eTijbnzBEy6CnEEw/vWzL222sE4A130ZwLzykpDQvmFNv/q/fgplNFddoZn10vCuSaMi4WYamnQxSSMnajKMAgxed/w9bWH+NvoyjNzxK0/35IgRm0TajDU41uYAk]]></Encrypt><MsgSignature><![CDATA[86c768639aba9c56f6759c22e294fb7734df3b7e]]></MsgSignature><TimeStamp>1687684047</TimeStamp><Nonce><![CDATA[1687319390]]></Nonce></xml>
+2023-06-25T17:09:26.722+0800	INFO	big-genius/main.go:56	server is shutdown

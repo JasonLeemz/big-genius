@@ -7,7 +7,6 @@ import (
 	trace "big-genius/core/middleware"
 	"big-genius/internal/app/controllers"
 	"big-genius/internal/app/models/database"
-	"big-genius/internal/app/models/openai"
 	"github.com/kataras/iris/v12"
 	"github.com/kataras/iris/v12/context"
 )
@@ -38,6 +37,18 @@ func main() {
 		})
 	})
 
+	app.Get("/wx/airobot", func(c *context.Context) {
+		controllers.AIRobot(ctx.Context{
+			Context: c,
+		})
+	})
+
+	app.Post("/wx/airobot", func(c *context.Context) {
+		controllers.AIRobot(ctx.Context{
+			Context: c,
+		})
+	})
+
 	if err := app.Listen(":" + config.GlobalConfig.App.Port); err != nil {
 		panic(err)
 	}
@@ -47,14 +58,17 @@ func main() {
 
 func initComponents() {
 	// 初始化配置
-	config.InitConfig()
+	config.Init()
 
 	// 初始化日志记录器
-	log.InitLogger()
+	log.Init()
 
 	// 初始化数据库
-	database.DatabaseInit()
+	database.Init()
 
-	// 初始化数据库
-	openai.ChatGPTInit()
+	// 初始化全局Proxy
+	//proxy.Init()
+
+	// 初始化OpenAI
+	//openai.Init()
 }

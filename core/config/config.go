@@ -12,6 +12,8 @@ type Config struct {
 	Database DatabaseCfg `yaml:"database"`
 	Log      LogCfg      `yaml:"log"`
 	OpenAI   OpenAI      `yaml:"openai"`
+	Proxy    Proxy       `yaml:"proxy"`
+	WeChat   WeChat      `yaml:"wechat"`
 }
 
 type AppCfg struct {
@@ -27,14 +29,27 @@ type DatabaseCfg struct {
 }
 
 type LogCfg struct {
-	LogLevel int    `yaml:"log_level"`
+	LogLevel int    `yaml:"logLevel"`
 	Path     string `yaml:"path"`
 }
+
 type OpenAI struct {
 	Token string `yaml:"token"`
 }
 
-func InitConfig() {
+type Proxy struct {
+	Schema string `yaml:"schema"`
+	Host   string `yaml:"host"`
+	Port   string `yaml:"port"`
+}
+
+type WeChat struct {
+	Token          string `yaml:"token"`
+	CorpID         string `yaml:"corpID"`
+	EncodingAesKey string `yaml:"encodingAesKey"`
+}
+
+func Init() {
 	path := "./config/app.dev.yaml"
 	viper.SetConfigFile(path) // 指定配置文件路径
 	//viper.SetConfigName("config")         // 配置文件名称(无扩展名)
