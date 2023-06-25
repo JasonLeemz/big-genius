@@ -5,4 +5,4 @@ go.sum
 ._.DS_Store
 *_test.go
 logs/*.log
-config/app.*
+config/*
