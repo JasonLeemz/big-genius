@@ -10,10 +10,11 @@ var GlobalConfig *Config
 type Config struct {
 	App      AppCfg      `yaml:"app"`
 	Database DatabaseCfg `yaml:"database"`
+	Redis    RedisCfg    `yaml:"redis"`
 	Log      LogCfg      `yaml:"log"`
-	OpenAI   OpenAI      `yaml:"openai"`
-	Proxy    Proxy       `yaml:"proxy"`
-	WeChat   WeChat      `yaml:"wechat"`
+	OpenAI   OpenAICfg   `yaml:"openai"`
+	Proxy    ProxyCfg    `yaml:"proxy"`
+	WeChat   WeChatCfg   `yaml:"wechat"`
 }
 
 type AppCfg struct {
@@ -27,24 +28,30 @@ type DatabaseCfg struct {
 	Username string `yaml:"username"`
 	DB       string `yaml:"db"`
 }
+type RedisCfg struct {
+	Host     string `yaml:"host"`
+	Port     int    `yaml:"port"`
+	Password string `yaml:"password"`
+	DB       int    `yaml:"db"`
+}
 
 type LogCfg struct {
 	LogLevel int    `yaml:"logLevel"`
 	Path     string `yaml:"path"`
 }
 
-type OpenAI struct {
+type OpenAICfg struct {
 	Token   string `yaml:"token"`
 	BaseURL string `yaml:"baseURL"`
 }
 
-type Proxy struct {
+type ProxyCfg struct {
 	Schema string `yaml:"schema"`
 	Host   string `yaml:"host"`
 	Port   string `yaml:"port"`
 }
 
-type WeChat struct {
+type WeChatCfg struct {
 	Token          string `yaml:"token"`
 	CorpID         string `yaml:"corpID"`
 	EncodingAesKey string `yaml:"encodingAesKey"`

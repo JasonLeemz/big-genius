@@ -6,6 +6,7 @@ import (
 	"github.com/sashabaranov/go-openai"
 	"net/http"
 	"net/url"
+	"time"
 )
 
 var AI *openai.Client
@@ -26,6 +27,7 @@ func Init() {
 		Transport: &http.Transport{
 			Proxy: http.ProxyURL(proxyUrl),
 		},
+		Timeout: time.Second * 10,
 	}
 	conf.BaseURL = config.GlobalConfig.OpenAI.BaseURL
 

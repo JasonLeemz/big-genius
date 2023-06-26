@@ -2,7 +2,9 @@ package services
 
 import (
 	ctx "big-genius/core/context"
+	"big-genius/core/log"
 	"big-genius/internal/app/dao"
+	"encoding/json"
 )
 
 type OpenAIService struct {
@@ -19,7 +21,11 @@ func NewOpenAIService() *OpenAIService {
 }
 
 func (s *OpenAIService) CreateChatCompletion(ctx ctx.Context, msg string) (string, error) {
+	ccc, _ := json.Marshal(ctx)
+	log.Logger.Error(string(ccc))
 	resp, err := s.OpenAIDAO.CreateChatCompletion(ctx, msg)
+	ddd, _ := json.Marshal(ctx)
+	log.Logger.Error(string(ddd))
 	if err != nil {
 		return "", err
 	}

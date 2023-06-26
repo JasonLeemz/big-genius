@@ -8,7 +8,7 @@ import (
 	"big-genius/internal/app/controllers"
 	"big-genius/internal/app/models/database"
 	"big-genius/internal/app/models/openai"
-	"big-genius/internal/app/models/proxy"
+	"big-genius/internal/app/models/redis"
 	"github.com/kataras/iris/v12"
 	"github.com/kataras/iris/v12/context"
 )
@@ -68,8 +68,11 @@ func initComponents() {
 	// 初始化数据库
 	database.Init()
 
-	// 初始化全局Proxy
-	proxy.Init()
+	// 初始化Redis
+	redis.Init()
+
+	//// 初始化全局Proxy
+	//proxy.Init()
 
 	// 初始化OpenAI
 	openai.Init()
