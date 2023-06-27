@@ -11,6 +11,7 @@ type Config struct {
 	App      AppCfg      `yaml:"app"`
 	Database DatabaseCfg `yaml:"database"`
 	Redis    RedisCfg    `yaml:"redis"`
+	MQ       MQCfg       `yaml:"mq"`
 	Log      LogCfg      `yaml:"log"`
 	OpenAI   OpenAICfg   `yaml:"openai"`
 	Proxy    ProxyCfg    `yaml:"proxy"`
@@ -35,6 +36,14 @@ type RedisCfg struct {
 	DB       int    `yaml:"db"`
 }
 
+type MQCfg struct {
+	Schema   string `yaml:"schema"`
+	Host     string `yaml:"host"`
+	Port     string `yaml:"port"`
+	Username string `yaml:"username"`
+	Password string `yaml:"password"`
+}
+
 type LogCfg struct {
 	LogLevel int    `yaml:"logLevel"`
 	Path     string `yaml:"path"`
@@ -52,9 +61,13 @@ type ProxyCfg struct {
 }
 
 type WeChatCfg struct {
-	Token          string `yaml:"token"`
-	CorpID         string `yaml:"corpID"`
-	EncodingAesKey string `yaml:"encodingAesKey"`
+	Token             string `yaml:"token"`
+	CorpID            string `yaml:"corpID"`
+	EncodingAesKey    string `yaml:"encodingAesKey"`
+	CorpSecret        string `yaml:"corpSecret"`
+	GetAccessTokenUrl string `yaml:"getAccessTokenUrl"`
+	SendMsgUrl        string `yaml:"sendMsgUrl"`
+	AgentID           int    `yaml:"agentid"`
 }
 
 func Init() {

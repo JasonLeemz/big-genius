@@ -3,9 +3,19 @@ package wechat
 import (
 	"big-genius/core/config"
 	"big-genius/core/log"
+	"big-genius/internal/app/logic"
+	"big-genius/internal/app/models/redis"
+	ctx2 "context"
+	"encoding/json"
 	"encoding/xml"
 	"errors"
+	"fmt"
+	"github.com/kataras/iris/v12/context"
 	"github.com/sbzhu/weworkapi_golang/wxbizmsgcrypt"
+	"gopkg.in/resty.v1"
+	"io"
+	"net/http"
+	"time"
 )
 
 type MsgContent struct {
@@ -115,7 +125,7 @@ func VerifyData(reqMsgSign, reqTimestamp, reqNonce string, reqData []byte) (*Msg
         以上2，3，4步可以用企业微信提供的库函数EncryptMsg来实现。
 */
 
-func GenSendMsg(msgCont MsgContent, reqTimestamp, reqNonce string) ([]byte, error) {
+func GenWebhookMsg(msgCont MsgContent, reqTimestamp, reqNonce string) ([]byte, error) {
 	newWxCrypt()
 
 	respData, err := xml.Marshal(msgCont)
@@ -133,4 +143,131 @@ func GenSendMsg(msgCont MsgContent, reqTimestamp, reqNonce string) ([]byte, erro
 	}
 	log.Logger.Infof("after encrypt sEncryptMsg: %s", encryptMsg)
 	return encryptMsg, nil
+}
+
+type AccessToken struct {
+	ErrCode     int    `json:"errcode"`
+	ErrMsg      string `json:"errmsg"`
+	AccessToken string `json:"access_token"`
+	ExpiresIn   int    `json:"expires_in"`
+}
+
+const (
+	RedisKeyAccessToken = "wx_access_token"
+)
+
+func DestroyAccessToken(ctx *context.Context) int64 {
+	at, err := logic.RedisDelete(ctx, RedisKeyAccessToken)
+	if err != nil {
+		log.Logger.Errorf("RedisDelete Error: %s", err.Error())
+	}
+
+	return at
+}
+
+func getAccessTokenFromRedis(ctx ctx2.Context) string {
+	at, err := logic.RedisGet(ctx, RedisKeyAccessToken)
+	if err != nil {
+		log.Logger.Errorf("getAccessTokenFromRedis: %s", err.Error())
+	}
+	if at == "" || at == redis.KeyNotExist {
+		return ""
+	}
+
+	return at
+}
+
+func GetAccessToken(ctx ctx2.Context) string {
+	// redis中获取，不存在的话再去请求新的
+	at := getAccessTokenFromRedis(ctx)
+	if at != "" {
+		return at
+	}
+	//return ""
+
+	url := fmt.Sprintf("%s?corpid=%s&corpsecret=%s",
+		config.GlobalConfig.WeChat.GetAccessTokenUrl,
+		config.GlobalConfig.WeChat.CorpID,
+		config.GlobalConfig.WeChat.CorpSecret)
+	// 发送 GET 请求
+	response, err := http.Get(url)
+	if err != nil {
+		log.Logger.Errorf("http.Get(url) Error: %s", err.Error())
+		return ""
+	}
+	defer response.Body.Close()
+
+	// 读取响应结果
+	body, err := io.ReadAll(response.Body)
+	if err != nil {
+		log.Logger.Errorf("io.ReadAll Error: %s", err.Error())
+		return ""
+	}
+	log.Logger.Infof("GetAccessToken:[%s]", body)
+
+	// 解析响应的 JSON 数据
+	sat := AccessToken{}
+	err = json.Unmarshal(body, &sat)
+	if err != nil {
+		log.Logger.Errorf("Unmarshal AccessToken Error: %s", err.Error())
+		return ""
+	}
+
+	// reload redis token
+	dur := time.Duration(sat.ExpiresIn) * time.Second
+	b, err := logic.RedisSetNX(ctx, RedisKeyAccessToken, sat.AccessToken, dur)
+	log.Logger.Infof("RedisSetNX bool:%t, err:%v", b, err)
+
+	return sat.AccessToken
+}
+
+type SendReq struct {
+	ToUser                 string          `json:"touser,omitempty"`
+	MsgType                string          `json:"msgtype"`
+	AgentID                int             `json:"agentid"`
+	Text                   SendReqText     `json:"text"`
+	Markdown               SendReqMarkdown `json:"markdown"`
+	ToParty                string          `json:"toparty,omitempty"`
+	ToTag                  string          `json:"totag,omitempty"`
+	Safe                   int             `json:"safe,omitempty"`
+	EnableIdTrans          int             `json:"enable_id_trans,omitempty"`
+	EnableDuplicateCheck   int             `json:"enable_duplicate_check,omitempty"`
+	DuplicateCheckInterval int             `json:"duplicate_check_interval,omitempty"`
+}
+type SendReqText struct {
+	Content string `json:"content,omitempty"`
+}
+
+type SendReqMarkdown struct {
+	Content string `json:"content,omitempty"`
+}
+
+type SendResp struct {
+	ErrCode int    `json:"errcode"`
+	ErrMsg  string `json:"errmsg"`
+	MsgID   string `json:"msgid,omitempty"`
+}
+
+func SendMsg(toUser, msg string, token string) (int, error) {
+	req := SendReq{
+		ToUser:  toUser,
+		MsgType: "markdown",
+		AgentID: config.GlobalConfig.WeChat.AgentID,
+		Markdown: SendReqMarkdown{
+			Content: msg,
+		},
+	}
+
+	url := fmt.Sprintf("%s?access_token=%s", config.GlobalConfig.WeChat.SendMsgUrl, token)
+	log.Logger.Infof("sendurl:[%s]", url)
+	// 发送 PostJson 请求
+	resp := SendResp{}
+	post, err := resty.R().
+		SetHeader("Accept", "application/json").
+		SetBody(req).
+		SetResult(&resp).
+		Post(url)
+	log.Logger.Infof("WX Back:post:%v, err:%v", post, err)
+	log.Logger.Infof("WX Back:%v", resp)
+	return resp.ErrCode, nil
 }

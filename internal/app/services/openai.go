@@ -1,10 +1,9 @@
 package services
 
 import (
-	ctx "big-genius/core/context"
-	"big-genius/core/log"
 	"big-genius/internal/app/dao"
-	"encoding/json"
+	"context"
+	"time"
 )
 
 type OpenAIService struct {
@@ -20,14 +19,16 @@ func NewOpenAIService() *OpenAIService {
 	return theOpenAIService
 }
 
-func (s *OpenAIService) CreateChatCompletion(ctx ctx.Context, msg string) (string, error) {
-	ccc, _ := json.Marshal(ctx)
-	log.Logger.Error(string(ccc))
+func (s *OpenAIService) CreateChatCompletion(msg string) (string, error) {
+	timeout := 60 * time.Second
+	ctx, cancel := context.WithTimeout(context.Background(), timeout)
+	defer cancel()
+
 	resp, err := s.OpenAIDAO.CreateChatCompletion(ctx, msg)
-	ddd, _ := json.Marshal(ctx)
-	log.Logger.Error(string(ddd))
+
 	if err != nil {
-		return "", err
+		// TODO
+		return err.Error(), err
 	}
 
 	answer := ""

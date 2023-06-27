@@ -6,7 +6,10 @@ import (
 	"github.com/redis/go-redis/v9"
 )
 
-var RDB *redis.Client
+var (
+	RDB         *redis.Client
+	KeyNotExist = "#KeyNotExist#"
+)
 
 func Init() {
 	RDB = redis.NewClient(&redis.Options{
