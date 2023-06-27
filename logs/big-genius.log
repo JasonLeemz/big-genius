@@ -1702,3 +1702,180 @@
 2023-06-27T16:23:36.263+0800	INFO	wechat/wechat.go:270	WX Back:post:{"errcode":0,"errmsg":"ok","msgid":"mrVtVXE39it1tWVvd57npAFOWAMZ1nGP7gALkicWXgG1MXEY5-W_tRBGEYcz8m2YG_qomrgdSbiCbvHiLviS9g"}, err:<nil>
 2023-06-27T16:23:36.263+0800	INFO	wechat/wechat.go:271	WX Back:{0 ok mrVtVXE39it1tWVvd57npAFOWAMZ1nGP7gALkicWXgG1MXEY5-W_tRBGEYcz8m2YG_qomrgdSbiCbvHiLviS9g}
 2023-06-27T16:33:01.307+0800	INFO	big-genius/main.go:45	server is shutdown
+2023-06-27T16:41:46.113+0800	INFO	mq/mq.go:79	Waiting for messages...
+2023-06-27T16:41:46.114+0800	INFO	proxy/proxy.go:17	Proxy URL: http://192.168.31.60:7890
+2023-06-27T16:41:48.545+0800	INFO	big-genius/main.go:45	server is shutdown
+2023-06-27T20:40:13.450+0800	INFO	mq/mq.go:79	Waiting for messages...
+2023-06-27T20:40:13.451+0800	INFO	proxy/proxy.go:17	Proxy URL: http://192.168.31.60:7890
+2023-06-27T20:40:16.501+0800	INFO	big-genius/main.go:45	server is shutdown
+2023-06-27T21:01:29.234+0800	INFO	mq/mq.go:79	Waiting for messages...
+2023-06-27T21:01:29.235+0800	INFO	proxy/proxy.go:17	Proxy URL: http://192.168.31.60:7890
+2023-06-27T21:01:35.805+0800	INFO	big-genius/main.go:45	server is shutdown
+2023-06-27T21:02:07.787+0800	INFO	mq/mq.go:79	Waiting for messages...
+2023-06-27T21:02:44.274+0800	INFO	controllers/wechat.go:39	wxsend:<xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><Encrypt><![CDATA[YzA/FfYpS0Or8LE9V9DnEu0B+pOUP2mrdCEayvjjtz6q9V3uWkcSywV+bhVn45zEAPuTz4Yaxm+xApsrNN8RoPegDgCfhLZzQmbHXNlm5W/nfhGuloGQl7r2dUJoWauvsEfzRgZVEb2Ycwcrb9BjiNnqiEX5EvcWasCY7o2x1NfMYWYfE2hHn+YyD8xFc6OzksYIaxMA1AJ6TBBh6SEx7xpfY/9VsIV+/jmuf148Q8IK+PQ1jBwk4IsTugCpFtmfe1fJEbqyAy14NHJ/HE5yC2Z5d+VRSCHeMO8ayMHq7pugTKlKdOUdnK/h/BGgUdpnSl02oe4iAtliQ7QvXka+ExjcaX9plrYLjcqQ6AeqriZGrSUc1iMiwT8O1U64capuULFvyzZhJM/lW515e5Mwsu79qCyCy25VZjsHaaTmE4AbOuCF7yWBypysbbBLNLVld2zM3vNBUY/OTxAuYRGMqg==]]></Encrypt><AgentID><![CDATA[1000002]]></AgentID></xml>
+2023-06-27T21:02:44.275+0800	INFO	wechat/wechat.go:94	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687870965</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[newbing 和 chatgpt有什么区别]]></Content><MsgId>7249350598841381164</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-27T21:02:44.275+0800	INFO	wechat/wechat.go:102	Unmarshal data: {ww3e03cf4760de0bcd LiMingZe 1687870965 text newbing 和 chatgpt有什么区别 7249350598841381164 0}
+2023-06-27T21:02:44.275+0800	INFO	wechat/wechat.go:137	xml.Marshal: <MsgContent><ToUserName>LiMingZe</ToUserName><FromUserName>ww3e03cf4760de0bcd</FromUserName><CreateTime>1687870965</CreateTime><MsgType>text</MsgType><Content></Content><MsgId>7249350598841381164</MsgId><AgentId>0</AgentId></MsgContent>
+2023-06-27T21:02:44.275+0800	INFO	wechat/wechat.go:144	after encrypt sEncryptMsg: <xml><Encrypt><![CDATA[AHT6KbIyg/5x75MJbCwGhMB08EsFyN3ss7leSattBtv9K1hPL4RMOr6uv0T1q775ZiDXosfQ3igC/wLY8fL8DSimOd/WGkqle8jsxQzz0rTo2PvgchTKFg8D1HlMkQT2+pWEdpheeGU79bbFzXkkxcVM8/OYg8VG/eZDhMY4vbGrGtsdcmmkHdno1h6J7sxWEmbReDuN1IuCJ45QoS54I4mstxDdMnhPnNJsnmTOv2pwkxNzdU3HjwfHz0l+11Yij4iDQXGN3ZNZKt/jVxi4dbTIJzG5NKiZyBGu5M5wR9EcakR2aetu+UG5R7qPFM+xoitq+ZDPxRUzwV8EwZzlzrpZo6xwSmXH/ToT3GxbpJVgkxDmG64wJYNI/F7idXPT]]></Encrypt><MsgSignature><![CDATA[7bf4064ea73d089e25bc433747f57523b358b4a0]]></MsgSignature><TimeStamp>1687870966</TimeStamp><Nonce><![CDATA[1687835476]]></Nonce></xml>
+2023-06-27T21:02:44.275+0800	INFO	mq/trigger.go:59	SendMQMsg:{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687870965,"MsgType":"text","Content":"newbing 和 chatgpt有什么区别","Msgid":"7249350598841381164","Agentid":0}
+2023-06-27T21:02:44.282+0800	INFO	mq/mq.go:43	ai.chatgpt ok
+2023-06-27T21:02:44.287+0800	INFO	mq/mq.go:74	Received a message: {"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687870965,"MsgType":"text","Content":"newbing 和 chatgpt有什么区别","Msgid":"7249350598841381164","Agentid":0}
+2023-06-27T21:02:44.287+0800	INFO	mq/trigger.go:14	{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687870965,"MsgType":"text","Content":"newbing 和 chatgpt有什么区别","Msgid":"7249350598841381164","Agentid":0}
+2023-06-27T21:02:45.963+0800	INFO	wechat/wechat.go:206	GetAccessToken:[{"errcode":0,"errmsg":"ok","access_token":"63m5CR3tTsoIXuja23NiUPzgE5c_dt3rt0FLxFde_K_psO2E1Tf03-K-kj9x-KfKTZcNmqVy2OFdK7lC-VL9RSXt2CkBp0N_jgkPsVybwe5kAhgpFrSdsct_hZQTEcdsWa672POkojyM6rXyr4ZFGVP-MqiI5zYOWmHyFDMXFzaqk0cV7Q2pcRc729rgMiqksg-X5x0fvEX9gEFx5XDG1Q","expires_in":7200}]
+2023-06-27T21:02:45.980+0800	INFO	wechat/wechat.go:219	RedisSetNX bool:true, err:<nil>
+2023-06-27T21:03:19.850+0800	INFO	dao/openai.go:38	ChatCompletion resp: {chatcmpl-7W2dKTcqyLsgYgxmyzGY9Uc59cV3B chat.completion 1687870974 gpt-3.5-turbo-0301 [{0 {assistant Newbing是一种简单的问答机器人，可以回答关于健康、营养、医疗等问题，并提供一些推荐的服务。而ChatGPT是一个更为高级的人工智能聊天机器人，不仅可以回答问题，还可以进行对话，理解语言语义，并提供更为丰富和个性化的服务。 ChatGPT还可以通过训练不断优化自己的表现。因此，两者在技术和服务能力上有很大的差异。  <nil>} stop}] {20 153 173}}
+2023-06-27T21:03:19.851+0800	INFO	mq/trigger.go:35	>>>>>ANSWER<<<<<:Newbing是一种简单的问答机器人，可以回答关于健康、营养、医疗等问题，并提供一些推荐的服务。而ChatGPT是一个更为高级的人工智能聊天机器人，不仅可以回答问题，还可以进行对话，理解语言语义，并提供更为丰富和个性化的服务。 ChatGPT还可以通过训练不断优化自己的表现。因此，两者在技术和服务能力上有很大的差异。
+2023-06-27T21:03:19.851+0800	INFO	wechat/wechat.go:262	sendurl:[https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=63m5CR3tTsoIXuja23NiUPzgE5c_dt3rt0FLxFde_K_psO2E1Tf03-K-kj9x-KfKTZcNmqVy2OFdK7lC-VL9RSXt2CkBp0N_jgkPsVybwe5kAhgpFrSdsct_hZQTEcdsWa672POkojyM6rXyr4ZFGVP-MqiI5zYOWmHyFDMXFzaqk0cV7Q2pcRc729rgMiqksg-X5x0fvEX9gEFx5XDG1Q]
+2023-06-27T21:03:20.265+0800	INFO	wechat/wechat.go:270	WX Back:post:{"errcode":0,"errmsg":"ok","msgid":"mrVtVXE39it1tWVvd57npI0KYSaA1fMuOx6qQ1pueT7VqdCgnV6EpHLpfWFTyR4qfbSO7X9gkSiG9nPhH1cOBg"}, err:<nil>
+2023-06-27T21:03:20.265+0800	INFO	wechat/wechat.go:271	WX Back:{0 ok mrVtVXE39it1tWVvd57npI0KYSaA1fMuOx6qQ1pueT7VqdCgnV6EpHLpfWFTyR4qfbSO7X9gkSiG9nPhH1cOBg}
+2023-06-27T21:04:41.615+0800	INFO	controllers/wechat.go:39	wxsend:<xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><Encrypt><![CDATA[tL2bBunrXUVv+baZqWumY5UONXcm3O/S2NHOf43+JDdPbhbgY7N2WOJ5ipwB5j9A3r8viWRinBTvSV9uT3uixeWsWdbuREmcLn8DGWSAdam9yeO9ptBw/qIcJ0onhyTqg1WKSpjNXUVC4FSkVfEfMYAy1bZq6+ZpBeEIwJ3DeoNdE//aap67I9JS0BDdw4OD5o74+HtCnC0rQuTi0XI0Br9ne7aojnTsqUUlUHrhEMy4vaddC00+z7u8LHl9CgtfGckR6vjp5fmlqa3a95Zfqk8OhpJQIPIzDWsczzHhT4RSgI6QPGDVGpKVC4Kz/VBNgxLiMnHB5U6U0W6rPLj4MI5+/OG9X5S1J8i++OR24dd1437vzJpj8u9MdAjybpJ7GchZ7AvNc/EmQvF4OoIckWLoctUfQOPIzfVx00UTVjsitIAfYrpjpcd6H/MazHaRI458B3EWDgbXzUUWdIwUqg==]]></Encrypt><AgentID><![CDATA[1000002]]></AgentID></xml>
+2023-06-27T21:04:41.615+0800	INFO	wechat/wechat.go:94	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687871083</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[百盛图v1这款咖啡机怎么样]]></Content><MsgId>7249351102170043180</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-27T21:04:41.615+0800	INFO	wechat/wechat.go:102	Unmarshal data: {ww3e03cf4760de0bcd LiMingZe 1687871083 text 百盛图v1这款咖啡机怎么样 7249351102170043180 0}
+2023-06-27T21:04:41.615+0800	INFO	wechat/wechat.go:137	xml.Marshal: <MsgContent><ToUserName>LiMingZe</ToUserName><FromUserName>ww3e03cf4760de0bcd</FromUserName><CreateTime>1687871083</CreateTime><MsgType>text</MsgType><Content></Content><MsgId>7249351102170043180</MsgId><AgentId>0</AgentId></MsgContent>
+2023-06-27T21:04:41.616+0800	INFO	wechat/wechat.go:144	after encrypt sEncryptMsg: <xml><Encrypt><![CDATA[XbzPOe4zjoHuzi3yZ1jg/CD/K9GkZuleOHqRvJgEnvo/Z3ze6W/X1C96UEs3IkqlTy5LN86I9bXhJy2qXVqkc2P9sbP4gN83PvaxH2SNTwoP4lGmD/pLF1q7MDKrs3kgUIj1UtAGioDpwfQxskXhpOGeb6KVq7eWLh5gtIne9FjWSErvGPlWnTO1uxxcu5TXI4tUcoVGJ3uEjmc1oZH3SezDlT7AZ/i6pZ0o9RYJFrN3u56IUgcivq4OTEJ2TRJCFbWUIESL8lSd4JHmmUbrgE+x4wa0oiuU+je/0MOKbh5XyIJLrjCy5WuF/6Z/n8Co5W7o7mxBVVWWd2okOHGFbDsguusHXcFwrlsAfpDd0af4vVmcJDl3O3UjyvQkQ8E4]]></Encrypt><MsgSignature><![CDATA[e1d605a9108b03abedaf58927087de8460b98fd6]]></MsgSignature><TimeStamp>1687871083</TimeStamp><Nonce><![CDATA[1688138043]]></Nonce></xml>
+2023-06-27T21:04:41.616+0800	INFO	mq/trigger.go:59	SendMQMsg:{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687871083,"MsgType":"text","Content":"百盛图v1这款咖啡机怎么样","Msgid":"7249351102170043180","Agentid":0}
+2023-06-27T21:04:41.621+0800	INFO	mq/mq.go:43	ai.chatgpt ok
+2023-06-27T21:04:41.625+0800	INFO	mq/mq.go:74	Received a message: {"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687871083,"MsgType":"text","Content":"百盛图v1这款咖啡机怎么样","Msgid":"7249351102170043180","Agentid":0}
+2023-06-27T21:04:41.625+0800	INFO	mq/trigger.go:14	{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687871083,"MsgType":"text","Content":"百盛图v1这款咖啡机怎么样","Msgid":"7249351102170043180","Agentid":0}
+2023-06-27T21:05:01.638+0800	INFO	dao/openai.go:38	ChatCompletion resp: {chatcmpl-7W2f7gBKtzuiPOClIgiggNW9Sxsp8 chat.completion 1687871085 gpt-3.5-turbo-0301 [{0 {assistant 很抱歉，作为AI语言模型，我无法对具体产品的质量和性能进行评估，建议您查看相关的消费者评价和专业测评等资料，以获得更准确的信息。  <nil>} stop}] {27 67 94}}
+2023-06-27T21:05:01.638+0800	INFO	mq/trigger.go:35	>>>>>ANSWER<<<<<:很抱歉，作为AI语言模型，我无法对具体产品的质量和性能进行评估，建议您查看相关的消费者评价和专业测评等资料，以获得更准确的信息。
+2023-06-27T21:05:01.638+0800	INFO	wechat/wechat.go:262	sendurl:[https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=63m5CR3tTsoIXuja23NiUPzgE5c_dt3rt0FLxFde_K_psO2E1Tf03-K-kj9x-KfKTZcNmqVy2OFdK7lC-VL9RSXt2CkBp0N_jgkPsVybwe5kAhgpFrSdsct_hZQTEcdsWa672POkojyM6rXyr4ZFGVP-MqiI5zYOWmHyFDMXFzaqk0cV7Q2pcRc729rgMiqksg-X5x0fvEX9gEFx5XDG1Q]
+2023-06-27T21:05:02.149+0800	INFO	wechat/wechat.go:270	WX Back:post:{"errcode":0,"errmsg":"ok","msgid":"mrVtVXE39it1tWVvd57npI0KYSaA1fMuOx6qQ1pueT7jf68dBJZfLn-BXr7SZZ2G1lJkt41nijYmrbDp9DJGWQ"}, err:<nil>
+2023-06-27T21:05:02.150+0800	INFO	wechat/wechat.go:271	WX Back:{0 ok mrVtVXE39it1tWVvd57npI0KYSaA1fMuOx6qQ1pueT7jf68dBJZfLn-BXr7SZZ2G1lJkt41nijYmrbDp9DJGWQ}
+2023-06-27T21:09:02.276+0800	INFO	controllers/wechat.go:39	wxsend:<xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><Encrypt><![CDATA[NgdRNsOmy7+u5z80DiziNM4p28exSnAXPry5hUc2RImP7DpD2AfTbAJk0ThqtdHSSQqutKW24jfg9TrHJPr0O+/WYBxk2dNVgaG0kqILTq7aQ2Bb8175SDgDMnt1lZxTL0UjYax/gF2PRgUABOVEz95jEEq/ZruI9BCJVm8YxR/gVq7ksTtsFGq5UTgTizS7midQ3avq/p7try9HpipbuhYVpSz4OzRouGcWK5Du15F9nwqHHq3MlqM+YAfNTceeBE2QS6/ucQSUUpTNwaRSh2C1dT1vU3s9WVmEPE5cF9NsON9R4YQQTP7nvtYfDsUc6/AEdJNLha8eVs/Zn1lrwS8f/su2I6KnOdbEIm4Vsx4YNvWSRGGXSL/p+TAHznATwB4v0iswqCgixDC1N5M9Zm1nhi6kFpKJ/GNSBlq9VkzQUYczVDFS6FbBgXogf0Wn7gfqQPk+2DJj0mu3BPHSGMDFpa76uY2OZSZCd7/V02Y4mcy0oiXYI90IHFYc3TNYCBvG8ngvQofEAnlMb5+SA8lsIVjKIEBIHZrPbhqF+hIjYdb0I5xqGwhTw20gB1zrHRhSmNsE4TZPBLMkhduQLCWkGcEe/aj+xhxTUaxU/syUtczHg/b+qJSKG3egXWV0oZ1mo+P+vcERcFm7tZO3+j3kzVcF/jLEM8XYc6OcTBk=]]></Encrypt><AgentID><![CDATA[1000002]]></AgentID></xml>
+2023-06-27T21:09:02.278+0800	INFO	wechat/wechat.go:94	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687871344</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[使用golang语言的iris框架接入rabbitmq时，怎样在消费时调用现有的函数并传入context，并保证耗时过长而不会出现context deadline exceeded]]></Content><MsgId>7249352224791266092</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-27T21:09:02.278+0800	INFO	wechat/wechat.go:102	Unmarshal data: {ww3e03cf4760de0bcd LiMingZe 1687871344 text 使用golang语言的iris框架接入rabbitmq时，怎样在消费时调用现有的函数并传入context，并保证耗时过长而不会出现context deadline exceeded 7249352224791266092 0}
+2023-06-27T21:09:02.278+0800	INFO	wechat/wechat.go:137	xml.Marshal: <MsgContent><ToUserName>LiMingZe</ToUserName><FromUserName>ww3e03cf4760de0bcd</FromUserName><CreateTime>1687871344</CreateTime><MsgType>text</MsgType><Content></Content><MsgId>7249352224791266092</MsgId><AgentId>0</AgentId></MsgContent>
+2023-06-27T21:09:02.278+0800	INFO	wechat/wechat.go:144	after encrypt sEncryptMsg: <xml><Encrypt><![CDATA[zMVXX8DboYZlaPkMz5OdgX1HWU7pKqTP8ygCxxfpy2vrEMhg9jbGvufcaeQmKQmICfzXBU6V3HPtyQSjlqh6FXyCf9lbrFhcbsILuCDVXpknF0ZLUvx4XvtyWEfyA1GZPXMSeokcYRmdBWi1zgM77EfWUWThUW2vMFX3BtgRcLg6OrVarVzJ5+nViz+gF0gM8qG4eSeH84FeD0oYfijjTZtBqddhSdPnTzSK5puFtl5SDjXI4WqZlKjQDBvWfz4W8Ql+KxYjbG69XgSUFpI8bAkXZFlyb0UqP4vHER7RLLEDNH4h1uRnCrqfPHCP2lKDleNykhAPk2D351VAsUolXp24m3obAe25p70tNBewr1fHzhB9YAdp/JW7LjYxSJz4]]></Encrypt><MsgSignature><![CDATA[45dfea4f4483eb8b6f2e5ce85076586b0ea56439]]></MsgSignature><TimeStamp>1687871344</TimeStamp><Nonce><![CDATA[1687175244]]></Nonce></xml>
+2023-06-27T21:09:02.278+0800	INFO	mq/trigger.go:59	SendMQMsg:{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687871344,"MsgType":"text","Content":"使用golang语言的iris框架接入rabbitmq时，怎样在消费时调用现有的函数并传入context，并保证耗时过长而不会出现context deadline exceeded","Msgid":"7249352224791266092","Agentid":0}
+2023-06-27T21:09:02.282+0800	INFO	mq/mq.go:43	ai.chatgpt ok
+2023-06-27T21:09:02.288+0800	INFO	mq/mq.go:74	Received a message: {"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687871344,"MsgType":"text","Content":"使用golang语言的iris框架接入rabbitmq时，怎样在消费时调用现有的函数并传入context，并保证耗时过长而不会出现context deadline exceeded","Msgid":"7249352224791266092","Agentid":0}
+2023-06-27T21:09:02.288+0800	INFO	mq/trigger.go:14	{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687871344,"MsgType":"text","Content":"使用golang语言的iris框架接入rabbitmq时，怎样在消费时调用现有的函数并传入context，并保证耗时过长而不会出现context deadline exceeded","Msgid":"7249352224791266092","Agentid":0}
+2023-06-27T21:10:02.286+0800	ERROR	dao/openai.go:34	ChatCompletion error: Post "https://api.openai.com/v1/chat/completions": context deadline exceeded
+
+2023-06-27T21:10:02.287+0800	ERROR	mq/trigger.go:32	请求openai超时:Post "https://api.openai.com/v1/chat/completions": context deadline exceeded
+2023-06-27T21:10:02.287+0800	INFO	wechat/wechat.go:262	sendurl:[https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=63m5CR3tTsoIXuja23NiUPzgE5c_dt3rt0FLxFde_K_psO2E1Tf03-K-kj9x-KfKTZcNmqVy2OFdK7lC-VL9RSXt2CkBp0N_jgkPsVybwe5kAhgpFrSdsct_hZQTEcdsWa672POkojyM6rXyr4ZFGVP-MqiI5zYOWmHyFDMXFzaqk0cV7Q2pcRc729rgMiqksg-X5x0fvEX9gEFx5XDG1Q]
+2023-06-27T21:10:02.921+0800	INFO	wechat/wechat.go:270	WX Back:post:{"errcode":0,"errmsg":"ok","msgid":"mrVtVXE39it1tWVvd57npI0KYSaA1fMuOx6qQ1pueT7f_s5bj1fLr4lOyYf3abEhTLI-APUj6sV2gwJDoncRGA"}, err:<nil>
+2023-06-27T21:10:02.922+0800	INFO	wechat/wechat.go:271	WX Back:{0 ok mrVtVXE39it1tWVvd57npI0KYSaA1fMuOx6qQ1pueT7f_s5bj1fLr4lOyYf3abEhTLI-APUj6sV2gwJDoncRGA}
+2023-06-27T21:12:29.988+0800	INFO	big-genius/main.go:44	server is shutdown
+2023-06-27T21:12:34.605+0800	INFO	mq/mq.go:79	Waiting for messages...
+2023-06-27T21:12:51.852+0800	INFO	controllers/wechat.go:39	wxsend:<xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><Encrypt><![CDATA[Ent1Hh77azPSIaJkSUCQdrhOr1Na9d19SV51OVeLwEJQmR5vcldSpO6TrcrfuTFXFX/gwFQ9j7z52sNoZ3YgeyxFbUEWUaHFH4O9jXwH3apa593+blfD6dMVz7VgP6GR0rK+eYRkYEdX92JgXvYU8Vt7pRwR3hxkl3lY8sqleYa6hocJ8zWP9mrytRD+w1xrc8c8hAeT42v6ovAeSnHxg2ivoGV/MoozoK1eBCt9ld7eanx3yCcjavzSGfy0VqpzGcLCvx07C52lUk2rVoeWyaA6sCYS4hrolgakWxCD2pxuu5uRz2lOIwbKY2Dx6GUp7ACd7B1q7l63WD8koD1LWUJDgLpb1DA46SCyWSGIR7U8mX9+CTk0OIE7c2LFBYPudaAcSzyueBkbalVaGBEsoh/Be5GPIDU0ZSYsRgRg3kazaTgGSfWXR3Okbjp+ELxO8Q2FW8pJQn86lXv5TLvM6SvAgvMLBogXjczesh/rvenypYGltbuKh3N1IMFITy7BvvuUOfh49ydLamuvITdOjfSB6B5wjLX47gTccdS697OoRtXQ3seIf+jogUp7bGoGIWWODEw4uUdBBJH+4Xu2E/7bF14wA0k0UEta9olzzHsr20XpkUTesSL6Ns32s/vdkCqt7vL6NU5anD3lfV3rXxT1qJbqqapiBLXgYC526zI=]]></Encrypt><AgentID><![CDATA[1000002]]></AgentID></xml>
+2023-06-27T21:12:51.853+0800	INFO	wechat/wechat.go:94	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687871574</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[使用golang语言的iris框架接入rabbitmq时，怎样在消费时调用现有的函数并传入context，并保证耗时过长而不会出现context deadline exceeded]]></Content><MsgId>7249353210774794540</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-27T21:12:51.853+0800	INFO	wechat/wechat.go:102	Unmarshal data: {ww3e03cf4760de0bcd LiMingZe 1687871574 text 使用golang语言的iris框架接入rabbitmq时，怎样在消费时调用现有的函数并传入context，并保证耗时过长而不会出现context deadline exceeded 7249353210774794540 0}
+2023-06-27T21:12:51.853+0800	INFO	wechat/wechat.go:137	xml.Marshal: <MsgContent><ToUserName>LiMingZe</ToUserName><FromUserName>ww3e03cf4760de0bcd</FromUserName><CreateTime>1687871574</CreateTime><MsgType>text</MsgType><Content></Content><MsgId>7249353210774794540</MsgId><AgentId>0</AgentId></MsgContent>
+2023-06-27T21:12:51.853+0800	INFO	wechat/wechat.go:144	after encrypt sEncryptMsg: <xml><Encrypt><![CDATA[re+UTg8B7m6qITiNGPlONw90nSv169PqY4SdEwXMZKYNy2s6c0K9P1G5B9Rkt4T4b/VncOzYs9TONfn+jWWMBRLGRaa4ZTuh9VgHc0td1B4ycAOW971WnMgVcrG8TCY9YHgmgyuYLwFbuT3UIkIWdG5kzKerBnBnRZTWZdO8oSorioaZnu4r73zaxjcayA9HL46KVCPFO1PCXXu5n5WvY/EiWnckJhWh8hb2w19JmcDmtwdqctP01mlwFrQQPrdSST3TREtXmwcYTr9GDdWKwTDC2z3ixACpCwBFTlYuz1OjPZKbAs/WMVYi3sv5l6sHSbQr4bnOTSqMW/IraMARMuMKnukSRxtYf13AeKBnSP1UCQa785AEck4v710S7YcU]]></Encrypt><MsgSignature><![CDATA[8cb67bb6838939a10e6d4b4ab3d933f663667ac4]]></MsgSignature><TimeStamp>1687871574</TimeStamp><Nonce><![CDATA[1687768622]]></Nonce></xml>
+2023-06-27T21:12:51.853+0800	INFO	mq/trigger.go:63	SendMQMsg:{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687871574,"MsgType":"text","Content":"使用golang语言的iris框架接入rabbitmq时，怎样在消费时调用现有的函数并传入context，并保证耗时过长而不会出现context deadline exceeded","Msgid":"7249353210774794540","Agentid":0}
+2023-06-27T21:12:51.858+0800	INFO	mq/mq.go:43	ai.chatgpt ok
+2023-06-27T21:12:51.864+0800	INFO	mq/mq.go:74	Received a message: {"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687871574,"MsgType":"text","Content":"使用golang语言的iris框架接入rabbitmq时，怎样在消费时调用现有的函数并传入context，并保证耗时过长而不会出现context deadline exceeded","Msgid":"7249353210774794540","Agentid":0}
+2023-06-27T21:12:51.864+0800	INFO	mq/trigger.go:14	{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687871574,"MsgType":"text","Content":"使用golang语言的iris框架接入rabbitmq时，怎样在消费时调用现有的函数并传入context，并保证耗时过长而不会出现context deadline exceeded","Msgid":"7249353210774794540","Agentid":0}
+2023-06-27T21:13:51.863+0800	ERROR	dao/openai.go:34	ChatCompletion error: Post "https://api.openai.com/v1/chat/completions": context deadline exceeded
+
+2023-06-27T21:13:51.863+0800	INFO	mq/trigger.go:34	请求openai耗时:60nss
+2023-06-27T21:13:51.863+0800	ERROR	mq/trigger.go:36	请求openai超时:Post "https://api.openai.com/v1/chat/completions": context deadline exceeded
+2023-06-27T21:13:51.863+0800	INFO	wechat/wechat.go:262	sendurl:[https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=63m5CR3tTsoIXuja23NiUPzgE5c_dt3rt0FLxFde_K_psO2E1Tf03-K-kj9x-KfKTZcNmqVy2OFdK7lC-VL9RSXt2CkBp0N_jgkPsVybwe5kAhgpFrSdsct_hZQTEcdsWa672POkojyM6rXyr4ZFGVP-MqiI5zYOWmHyFDMXFzaqk0cV7Q2pcRc729rgMiqksg-X5x0fvEX9gEFx5XDG1Q]
+2023-06-27T21:13:58.914+0800	INFO	wechat/wechat.go:270	WX Back:post:{"errcode":0,"errmsg":"ok","msgid":"mrVtVXE39it1tWVvd57npI0KYSaA1fMuOx6qQ1pueT4AQAu2BTZadsc0tb7oaHyuENSAP5ThmEs0GDMU47V29w"}, err:<nil>
+2023-06-27T21:13:58.914+0800	INFO	wechat/wechat.go:271	WX Back:{0 ok mrVtVXE39it1tWVvd57npI0KYSaA1fMuOx6qQ1pueT4AQAu2BTZadsc0tb7oaHyuENSAP5ThmEs0GDMU47V29w}
+2023-06-27T21:15:24.341+0800	INFO	big-genius/main.go:44	server is shutdown
+2023-06-27T21:15:31.697+0800	INFO	mq/mq.go:79	Waiting for messages...
+2023-06-27T21:15:42.337+0800	INFO	controllers/wechat.go:39	wxsend:<xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><Encrypt><![CDATA[+HX30sQgxerzESDedFb9H5YIKpKdQmtF/uHchocNTGORCRnOR6Lo5hh7723mQQXbLLd7lWOPVhPfwXHlJxlsdHJ8sKPdO3L1E95aP5jjBEvyP0V2vLmQ5+fXlOT9aqsl3h9ZWv6ZSMb5cFvxBClaJwcf+8CVdWtC4l+Qo6B3F3ufguTOEH9ucsojK+oE+Ql6aNQWYV+cwsPTwLdIda5/zAWA/Dj+Xp7PUFBE6OrZe6Lgwi0+1lNsVcdYOp/n1I834reb7E7K7OkmKgYP9nQ3e9etPnRkt6uvy/6d90+soDCuqhEVHraZI29rYNknJs7g4mQxK/pn66WOEcT+0StiXa60YjlK+fwaKmAOVRqqV1H+xFvSP0uU6qVHbEfEnli4ylPf5DCub2kVITw5ut3FdamTkozdOn7/mNsGHhjWlLaqJg2ieLXKp5kkznfiNyPkEWrXnLLcBB4PH9cfWZOF016rgU2EbHwL22l7L3JLymaBsdRWmqjzMnl2Ul/DN+JyIo+B/7vcCeqL2LB24lZCLo09EAnAGZn4zvaz2hnUFs/M0TNkFbPOeBhfkOfs99kgGlbnPAW9kROXeZgy1PembTWcZUhhayman47vY+EXnSwFo5+XZm4pby+NWtux8ku4fKUKVzZ/GjqxqRTlcs3jPp9mn8sn49guLmfTSpCrmaw=]]></Encrypt><AgentID><![CDATA[1000002]]></AgentID></xml>
+2023-06-27T21:15:42.338+0800	INFO	wechat/wechat.go:94	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687871744</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[使用golang语言的iris框架接入rabbitmq时，怎样在消费时调用现有的函数并传入context，并保证耗时过长而不会出现context deadline exceeded]]></Content><MsgId>7249353941738862124</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-27T21:15:42.338+0800	INFO	wechat/wechat.go:102	Unmarshal data: {ww3e03cf4760de0bcd LiMingZe 1687871744 text 使用golang语言的iris框架接入rabbitmq时，怎样在消费时调用现有的函数并传入context，并保证耗时过长而不会出现context deadline exceeded 7249353941738862124 0}
+2023-06-27T21:15:42.338+0800	INFO	wechat/wechat.go:137	xml.Marshal: <MsgContent><ToUserName>LiMingZe</ToUserName><FromUserName>ww3e03cf4760de0bcd</FromUserName><CreateTime>1687871744</CreateTime><MsgType>text</MsgType><Content></Content><MsgId>7249353941738862124</MsgId><AgentId>0</AgentId></MsgContent>
+2023-06-27T21:15:42.338+0800	INFO	wechat/wechat.go:144	after encrypt sEncryptMsg: <xml><Encrypt><![CDATA[BZypQ+7jjV+C95STmogqEB+jfBo9MGNDVseLXi82GT/sLx+Z9/TTksMhFl7FUHhRU7IDAF5fCrvkU2OBYUMjnvb8shqUBCUuS2iC4tVOa5hcvgNxGwD3lVBlNE1MK7Tbr3fKx31OumLh/YY7Wzw8Qfa1d1DAoBhInoTlH4coKtF1+E/+BH5e462+ygx5I+O6FwMVDpJrC3SNPt6G7Y0/+KgX0aD+iXAof1VTMAPPK6iXtcrTnOcvnIt6w3F4SWf5wjU4nrMalpPsQgCwKC4WFUe43ZY29h+AEKMZL68rtXhBQvh5JQnHONOym6KAEU1hqK7gTKkKZxPRVU2WvINvViKr6ZP7UgbLUxOwa0loSGTI7QeEbxdteZrzdFOG5/4v]]></Encrypt><MsgSignature><![CDATA[cf2c0d925dab590aec092e3342c7b8a2e78f1acd]]></MsgSignature><TimeStamp>1687871744</TimeStamp><Nonce><![CDATA[1688161260]]></Nonce></xml>
+2023-06-27T21:15:42.339+0800	INFO	mq/trigger.go:64	SendMQMsg:{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687871744,"MsgType":"text","Content":"使用golang语言的iris框架接入rabbitmq时，怎样在消费时调用现有的函数并传入context，并保证耗时过长而不会出现context deadline exceeded","Msgid":"7249353941738862124","Agentid":0}
+2023-06-27T21:15:42.344+0800	INFO	mq/mq.go:43	ai.chatgpt ok
+2023-06-27T21:15:42.349+0800	INFO	mq/mq.go:74	Received a message: {"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687871744,"MsgType":"text","Content":"使用golang语言的iris框架接入rabbitmq时，怎样在消费时调用现有的函数并传入context，并保证耗时过长而不会出现context deadline exceeded","Msgid":"7249353941738862124","Agentid":0}
+2023-06-27T21:15:42.349+0800	INFO	mq/trigger.go:14	{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687871744,"MsgType":"text","Content":"使用golang语言的iris框架接入rabbitmq时，怎样在消费时调用现有的函数并传入context，并保证耗时过长而不会出现context deadline exceeded","Msgid":"7249353941738862124","Agentid":0}
+2023-06-27T21:16:33.586+0800	INFO	dao/openai.go:38	ChatCompletion resp: {chatcmpl-7W2pmAZaFhPioxBL1FSXnqs4e6CD7 chat.completion 1687871746 gpt-3.5-turbo-0301 [{0 {assistant 1. 在消费函数中，使用context.WithTimeout创建一个带超时时间的context，比如5秒。
+2. 调用需要调用的函数时，将创建的context作为参数传递进去。
+3. 在函数中使用select语句监听两个channel，一个是函数执行完成时的channel，另一个是context超时时的channel。
+4. 如果函数执行完成，将结果通过channel返回。如果context超时，则返回错误信息。
+
+以下是示例代码：
+
+```go
+func consumeMessage(ctx iris.Context, msg []byte) {
+    timeoutCtx, cancel := context.WithTimeout(ctx.Request().Context(), 5*time.Second)
+    defer cancel()
+
+    resultCh := make(chan string)
+    errCh := make(chan error)
+
+    go func() {
+        result, err := YourExistingFunction(timeoutCtx, msg) //调用默认的消费函数，并传入带超时时间的context
+        if err != nil {
+            errCh <- err
+        } else {
+            resultCh <- result
+        }
+    }()
+
+    select {
+    case result := <-resultCh:
+        //处理结果
+        fmt.Printf("处理结果：%s\n", result)
+    case err := <-errCh:
+        //处理错误
+        fmt.Printf("出现错误：%s\n", err)
+    case <-timeoutCtx.Done():
+        //context超时了
+        fmt.Printf("执行超时\n")
+    }
+}
+```  <nil>} stop}] {58 315 373}}
+2023-06-27T21:16:33.586+0800	INFO	mq/trigger.go:34	请求openai耗时:51ns
+2023-06-27T21:16:33.586+0800	INFO	mq/trigger.go:40	>>>>>ANSWER<<<<<:1. 在消费函数中，使用context.WithTimeout创建一个带超时时间的context，比如5秒。
+2. 调用需要调用的函数时，将创建的context作为参数传递进去。
+3. 在函数中使用select语句监听两个channel，一个是函数执行完成时的channel，另一个是context超时时的channel。
+4. 如果函数执行完成，将结果通过channel返回。如果context超时，则返回错误信息。
+
+以下是示例代码：
+
+```go
+func consumeMessage(ctx iris.Context, msg []byte) {
+    timeoutCtx, cancel := context.WithTimeout(ctx.Request().Context(), 5*time.Second)
+    defer cancel()
+
+    resultCh := make(chan string)
+    errCh := make(chan error)
+
+    go func() {
+        result, err := YourExistingFunction(timeoutCtx, msg) //调用默认的消费函数，并传入带超时时间的context
+        if err != nil {
+            errCh <- err
+        } else {
+            resultCh <- result
+        }
+    }()
+
+    select {
+    case result := <-resultCh:
+        //处理结果
+        fmt.Printf("处理结果：%s\n", result)
+    case err := <-errCh:
+        //处理错误
+        fmt.Printf("出现错误：%s\n", err)
+    case <-timeoutCtx.Done():
+        //context超时了
+        fmt.Printf("执行超时\n")
+    }
+}
+```
+2023-06-27T21:16:33.586+0800	INFO	wechat/wechat.go:262	sendurl:[https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=63m5CR3tTsoIXuja23NiUPzgE5c_dt3rt0FLxFde_K_psO2E1Tf03-K-kj9x-KfKTZcNmqVy2OFdK7lC-VL9RSXt2CkBp0N_jgkPsVybwe5kAhgpFrSdsct_hZQTEcdsWa672POkojyM6rXyr4ZFGVP-MqiI5zYOWmHyFDMXFzaqk0cV7Q2pcRc729rgMiqksg-X5x0fvEX9gEFx5XDG1Q]
+2023-06-27T21:16:35.000+0800	INFO	wechat/wechat.go:270	WX Back:post:{"errcode":0,"errmsg":"ok","msgid":"mrVtVXE39it1tWVvd57npI0KYSaA1fMuOx6qQ1pueT6kF8u6U2dgzXdgTss8gVKxJUBcT_ZFCOOvWC8hi8eltQ"}, err:<nil>
+2023-06-27T21:16:35.001+0800	INFO	wechat/wechat.go:271	WX Back:{0 ok mrVtVXE39it1tWVvd57npI0KYSaA1fMuOx6qQ1pueT6kF8u6U2dgzXdgTss8gVKxJUBcT_ZFCOOvWC8hi8eltQ}
+2023-06-27T21:18:09.235+0800	INFO	controllers/wechat.go:39	wxsend:<xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><Encrypt><![CDATA[QNL/V8aeCh+W6+WHsmOLE6DPpBBYHg5iXo4yslQw1AM3pI02Tob8gE3eCyRa7QEQfLGJ7i4RSBUtKIny/FgdVU99OO3gmsji42Ak+TFC2XwCGCsQ8XPaBG0HMoHHfmj5THkjRDqKQBKFmU2KrjXSHM/txFVM/2MmTBtcMmhDi8qiBWSqt7ck+2iS5n9GGqaXFvlUIqidafCCvqAytH/Rbd8DvGrjpTiHNyLYqj2Yjx/084/4xUVcCVGC38c2H57siIL6eKSxJVLMuwEB4n93HeSweZKaApUAw8eGoHtCKaLqrWMsT9BCPMbk9+cEP3o5v/vjuy9g55xZcdRiYuFD9ICTSsFZh/FPQzqXvmdGpJ8xASaGvJa3EwViTM+WMUAa5e3l1QexF0YZcyu5s7dYLInw831hNqYeqPOwiKRxp7TnKrxxZSzhRueczGurNxAimqa9cC0BVAjb8b9iZctZJSLezq62wUxiNT/10WIhAbjCERju8GN4DDIpPZtR2fn5]]></Encrypt><AgentID><![CDATA[1000002]]></AgentID></xml>
+2023-06-27T21:18:09.235+0800	INFO	wechat/wechat.go:94	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687871891</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[YourExistingFunction 需要iris.Context 类型，现在给的不是]]></Content><MsgId>7249354574453626156</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-27T21:18:09.235+0800	INFO	wechat/wechat.go:102	Unmarshal data: {ww3e03cf4760de0bcd LiMingZe 1687871891 text YourExistingFunction 需要iris.Context 类型，现在给的不是 7249354574453626156 0}
+2023-06-27T21:18:09.236+0800	INFO	wechat/wechat.go:137	xml.Marshal: <MsgContent><ToUserName>LiMingZe</ToUserName><FromUserName>ww3e03cf4760de0bcd</FromUserName><CreateTime>1687871891</CreateTime><MsgType>text</MsgType><Content></Content><MsgId>7249354574453626156</MsgId><AgentId>0</AgentId></MsgContent>
+2023-06-27T21:18:09.236+0800	INFO	wechat/wechat.go:144	after encrypt sEncryptMsg: <xml><Encrypt><![CDATA[ph6lyfAeRCdRWJuxfvFQ1JNaTi+ciz0cJSP9Vg28ohEiGAc/nmCnFtSKQh7mtyaXU0qDOm0RUIWNcp3r3e827OuGShBn2eQZ5cszxYTyO3P9IS0YDyTuyE5NhY0vieizumZgFgUwq0SmDmcc1e85YET+K1fhqJc0Jc7w2aei0SUji29CvIA6ztLloWBLMVnTsvsmhRAiY7vcZtpx+fo9LVQYWgEivxhDhvvGU7XPKmKQNqadLlh5ulTVEdunxfiBiKE9l3Jmp0K8yrNAKc2wuCT3jdYlNOh4EO0l+so2dWk2B41X8+qW4qEhBiqYlEXbWSuXBsx3BgNP7egJxfXaFH9gEkMMgbL7f4rlC7tH4mhJCYid4xRP0HGcacNr21/s]]></Encrypt><MsgSignature><![CDATA[0c1c0def2965af45ce9cc891b5df0ce96499ecdb]]></MsgSignature><TimeStamp>1687871891</TimeStamp><Nonce><![CDATA[1687286998]]></Nonce></xml>
+2023-06-27T21:18:09.236+0800	INFO	mq/trigger.go:64	SendMQMsg:{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687871891,"MsgType":"text","Content":"YourExistingFunction 需要iris.Context 类型，现在给的不是","Msgid":"7249354574453626156","Agentid":0}
+2023-06-27T21:18:09.241+0800	INFO	mq/mq.go:43	ai.chatgpt ok
+2023-06-27T21:18:09.248+0800	INFO	mq/mq.go:74	Received a message: {"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687871891,"MsgType":"text","Content":"YourExistingFunction 需要iris.Context 类型，现在给的不是","Msgid":"7249354574453626156","Agentid":0}
+2023-06-27T21:18:09.248+0800	INFO	mq/trigger.go:14	{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687871891,"MsgType":"text","Content":"YourExistingFunction 需要iris.Context 类型，现在给的不是","Msgid":"7249354574453626156","Agentid":0}
+2023-06-27T21:18:24.520+0800	INFO	dao/openai.go:38	ChatCompletion resp: {chatcmpl-7W2s8lLXOENKFCU4Rv85oNGWyXQ2V chat.completion 1687871892 gpt-3.5-turbo-0301 [{0 {assistant iris.Context 类型的参数。请提供一个 iris.Context 类型的参数，以便正确调用该函数。  <nil>} stop}] {26 27 53}}
+2023-06-27T21:18:24.521+0800	INFO	mq/trigger.go:34	请求openai耗时:15ns
+2023-06-27T21:18:24.521+0800	INFO	mq/trigger.go:40	>>>>>ANSWER<<<<<:iris.Context 类型的参数。请提供一个 iris.Context 类型的参数，以便正确调用该函数。
+2023-06-27T21:18:24.521+0800	INFO	wechat/wechat.go:262	sendurl:[https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=63m5CR3tTsoIXuja23NiUPzgE5c_dt3rt0FLxFde_K_psO2E1Tf03-K-kj9x-KfKTZcNmqVy2OFdK7lC-VL9RSXt2CkBp0N_jgkPsVybwe5kAhgpFrSdsct_hZQTEcdsWa672POkojyM6rXyr4ZFGVP-MqiI5zYOWmHyFDMXFzaqk0cV7Q2pcRc729rgMiqksg-X5x0fvEX9gEFx5XDG1Q]
+2023-06-27T21:18:25.042+0800	INFO	wechat/wechat.go:270	WX Back:post:{"errcode":0,"errmsg":"ok","msgid":"mrVtVXE39it1tWVvd57npI0KYSaA1fMuOx6qQ1pueT41rELKhUBrraBKeMJTXViLIMoPoCPiTfCeClAnT3POuA"}, err:<nil>
+2023-06-27T21:18:25.042+0800	INFO	wechat/wechat.go:271	WX Back:{0 ok mrVtVXE39it1tWVvd57npI0KYSaA1fMuOx6qQ1pueT41rELKhUBrraBKeMJTXViLIMoPoCPiTfCeClAnT3POuA}

@@ -8,7 +8,6 @@ import (
 	"big-genius/internal/app/models/database"
 	"big-genius/internal/app/models/mq"
 	"big-genius/internal/app/models/openai"
-	"big-genius/internal/app/models/proxy"
 	"big-genius/internal/app/models/redis"
 	smq "big-genius/internal/app/services/mq"
 	"github.com/kataras/iris/v12"
@@ -64,8 +63,9 @@ func initComponents() {
 	smq.RegisterTrigger()
 
 	//// 初始化全局Proxy
-	proxy.Init()
+	//proxy.Init()
 
 	// 初始化OpenAI
-	openai.Init()
+	openai.InitChatGPT()
+	//openai.InitAzure()
 }

@@ -20,7 +20,7 @@ func NewOpenAIService() *OpenAIService {
 }
 
 func (s *OpenAIService) CreateChatCompletion(msg string) (string, error) {
-	timeout := 60 * time.Second
+	timeout := 200 * time.Second
 	ctx, cancel := context.WithTimeout(context.Background(), timeout)
 	defer cancel()
 

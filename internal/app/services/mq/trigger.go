@@ -27,7 +27,12 @@ func SendWxMsg(msg []byte) {
 		defer wg.Done()
 
 		s := services.NewOpenAIService()
+
+		startTime := time.Now()
 		answer, err := s.CreateChatCompletion(msgCont.Content)
+		elapsedTime := time.Since(startTime) / time.Second
+		log.Logger.Infof("请求openai耗时:%s", elapsedTime)
+
 		if err != nil {
 			log.Logger.Errorf("请求openai超时:%s", err.Error())
 			msgCont.Content = "请求openai超时"

@@ -50,8 +50,14 @@ type LogCfg struct {
 }
 
 type OpenAICfg struct {
-	Token   string `yaml:"token"`
-	BaseURL string `yaml:"baseURL"`
+	ChatGPT struct {
+		Token   string `yaml:"token"`
+		BaseURL string `yaml:"baseURL"`
+	} `yaml:"chatgpt"`
+	Azure struct {
+		Token   string `yaml:"token"`
+		BaseURL string `yaml:"baseURL"`
+	} `yaml:"azure"`
 }
 
 type ProxyCfg struct {
