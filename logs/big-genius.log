@@ -1879,3 +1879,364 @@ func consumeMessage(ctx iris.Context, msg []byte) {
 2023-06-27T21:18:24.521+0800	INFO	wechat/wechat.go:262	sendurl:[https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=63m5CR3tTsoIXuja23NiUPzgE5c_dt3rt0FLxFde_K_psO2E1Tf03-K-kj9x-KfKTZcNmqVy2OFdK7lC-VL9RSXt2CkBp0N_jgkPsVybwe5kAhgpFrSdsct_hZQTEcdsWa672POkojyM6rXyr4ZFGVP-MqiI5zYOWmHyFDMXFzaqk0cV7Q2pcRc729rgMiqksg-X5x0fvEX9gEFx5XDG1Q]
 2023-06-27T21:18:25.042+0800	INFO	wechat/wechat.go:270	WX Back:post:{"errcode":0,"errmsg":"ok","msgid":"mrVtVXE39it1tWVvd57npI0KYSaA1fMuOx6qQ1pueT41rELKhUBrraBKeMJTXViLIMoPoCPiTfCeClAnT3POuA"}, err:<nil>
 2023-06-27T21:18:25.042+0800	INFO	wechat/wechat.go:271	WX Back:{0 ok mrVtVXE39it1tWVvd57npI0KYSaA1fMuOx6qQ1pueT41rELKhUBrraBKeMJTXViLIMoPoCPiTfCeClAnT3POuA}
+2023-06-27T21:22:00.389+0800	INFO	controllers/wechat.go:39	wxsend:<xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><Encrypt><![CDATA[aFotBI46nVg335VV1MXbmm6FGycwBDd0aqOetT68PJYjWW7rN9s5aeeslbqllAslEoj7NQj4CbOXhenrIB6EcSgKpceQqzeDmyJUao2ieDA++zg8P5ITWcsxCSCRVoqdtAYP/LhiHDjVfGboSZdTdopIw3Z84xjDvvvZEyvjqu4XW27kDGHfDjqciqVzAbnhQ7DkmY3K2Io9XWSpvbnreSgbYdbvR+eGtQFcACuD+xEuUOzB10MMMdYaUDjpItNmmnmip585W7A1DSBeNP0miGbE7Ran6YYOEd8yrZ/6dNRiQJU9Qt/p3Y/Nuu9dQFlsO8n+ZE/miPnY6lXvQap+9SoGBz7y5Vk82O13fnnYhSMCoM6lpJbEZ6CeGGXj4Bgq31zWaXX9BcsCKIsAzdsVTd0O2jbOnuKlxAaKxlv41wUZp7FtUW0Sz3IEjx+eF2BUcur+z0ukDbDcGdf80x3FfQ==]]></Encrypt><AgentID><![CDATA[1000002]]></AgentID></xml>
+2023-06-27T21:22:00.390+0800	INFO	wechat/wechat.go:94	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687872122</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[PM2.5是什么意思]]></Content><MsgId>7249355567146969132</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-27T21:22:00.390+0800	INFO	wechat/wechat.go:102	Unmarshal data: {ww3e03cf4760de0bcd LiMingZe 1687872122 text PM2.5是什么意思 7249355567146969132 0}
+2023-06-27T21:22:00.390+0800	INFO	wechat/wechat.go:137	xml.Marshal: <MsgContent><ToUserName>LiMingZe</ToUserName><FromUserName>ww3e03cf4760de0bcd</FromUserName><CreateTime>1687872122</CreateTime><MsgType>text</MsgType><Content></Content><MsgId>7249355567146969132</MsgId><AgentId>0</AgentId></MsgContent>
+2023-06-27T21:22:00.390+0800	INFO	wechat/wechat.go:144	after encrypt sEncryptMsg: <xml><Encrypt><![CDATA[hbXiIFn6VdAWxZwiQBfFKNHMJQroONJm3KtsL09sjLgvOvU2UJVECTltnJAtJSl5CP7LDYS47EBrdQYsrJU+xv/PMvAfV6ha/osDCB1ulEOAit7sjuI3F01J1NfjNEMrM0sTh21E8Lc8flZ1xVE6/3pVG45IzY2SHZ6Wi4ZJMX3JFDUD2VXraxyrLlUNwQslL26JFjXwUSfTioZ+P/EPWewgOpAd7LKL0mq1iH13eGh80GA7oB2y4fWdOMxEzHsvXzwvP1I9WAgqiFWLo2oR//Eu4SP3zrcDhmMaufWkzicWh9sddpKa/5YUh8VvQ4cyldqOqdI3kgh7seUiRRUSwpmT0FajPEPApR9r4majEfYxy6wJT83TB+6SyszsqDGF]]></Encrypt><MsgSignature><![CDATA[41125d7ed97ec2a1f60813f9dee9918832a90499]]></MsgSignature><TimeStamp>1687872122</TimeStamp><Nonce><![CDATA[1687650963]]></Nonce></xml>
+2023-06-27T21:22:00.391+0800	INFO	mq/trigger.go:64	SendMQMsg:{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687872122,"MsgType":"text","Content":"PM2.5是什么意思","Msgid":"7249355567146969132","Agentid":0}
+2023-06-27T21:22:00.395+0800	INFO	mq/mq.go:43	ai.chatgpt ok
+2023-06-27T21:22:00.400+0800	INFO	mq/mq.go:74	Received a message: {"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687872122,"MsgType":"text","Content":"PM2.5是什么意思","Msgid":"7249355567146969132","Agentid":0}
+2023-06-27T21:22:00.400+0800	INFO	mq/trigger.go:14	{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687872122,"MsgType":"text","Content":"PM2.5是什么意思","Msgid":"7249355567146969132","Agentid":0}
+2023-06-27T21:22:31.204+0800	INFO	dao/openai.go:38	ChatCompletion resp: {chatcmpl-7W2vraeQZWUc1SaYjZruV7VMzNd2X chat.completion 1687872123 gpt-3.5-turbo-0301 [{0 {assistant PM2.5是指空气中粒径小于等于2.5微米的颗粒物，是空气中最细小、最危险的颗粒物之一。这类颗粒物来源于工厂排放、车辆尾气、木材燃烧等多种污染源，对人体健康和环境有很大的危害。高浓度的PM2.5会导致呼吸系统疾病、心血管系统疾病等健康问题。  <nil>} stop}] {18 158 176}}
+2023-06-27T21:22:31.204+0800	INFO	mq/trigger.go:34	请求openai耗时:30ns
+2023-06-27T21:22:31.204+0800	INFO	mq/trigger.go:40	>>>>>ANSWER<<<<<:PM2.5是指空气中粒径小于等于2.5微米的颗粒物，是空气中最细小、最危险的颗粒物之一。这类颗粒物来源于工厂排放、车辆尾气、木材燃烧等多种污染源，对人体健康和环境有很大的危害。高浓度的PM2.5会导致呼吸系统疾病、心血管系统疾病等健康问题。
+2023-06-27T21:22:31.204+0800	INFO	wechat/wechat.go:262	sendurl:[https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=63m5CR3tTsoIXuja23NiUPzgE5c_dt3rt0FLxFde_K_psO2E1Tf03-K-kj9x-KfKTZcNmqVy2OFdK7lC-VL9RSXt2CkBp0N_jgkPsVybwe5kAhgpFrSdsct_hZQTEcdsWa672POkojyM6rXyr4ZFGVP-MqiI5zYOWmHyFDMXFzaqk0cV7Q2pcRc729rgMiqksg-X5x0fvEX9gEFx5XDG1Q]
+2023-06-27T21:22:31.619+0800	INFO	wechat/wechat.go:270	WX Back:post:{"errcode":0,"errmsg":"ok","msgid":"B8suv-5ipZqQqMdXNRKIKk4NE60ylDvUTZyQnLx_RsJOp_yhGryQuwATY8zCqqBAmtBcSPTnZ-clUAJepf0H7A"}, err:<nil>
+2023-06-27T21:22:31.620+0800	INFO	wechat/wechat.go:271	WX Back:{0 ok B8suv-5ipZqQqMdXNRKIKk4NE60ylDvUTZyQnLx_RsJOp_yhGryQuwATY8zCqqBAmtBcSPTnZ-clUAJepf0H7A}
+2023-06-27T21:23:16.744+0800	INFO	controllers/wechat.go:39	wxsend:<xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><Encrypt><![CDATA[Vxc9s08davTEHLLsWbWntQeioe3H42wIjCk+DguH2bkOYOWpEE1CeaJMWpqnk1kIbrk09rrBgzO2BWiDqhiPnW+smzecgmf+4sVua6EU2BtSHReAH/+o12GfXmqTel2gciZ0FGkQEy0y6vOjYz9Bs+ceKNdSrqH7n0ecsWSXrj9yFb87lFbyGAsuS4ir1XluQO8ra08KKOwcXcgOo6fUq18vS9r/6sQ203gSLXMSVHbUlqgnBOoqM/g1J9kxoQ3sHvZdn1NbyfQXnNRZ1yLUWTHOQOptfEOsfAgc7gDZtxkz7DrOydxq+TMEGudo6Gp74jpAqAW1jgnjASBXt1cMYjchNyglNXqSCOXFjcsarhmfPHjXxIifHJvy1DbVnGrNX8qfMzrT16bC6nv0KmEOyLi4AL4tykN0rJ0BlAo2xvXj86b2mwymCQDhHVSlfoHij5wMYnkJv2w15yF6WvlYsA==]]></Encrypt><AgentID><![CDATA[1000002]]></AgentID></xml>
+2023-06-27T21:23:16.744+0800	INFO	wechat/wechat.go:94	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687872198</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[tvoc是什么意思]]></Content><MsgId>7249355894375908652</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-27T21:23:16.744+0800	INFO	wechat/wechat.go:102	Unmarshal data: {ww3e03cf4760de0bcd LiMingZe 1687872198 text tvoc是什么意思 7249355894375908652 0}
+2023-06-27T21:23:16.744+0800	INFO	wechat/wechat.go:137	xml.Marshal: <MsgContent><ToUserName>LiMingZe</ToUserName><FromUserName>ww3e03cf4760de0bcd</FromUserName><CreateTime>1687872198</CreateTime><MsgType>text</MsgType><Content></Content><MsgId>7249355894375908652</MsgId><AgentId>0</AgentId></MsgContent>
+2023-06-27T21:23:16.744+0800	INFO	wechat/wechat.go:144	after encrypt sEncryptMsg: <xml><Encrypt><![CDATA[W8G7S2c8+fBqkhen6Hv0tjETj78lKrgxzaGfOTUgpA6lnQH2hP46DVTU6VxKIq/e3li5Qkdkj8IGKaTKYU0eo0AXoHbrR1xIZbab65nRVfy9OA8ssLqAlr+tvugAtPznHlBjobNZc4oQYqZ9N5X7TU0xPYR65oByTXeIMAEB74BtCpIeSK5V9nqNLIJyM6bq/+Bbya4gVi+JqBNwPMJRnLB5nN8PVUZ8SiJMAssMFETWAXU8n48Q9lZEDcqt9gRxBpptLNDkcKzqglPuJOYL50PqNnl0ZhJaSIFEngHui7N7vkvIK/7LLDt8xlPvtrdBRZR4x1ojMw6k0oQdjXhjiI7N9p2ELzWz1n6j0rpJGmur6l0ZxnNMJk7wScwEV4Lh]]></Encrypt><MsgSignature><![CDATA[f9bdcfbf55a9accc92b231a77acca86e7fb273ba]]></MsgSignature><TimeStamp>1687872199</TimeStamp><Nonce><![CDATA[1687844065]]></Nonce></xml>
+2023-06-27T21:23:16.745+0800	INFO	mq/trigger.go:64	SendMQMsg:{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687872198,"MsgType":"text","Content":"tvoc是什么意思","Msgid":"7249355894375908652","Agentid":0}
+2023-06-27T21:23:16.749+0800	INFO	mq/mq.go:43	ai.chatgpt ok
+2023-06-27T21:23:16.755+0800	INFO	mq/mq.go:74	Received a message: {"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687872198,"MsgType":"text","Content":"tvoc是什么意思","Msgid":"7249355894375908652","Agentid":0}
+2023-06-27T21:23:16.755+0800	INFO	mq/trigger.go:14	{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687872198,"MsgType":"text","Content":"tvoc是什么意思","Msgid":"7249355894375908652","Agentid":0}
+2023-06-27T21:23:46.260+0800	INFO	dao/openai.go:38	ChatCompletion resp: {chatcmpl-7W2x6yX0Xa15hKuqS4xQqx7SiOMVz chat.completion 1687872200 gpt-3.5-turbo-0301 [{0 {assistant TVOC是总挥发性有机化合物（Total Volatile Organic Compounds）的缩写，包括空气中所有挥发性有机化合物的总量，如苯、甲醛、甲苯、二甲苯等。TVOC是指对人体健康有潜在危害的挥发性有机化合物总量。常见的来自室内材料以及生活中的各种化学品。  <nil>} stop}] {16 126 142}}
+2023-06-27T21:23:46.260+0800	INFO	mq/trigger.go:34	请求openai耗时:29ns
+2023-06-27T21:23:46.260+0800	INFO	mq/trigger.go:40	>>>>>ANSWER<<<<<:TVOC是总挥发性有机化合物（Total Volatile Organic Compounds）的缩写，包括空气中所有挥发性有机化合物的总量，如苯、甲醛、甲苯、二甲苯等。TVOC是指对人体健康有潜在危害的挥发性有机化合物总量。常见的来自室内材料以及生活中的各种化学品。
+2023-06-27T21:23:46.261+0800	INFO	wechat/wechat.go:262	sendurl:[https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=63m5CR3tTsoIXuja23NiUPzgE5c_dt3rt0FLxFde_K_psO2E1Tf03-K-kj9x-KfKTZcNmqVy2OFdK7lC-VL9RSXt2CkBp0N_jgkPsVybwe5kAhgpFrSdsct_hZQTEcdsWa672POkojyM6rXyr4ZFGVP-MqiI5zYOWmHyFDMXFzaqk0cV7Q2pcRc729rgMiqksg-X5x0fvEX9gEFx5XDG1Q]
+2023-06-27T21:23:46.670+0800	INFO	wechat/wechat.go:270	WX Back:post:{"errcode":0,"errmsg":"ok","msgid":"B8suv-5ipZqQqMdXNRKIKk4NE60ylDvUTZyQnLx_RsLoCaX0UW1rn6kOXhxOw3t6LUNmK5nylCQd-zIv5s4jUQ"}, err:<nil>
+2023-06-27T21:23:46.671+0800	INFO	wechat/wechat.go:271	WX Back:{0 ok B8suv-5ipZqQqMdXNRKIKk4NE60ylDvUTZyQnLx_RsLoCaX0UW1rn6kOXhxOw3t6LUNmK5nylCQd-zIv5s4jUQ}
+2023-06-27T21:25:12.538+0800	INFO	controllers/wechat.go:39	wxsend:<xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><Encrypt><![CDATA[Vp/K/AMkuYz0KmzPRTzTmlnmqZ6RlChBIf15OSTBc2c8J//CYNM2/HCrAWwsUnrOCqSMyL/zPuASJF8rm79LLXalgVM2dqs2K1qQv3nhzFdF2qoEEn53uL/WRTNEOqZZLVUuZer/Grvh4oQIpZufxuPrg8ra/9syy2m5UOQwO+m/qehsk9IDKWY4ssG7x33wOkMD9jZn2ChFDMPxhHzqfon0UvCw1utqMy6tG9O2hHkJHh07izLuI5g4bM8VbRCns98G+803VQ1uHoUYR8ZjzEi2s4wK+B7AA6moBbNaxNZ+GS55ujaGGTrZIGNWdZRzKF9bCvhsiDqrLkTxao5z1zWsETKzBjwcu2l6nqjVykDX6GG3Py4VYfwyp2EV6gT2XqYorm2QDliu9V2I1yWUi17G8udd5XzS7KyUxNoLVOPtDrhekd1N/7KYS0J2dqCrLuC7+2qIiQ2W+DuPznLOkzaJM6Ky/cdl4sav7OUdghqnT0v9cc1tXU86mxntUPJkF6Vs1fp/rtPdWJoER1uhz/mOJP0MM4soDBn61Nm2uR2rxfsbeA8L4cXMqdqnO0bn9cfgjWl0nZXYWX2bcPqYEoFQpIcjDF237OplhraZAUBrYpFvHpKuNdkNKtKrm0kRp6NpSozLa2hSnKfRFQ1gf974ZxN3jCOxja8MpROVr1YJ/Fz8LK+CcqzQSoYWnYS6XrqmqA5uq4PcLSU0/tzY6zyQrFR87WiYdtDRiBtd03zXtGJZVhX70DyYkdmQeQ8cNzUNWGcMQTXI5iX1+ZIVc2040yrkAXVC+Raz3O9XFdNtwjfM1VDA20uVqXpgt+N6RUGhIPUB9bPJHuCGzEaUFIZD2Gwzdym1iwj+cmYnaGkJ/5BtVfqfOCf2Q2WjB5dQiHUWgfGDGoiPfRc3H5nMkpIOFEx86Ga95AV9v+YBZ2XtvOOaIq//Av+WI70PX7VC76X9rkEyjc/lYW1dymkc793VHDVyh5B1vGx0HLI9mGpvBnrZQSw+qrQd9lgHUVYEHRzP4OZZ7/Q32q1bHfYk5urZ9eoDatv+4yCIIp1MkyDgBhzswVwzv+iUYPl3TeIZTHm/X+4QmXwJBz8OV4DQg5T2HTsdo5MI3ZcrGUiGRRddqMoXgPBks+qklD4MuHC8TykdR9Q6tEOWWtjb0lEVFYsYyowrDU/ssxFXUcj4rn+zl6OPouOHdZooyF9vsmXWKCbw+JSGeJnUUAwoC2DXHjtDYC7Oo6aWb3+SF+rCTowNRul0R9qTjwHLAjela+AC]]></Encrypt><AgentID><![CDATA[1000002]]></AgentID></xml>
+2023-06-27T21:25:12.540+0800	INFO	wechat/wechat.go:94	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687872314</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[请你设计并实现一个满足  LRU (最近最少使用) 缓存 约束的数据结构。
+实现 LRUCache 类：
+LRUCache(int capacity) 以 正整数 作为容量 capacity 初始化 LRU 缓存
+int get(int key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1 。
+void put(int key, int value) 如果关键字 key 已经存在，则变更其数据值 value ；如果不存在，则向缓存中插入该组 key-value 。如果插入操作导致关键字数量超过 capacity ，则应该 逐出 最久未使用的关键字。
+函数 get 和 put 必须以 O(1) 的平均时间复杂度运行。]]></Content><MsgId>7249356392601100588</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-27T21:25:12.540+0800	INFO	wechat/wechat.go:102	Unmarshal data: {ww3e03cf4760de0bcd LiMingZe 1687872314 text 请你设计并实现一个满足  LRU (最近最少使用) 缓存 约束的数据结构。
+实现 LRUCache 类：
+LRUCache(int capacity) 以 正整数 作为容量 capacity 初始化 LRU 缓存
+int get(int key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1 。
+void put(int key, int value) 如果关键字 key 已经存在，则变更其数据值 value ；如果不存在，则向缓存中插入该组 key-value 。如果插入操作导致关键字数量超过 capacity ，则应该 逐出 最久未使用的关键字。
+函数 get 和 put 必须以 O(1) 的平均时间复杂度运行。 7249356392601100588 0}
+2023-06-27T21:25:12.540+0800	INFO	wechat/wechat.go:137	xml.Marshal: <MsgContent><ToUserName>LiMingZe</ToUserName><FromUserName>ww3e03cf4760de0bcd</FromUserName><CreateTime>1687872314</CreateTime><MsgType>text</MsgType><Content></Content><MsgId>7249356392601100588</MsgId><AgentId>0</AgentId></MsgContent>
+2023-06-27T21:25:12.540+0800	INFO	wechat/wechat.go:144	after encrypt sEncryptMsg: <xml><Encrypt><![CDATA[x7XKvdBCmQR+wBEW+ZDm15eZJ/30CD67U228K1xhZ0gYtr75liDBHUmhlaoa3JiC60mRX12vyHki9k5WRU/x//65t4+Ai/hoYekArB9h4fOmLdqSlo7LCibUJ9ySFGED4pKgbC8ZD1OggP/R59FGuqsZm5bYr58KPF8EbB84w4p23rhuwWZg8Dlue/7Axv2n3CVf25XwWF7zlFFwkZf8qM3NYJPe+22nEYDEnmRtpOmnHn/9HO5goGuk4FsZYOGo91X+PZbnAQm4C4hBnY7QdLDE24lpB9RWVCXbRvObsln0TGEqJX1ikpFLwuNdStxR+toIdpWf2qT1BT5h6AfTMDQghPAYPfsvY01OLyeQnNFYDoiIdz0biNpL27Ucbro3]]></Encrypt><MsgSignature><![CDATA[c0131d8e58c65a026941b5ad92c186d38f8cb357]]></MsgSignature><TimeStamp>1687872315</TimeStamp><Nonce><![CDATA[1687853826]]></Nonce></xml>
+2023-06-27T21:25:12.540+0800	INFO	mq/trigger.go:64	SendMQMsg:{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687872314,"MsgType":"text","Content":"请你设计并实现一个满足  LRU (最近最少使用) 缓存 约束的数据结构。\n实现 LRUCache 类：\nLRUCache(int capacity) 以 正整数 作为容量 capacity 初始化 LRU 缓存\nint get(int key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1 。\nvoid put(int key, int value) 如果关键字 key 已经存在，则变更其数据值 value ；如果不存在，则向缓存中插入该组 key-value 。如果插入操作导致关键字数量超过 capacity ，则应该 逐出 最久未使用的关键字。\n函数 get 和 put 必须以 O(1) 的平均时间复杂度运行。","Msgid":"7249356392601100588","Agentid":0}
+2023-06-27T21:25:12.545+0800	INFO	mq/mq.go:43	ai.chatgpt ok
+2023-06-27T21:25:12.550+0800	INFO	mq/mq.go:74	Received a message: {"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687872314,"MsgType":"text","Content":"请你设计并实现一个满足  LRU (最近最少使用) 缓存 约束的数据结构。\n实现 LRUCache 类：\nLRUCache(int capacity) 以 正整数 作为容量 capacity 初始化 LRU 缓存\nint get(int key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1 。\nvoid put(int key, int value) 如果关键字 key 已经存在，则变更其数据值 value ；如果不存在，则向缓存中插入该组 key-value 。如果插入操作导致关键字数量超过 capacity ，则应该 逐出 最久未使用的关键字。\n函数 get 和 put 必须以 O(1) 的平均时间复杂度运行。","Msgid":"7249356392601100588","Agentid":0}
+2023-06-27T21:25:12.550+0800	INFO	mq/trigger.go:14	{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687872314,"MsgType":"text","Content":"请你设计并实现一个满足  LRU (最近最少使用) 缓存 约束的数据结构。\n实现 LRUCache 类：\nLRUCache(int capacity) 以 正整数 作为容量 capacity 初始化 LRU 缓存\nint get(int key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1 。\nvoid put(int key, int value) 如果关键字 key 已经存在，则变更其数据值 value ；如果不存在，则向缓存中插入该组 key-value 。如果插入操作导致关键字数量超过 capacity ，则应该 逐出 最久未使用的关键字。\n函数 get 和 put 必须以 O(1) 的平均时间复杂度运行。","Msgid":"7249356392601100588","Agentid":0}
+2023-06-27T21:26:35.436+0800	INFO	dao/openai.go:38	ChatCompletion resp: {chatcmpl-7W2yyojDYd6Vpk2IuepiJt9Ru1Uj1 chat.completion 1687872316 gpt-3.5-turbo-0301 [{0 {assistant 算法思路：
+
+使用哈希表 + 双向链表实现。哈希表用于快速查找键值，双向链表用于维护缓存的使用顺序。具体实现如下：
+
+1. 对于 get 操作，如果关键字在缓存中存在，则先通过哈希表定位到该节点在双向链表中的位置，然后将其移动到双向链表的头部，并返回该节点的值；如果关键字在缓存中不存在，则返回 -1。
+
+2. 对于 put 操作，如果关键字在缓存中存在，则先通过哈希表定位到该节点在双向链表中的位置，然后更新该节点的值，并将其移动到双向链表的头部；如果关键字在缓存中不存在，则创建一个新的节点，加入到双向链表的头部，并在哈希表中存储该节点的键值对。如果插入操作导致关键字数量超过 capacity，则应该删除双向链表尾部的节点，并在哈希表中删除对应的键值对。
+
+3. 为了保证时间复杂度，需要使用哈希表来维护关键字和节点之间的映射关系，并使用双向链表来维护节点之间的顺序关系。
+
+时间复杂度：
+
+对于每个 get 或 put 操作，需要在哈希表中查找对应的键值对，时间复杂度为 O(1)；对于 put 操作，同时需要在双向链表中进行插入、删除和移动操作，时间复杂度也为 O(1)。因此，总体时间复杂度为 O(1)。
+
+空间复杂度：
+
+空间复杂度为 O(capacity)，其中 capacity 为 LRUCache 的容量。因为哈希表和双向链表中分别存储了 capacity 个节点。  <nil>} stop}] {212 498 710}}
+2023-06-27T21:26:35.438+0800	INFO	mq/trigger.go:34	请求openai耗时:82ns
+2023-06-27T21:26:35.438+0800	INFO	mq/trigger.go:40	>>>>>ANSWER<<<<<:算法思路：
+
+使用哈希表 + 双向链表实现。哈希表用于快速查找键值，双向链表用于维护缓存的使用顺序。具体实现如下：
+
+1. 对于 get 操作，如果关键字在缓存中存在，则先通过哈希表定位到该节点在双向链表中的位置，然后将其移动到双向链表的头部，并返回该节点的值；如果关键字在缓存中不存在，则返回 -1。
+
+2. 对于 put 操作，如果关键字在缓存中存在，则先通过哈希表定位到该节点在双向链表中的位置，然后更新该节点的值，并将其移动到双向链表的头部；如果关键字在缓存中不存在，则创建一个新的节点，加入到双向链表的头部，并在哈希表中存储该节点的键值对。如果插入操作导致关键字数量超过 capacity，则应该删除双向链表尾部的节点，并在哈希表中删除对应的键值对。
+
+3. 为了保证时间复杂度，需要使用哈希表来维护关键字和节点之间的映射关系，并使用双向链表来维护节点之间的顺序关系。
+
+时间复杂度：
+
+对于每个 get 或 put 操作，需要在哈希表中查找对应的键值对，时间复杂度为 O(1)；对于 put 操作，同时需要在双向链表中进行插入、删除和移动操作，时间复杂度也为 O(1)。因此，总体时间复杂度为 O(1)。
+
+空间复杂度：
+
+空间复杂度为 O(capacity)，其中 capacity 为 LRUCache 的容量。因为哈希表和双向链表中分别存储了 capacity 个节点。
+2023-06-27T21:26:35.438+0800	INFO	wechat/wechat.go:262	sendurl:[https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=63m5CR3tTsoIXuja23NiUPzgE5c_dt3rt0FLxFde_K_psO2E1Tf03-K-kj9x-KfKTZcNmqVy2OFdK7lC-VL9RSXt2CkBp0N_jgkPsVybwe5kAhgpFrSdsct_hZQTEcdsWa672POkojyM6rXyr4ZFGVP-MqiI5zYOWmHyFDMXFzaqk0cV7Q2pcRc729rgMiqksg-X5x0fvEX9gEFx5XDG1Q]
+2023-06-27T21:26:35.879+0800	INFO	wechat/wechat.go:270	WX Back:post:{"errcode":0,"errmsg":"ok","msgid":"mrVtVXE39it1tWVvd57npI0KYSaA1fMuOx6qQ1pueT7Ntp-f30g3oz45JUGS7N4Vwv_eF-YMPwa9L1Iu0gDbSw"}, err:<nil>
+2023-06-27T21:26:35.879+0800	INFO	wechat/wechat.go:271	WX Back:{0 ok mrVtVXE39it1tWVvd57npI0KYSaA1fMuOx6qQ1pueT7Ntp-f30g3oz45JUGS7N4Vwv_eF-YMPwa9L1Iu0gDbSw}
+2023-06-27T21:29:08.549+0800	INFO	big-genius/main.go:44	server is shutdown
+2023-06-27T21:29:13.686+0800	INFO	mq/mq.go:79	Waiting for messages...
+2023-06-27T21:29:31.036+0800	INFO	controllers/wechat.go:39	wxsend:<xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><Encrypt><![CDATA[0Kk5xmBJmxwUu22KLlpuh7iLiWKazYYZ5RZjVUysUaNOfDujKYHlBR/EjX4VJy8gh/hhhhpuh8lJ0llYsHVuIML4wi1gycHGlPZZvP7Szb2h3Id+kERfxQZgvOU2z1HvIfwMsGIEPVOt9EgILWYWQNyfdeOafsvdsZSNJkBCuOtG+410QXCB88ly7Vg93+dCQtdQnJGwXbnCpp4ftbwkG39iT/Xh0WoHaT7//npUkTroaaTLmNFH6zEOILJG3AgwM6ToLnd6Q+UQghL5A66JKTYZuSZF8qKz0/lAqO3d+FbN0NRY+C6zxrjrwiCahLb12e3lUtbciq/X+leeHWQTKayq1zNpKpxJb82QTTGVvUvrcKhCFHA0VPFL7d/s74Gb3U7iynTJH/UemTBPbb+fol1jefGKO60x7B51lGLz6cLVtdqBoEkFal3+Tpq/EtaoRNqleJI3ewcVtkHgUU5ScfLQqyVUS1J68OCHLmHnPOzlUBXSRR7qQ8sdVz0NVuOSNf62jUMi1+Bf2uudTtQzwTOm186ym60qYdgBCdThwnNGGh1buucEVvFrMlnXKoTqAWfd0QVdZSd2lm60S+PaAw6JXePOyrHv8IqAzSCB+d8hr0rP+EN6XJU3P+yEHxe+FXzPSz7lny4nbvgBBnorzBK6QAFRcx5Sd9EroxVDx2LFWsJAHJignr5zRNilrY4CXmwJgHFichRPeYmFnQjjF7mRNjM4tmW4fQTxP/YS4DU3/KD0GzUAFRX398zJg3gxQh6pYE8k59YL3bRNbw53Q9JMIvV8aod94SfJrj6JhxIkCCMZ6E5C8YUu5oKoUbLBojqYTqYwRSZE/amnu0e8wRmxaO8d+GgY5+eB28vW9rBJOySpVwhxpBW6MXW2EgG3m83Y1fA+RsFABzP7IDF+VBnSMs5JUZYStdeEEZWKXTM1U9VjrSZm3EXsWqQ7YPYYUvLPKhQRfE5KD8mNiwUuScKyYqEbCEfKi8/nTrrncEBEb8lLUmdXITGVbyNkBFOMupiSU/R6nuP6O46inAcTHXUwDC0qawkwUO5/mHwA3WTKN5LMgs2I6y2+rB+8/i8+p1F007jysoky9IH6shtbdN7Hwl7HpzWSP4xyy6W4YtAlOUcX9FzfBbOrzsTDaptn4ZbL8arrtOchQ/4Jei0+4IcDpZVIWKpr8Tnyvr1CTnhD9hKxDqzbyyJkBVgA2APdcJ+roOe52von8iD2UBsny/003gGErzhXzGqgYBYC1mJxcIaNO6cObbiPiEE/1zy8]]></Encrypt><AgentID><![CDATA[1000002]]></AgentID></xml>
+2023-06-27T21:29:31.037+0800	INFO	wechat/wechat.go:94	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687872573</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[使用golang语言来实现一个满足  LRU (最近最少使用) 缓存 约束的数据结构。
+实现 LRUCache 类：
+LRUCache(int capacity) 以 正整数 作为容量 capacity 初始化 LRU 缓存
+int get(int key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1 。
+void put(int key, int value) 如果关键字 key 已经存在，则变更其数据值 value ；如果不存在，则向缓存中插入该组 key-value 。如果插入操作导致关键字数量超过 capacity ，则应该 逐出 最久未使用的关键字。
+函数 get 和 put 必须以 O(1) 的平均时间复杂度运行。]]></Content><MsgId>7249357502870173228</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-27T21:29:31.038+0800	INFO	wechat/wechat.go:102	Unmarshal data: {ww3e03cf4760de0bcd LiMingZe 1687872573 text 使用golang语言来实现一个满足  LRU (最近最少使用) 缓存 约束的数据结构。
+实现 LRUCache 类：
+LRUCache(int capacity) 以 正整数 作为容量 capacity 初始化 LRU 缓存
+int get(int key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1 。
+void put(int key, int value) 如果关键字 key 已经存在，则变更其数据值 value ；如果不存在，则向缓存中插入该组 key-value 。如果插入操作导致关键字数量超过 capacity ，则应该 逐出 最久未使用的关键字。
+函数 get 和 put 必须以 O(1) 的平均时间复杂度运行。 7249357502870173228 0}
+2023-06-27T21:29:31.038+0800	INFO	wechat/wechat.go:137	xml.Marshal: <MsgContent><ToUserName>LiMingZe</ToUserName><FromUserName>ww3e03cf4760de0bcd</FromUserName><CreateTime>1687872573</CreateTime><MsgType>text</MsgType><Content></Content><MsgId>7249357502870173228</MsgId><AgentId>0</AgentId></MsgContent>
+2023-06-27T21:29:31.038+0800	INFO	wechat/wechat.go:144	after encrypt sEncryptMsg: <xml><Encrypt><![CDATA[esghDID+k7sLM+MDNJ1DZgq/Vk4rxbZbg4j/HvbazcClsPy2/RhEmRvdcxJo5Sy6xhUIFYNNzPlbfpMYXDsepiZVetuDIyvyNpHlwdn+T4nMGM+RWcpIM3H6ey1Gh2Zp1MSDEgwRHaNXnusygCuLhIRN2D4cKTgSSUl499I6pKdyE8fCE3XGmFvAdJBGQls7T4MDMq/8Uy5ja86gqbdON06shQveSabaC/LF24JdtDKAzNo+jMvAiIJx/Pb9qfs4pHo6ap0U++BEk45eM6C6rrV8lBFppM9hg2FQiuYvKkh0TX/HY3mK7UlTs5SxwwIO76VXV2E1H/hO2W8cNCoGnjWNJ9sc/bD765fS9yCzaoPl1pFuVLjniv/LAaxu/MO2]]></Encrypt><MsgSignature><![CDATA[575689bb9f0fc77f604ca4b30b63c1a6ab3aafc8]]></MsgSignature><TimeStamp>1687872573</TimeStamp><Nonce><![CDATA[1688024262]]></Nonce></xml>
+2023-06-27T21:29:31.038+0800	INFO	mq/trigger.go:64	SendMQMsg:{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687872573,"MsgType":"text","Content":"使用golang语言来实现一个满足  LRU (最近最少使用) 缓存 约束的数据结构。\n实现 LRUCache 类：\nLRUCache(int capacity) 以 正整数 作为容量 capacity 初始化 LRU 缓存\nint get(int key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1 。\nvoid put(int key, int value) 如果关键字 key 已经存在，则变更其数据值 value ；如果不存在，则向缓存中插入该组 key-value 。如果插入操作导致关键字数量超过 capacity ，则应该 逐出 最久未使用的关键字。\n函数 get 和 put 必须以 O(1) 的平均时间复杂度运行。","Msgid":"7249357502870173228","Agentid":0}
+2023-06-27T21:29:31.042+0800	INFO	mq/mq.go:43	ai.chatgpt ok
+2023-06-27T21:29:31.047+0800	INFO	mq/mq.go:74	Received a message: {"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687872573,"MsgType":"text","Content":"使用golang语言来实现一个满足  LRU (最近最少使用) 缓存 约束的数据结构。\n实现 LRUCache 类：\nLRUCache(int capacity) 以 正整数 作为容量 capacity 初始化 LRU 缓存\nint get(int key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1 。\nvoid put(int key, int value) 如果关键字 key 已经存在，则变更其数据值 value ；如果不存在，则向缓存中插入该组 key-value 。如果插入操作导致关键字数量超过 capacity ，则应该 逐出 最久未使用的关键字。\n函数 get 和 put 必须以 O(1) 的平均时间复杂度运行。","Msgid":"7249357502870173228","Agentid":0}
+2023-06-27T21:29:31.047+0800	INFO	mq/trigger.go:14	{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687872573,"MsgType":"text","Content":"使用golang语言来实现一个满足  LRU (最近最少使用) 缓存 约束的数据结构。\n实现 LRUCache 类：\nLRUCache(int capacity) 以 正整数 作为容量 capacity 初始化 LRU 缓存\nint get(int key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1 。\nvoid put(int key, int value) 如果关键字 key 已经存在，则变更其数据值 value ；如果不存在，则向缓存中插入该组 key-value 。如果插入操作导致关键字数量超过 capacity ，则应该 逐出 最久未使用的关键字。\n函数 get 和 put 必须以 O(1) 的平均时间复杂度运行。","Msgid":"7249357502870173228","Agentid":0}
+2023-06-27T21:29:58.984+0800	ERROR	dao/openai.go:34	ChatCompletion error: Post "https://api.openai.com/v1/chat/completions": unexpected EOF
+
+2023-06-27T21:29:58.984+0800	INFO	mq/trigger.go:34	请求openai耗时:27ns
+2023-06-27T21:29:58.984+0800	ERROR	mq/trigger.go:37	请求openai超时:Post "https://api.openai.com/v1/chat/completions": unexpected EOF
+2023-06-27T21:29:58.984+0800	INFO	wechat/wechat.go:262	sendurl:[https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=63m5CR3tTsoIXuja23NiUPzgE5c_dt3rt0FLxFde_K_psO2E1Tf03-K-kj9x-KfKTZcNmqVy2OFdK7lC-VL9RSXt2CkBp0N_jgkPsVybwe5kAhgpFrSdsct_hZQTEcdsWa672POkojyM6rXyr4ZFGVP-MqiI5zYOWmHyFDMXFzaqk0cV7Q2pcRc729rgMiqksg-X5x0fvEX9gEFx5XDG1Q]
+2023-06-27T21:29:59.410+0800	INFO	wechat/wechat.go:270	WX Back:post:{"errcode":0,"errmsg":"ok","msgid":"mrVtVXE39it1tWVvd57npI0KYSaA1fMuOx6qQ1pueT52Bpbm32OJzRX_PLDvsBag5u7Kz0i83y2U7MnEbAQ2rw"}, err:<nil>
+2023-06-27T21:29:59.410+0800	INFO	wechat/wechat.go:271	WX Back:{0 ok mrVtVXE39it1tWVvd57npI0KYSaA1fMuOx6qQ1pueT52Bpbm32OJzRX_PLDvsBag5u7Kz0i83y2U7MnEbAQ2rw}
+2023-06-27T21:30:23.359+0800	INFO	controllers/wechat.go:39	wxsend:<xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><Encrypt><![CDATA[FR2l/J+JaEgK1v9pCuv54zNYxXwGXu3OMhP7RQ+fRyLuc+mbkV0Xif8nTVhnyjNhe2xRzYOuVRAAWBJSh72fg5ALaSWSfbU+c8MttP4tOgxJxkEXk7dOcn3VjcjS/SjqLvMS9WPttXc83OIY7bDWj3ALZGJFQ7JW1U0gAMJnuL07QAfmotRw2Tqaw+YtFc81wFQWYVuNUaacQ8r6Ib/V+lMOeQ6Hwvzm3xZiZ4Fhx6x2frVoVMMFHc9llp1XKV/PT4/xIN3BjkodP009FHfMlEnsF17/kZSixbXT90h9as1B6nSJTG9RbDqhHtiA5PERMOKBcLUFgX0NUp+ozKCHB7DYuYhVshmWA9altwFiUzxHyEEWGGN1lFPN0ODl8l/enC2FVYgmq/WDldLxinkELXIu/Kmk032sHJW9bBDgb+xEOO5AT6uOfOXG4QiaL8NAJtFz7QQEWQU4OBO44alZqipQV0rdC6RKwTQlHb1jhomS1qQq+M+56qIfIaRjl7NPrGKxy+OutKwV6RxFa/sWP4Cnb8TibY3l80hKhpiab4UiN/PkRxccOvp+1YTDDiALtr3LU86GNqbFcmFqpLE8Cn0X1qRgA1QMe7oqL1iXuch8Ft1XFVA4U6mrQubeWDNrHXZJVucnWXSyT7QeGgWNkxbl+byzpAB+ygVpr+kKWdrL2xF4lI2hyMsvJpPesFRDocZQYB90O67xsRicgNijQhWQLLTYq0CHiYgj67IgA0+bE8N43rQv0PUOgO4FwubKGNrnL5io5Cs449HE58bKl1B2Qo9Jca6x62KscL+qVj/OHonrh/VczN4HWROOivllckWtezUfLMeKfv4AmQ89e8NuB9mbKOzd7YZAdazjLOOHC+8mk3U3T1aeiS36SvQoDj5WkAg6GVRYanP0w8gpmrcZkvqAGkV2Ndclmvwa1AWxve3C0fsm3yg7DGCC/kH4q5e3aMPIA9isdOj44HcR2cY715xWCEMha7N+xD5rOTIIYDRcnHmPOOQHDHUw5wWjwW+/HUNwXwpyukxQhq662/wlgZqaH4l+PDhAMwH0iIpmdFx+O+3FhkM09UYeQxjCxuWjCuqrIuKgmp08Nm650ThPwiDqRAAskPhja89zyZPpQ6SftpylOLtMKxTgnYYBsjH8CvD/S3P33FVVzT55eLqH3xnAXIcUB8qdd3fQCD0SpEIPBqD8bOF0vb1ocGkejfeOJ41f4DNwZGgrkNGLeCki9r7hLG4MDo/VGaewm1LLfsaV2J0B38fjcyPiEuOK]]></Encrypt><AgentID><![CDATA[1000002]]></AgentID></xml>
+2023-06-27T21:30:23.359+0800	INFO	wechat/wechat.go:94	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687872625</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[使用golang语言来实现一个满足  LRU (最近最少使用) 缓存 约束的数据结构。
+实现 LRUCache 类：
+LRUCache(int capacity) 以 正整数 作为容量 capacity 初始化 LRU 缓存
+int get(int key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1 。
+void put(int key, int value) 如果关键字 key 已经存在，则变更其数据值 value ；如果不存在，则向缓存中插入该组 key-value 。如果插入操作导致关键字数量超过 capacity ，则应该 逐出 最久未使用的关键字。
+函数 get 和 put 必须以 O(1) 的平均时间复杂度运行。]]></Content><MsgId>7249357725407399724</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-27T21:30:23.359+0800	INFO	wechat/wechat.go:102	Unmarshal data: {ww3e03cf4760de0bcd LiMingZe 1687872625 text 使用golang语言来实现一个满足  LRU (最近最少使用) 缓存 约束的数据结构。
+实现 LRUCache 类：
+LRUCache(int capacity) 以 正整数 作为容量 capacity 初始化 LRU 缓存
+int get(int key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1 。
+void put(int key, int value) 如果关键字 key 已经存在，则变更其数据值 value ；如果不存在，则向缓存中插入该组 key-value 。如果插入操作导致关键字数量超过 capacity ，则应该 逐出 最久未使用的关键字。
+函数 get 和 put 必须以 O(1) 的平均时间复杂度运行。 7249357725407399724 0}
+2023-06-27T21:30:23.359+0800	INFO	wechat/wechat.go:137	xml.Marshal: <MsgContent><ToUserName>LiMingZe</ToUserName><FromUserName>ww3e03cf4760de0bcd</FromUserName><CreateTime>1687872625</CreateTime><MsgType>text</MsgType><Content></Content><MsgId>7249357725407399724</MsgId><AgentId>0</AgentId></MsgContent>
+2023-06-27T21:30:23.359+0800	INFO	wechat/wechat.go:144	after encrypt sEncryptMsg: <xml><Encrypt><![CDATA[gxEa19Ts9ySTbBoipkLITBq3dTqtg7UWCXn+m3Xvk5ilDEjmNygA/E4DYSQVjhLzbtFuFnjhamsaL5yoQ+f50gb+w3Apnm8H0rKWX+su4qVGU3BjDoItXDZpH+ih3owWZza2qo7huQ9Uk3Ql5UDKQWtkzB2wFMui7qXUIIUmGHRlx88dpV4vvFshi96Vsnbak9Pui4+VCmakpHL7UT4TXscerfrPGEEq//y+ByqELAtV2e30R7uejJFn0080Eua4zFudUULgSbvjPOJwtDgPreXpOaI7SPrgl8aT6dUyFOQ5+YUNP/l0Nskx88WxJHfvxwnvh7gWfAq0ow9DlFgME0g41TyEauamwXYCYmsBnqtPx7YDVO+Ttt01TxbPNvdx]]></Encrypt><MsgSignature><![CDATA[7404d8cbb780a22dd0899d04c105e393155d6106]]></MsgSignature><TimeStamp>1687872625</TimeStamp><Nonce><![CDATA[1688204792]]></Nonce></xml>
+2023-06-27T21:30:23.360+0800	INFO	mq/trigger.go:64	SendMQMsg:{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687872625,"MsgType":"text","Content":"使用golang语言来实现一个满足  LRU (最近最少使用) 缓存 约束的数据结构。\n实现 LRUCache 类：\nLRUCache(int capacity) 以 正整数 作为容量 capacity 初始化 LRU 缓存\nint get(int key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1 。\nvoid put(int key, int value) 如果关键字 key 已经存在，则变更其数据值 value ；如果不存在，则向缓存中插入该组 key-value 。如果插入操作导致关键字数量超过 capacity ，则应该 逐出 最久未使用的关键字。\n函数 get 和 put 必须以 O(1) 的平均时间复杂度运行。","Msgid":"7249357725407399724","Agentid":0}
+2023-06-27T21:30:23.365+0800	INFO	mq/mq.go:43	ai.chatgpt ok
+2023-06-27T21:30:23.372+0800	INFO	mq/mq.go:74	Received a message: {"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687872625,"MsgType":"text","Content":"使用golang语言来实现一个满足  LRU (最近最少使用) 缓存 约束的数据结构。\n实现 LRUCache 类：\nLRUCache(int capacity) 以 正整数 作为容量 capacity 初始化 LRU 缓存\nint get(int key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1 。\nvoid put(int key, int value) 如果关键字 key 已经存在，则变更其数据值 value ；如果不存在，则向缓存中插入该组 key-value 。如果插入操作导致关键字数量超过 capacity ，则应该 逐出 最久未使用的关键字。\n函数 get 和 put 必须以 O(1) 的平均时间复杂度运行。","Msgid":"7249357725407399724","Agentid":0}
+2023-06-27T21:30:23.372+0800	INFO	mq/trigger.go:14	{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687872625,"MsgType":"text","Content":"使用golang语言来实现一个满足  LRU (最近最少使用) 缓存 约束的数据结构。\n实现 LRUCache 类：\nLRUCache(int capacity) 以 正整数 作为容量 capacity 初始化 LRU 缓存\nint get(int key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1 。\nvoid put(int key, int value) 如果关键字 key 已经存在，则变更其数据值 value ；如果不存在，则向缓存中插入该组 key-value 。如果插入操作导致关键字数量超过 capacity ，则应该 逐出 最久未使用的关键字。\n函数 get 和 put 必须以 O(1) 的平均时间复杂度运行。","Msgid":"7249357725407399724","Agentid":0}
+2023-06-27T21:32:12.512+0800	INFO	dao/openai.go:38	ChatCompletion resp: {chatcmpl-7W34Cb6moeOExjT0hRtfr9QKyssNT chat.completion 1687872640 gpt-3.5-turbo-0301 [{0 {assistant package main
+
+import "fmt"
+
+type ListNode struct {
+    key, value int
+    prev, next *ListNode
+}
+
+type LRUCache struct {
+    capacity int
+    hash     map[int]*ListNode
+    head     *ListNode
+    tail     *ListNode
+}
+
+// 初始化双向链表（没有初始数据）
+func initList() *ListNode {
+    return &ListNode{}
+}
+
+// 向双向链表头插入节点
+func (list *ListNode) push(node *ListNode) {
+    node.next = list.next
+    list.next.prev = node
+    list.next = node
+    node.prev = list
+}
+
+// 删除双向链表尾节点
+func (list *ListNode) pop() *ListNode {
+    if list.prev != nil {
+        node := list.prev
+        node.prev.next = list
+        list.prev = node.prev
+        return node
+    }
+    return nil
+}
+
+// 创建并初始化LRUCache
+func Constructor(capacity int) LRUCache {
+    head := initList()
+    tail := initList()
+    head.next = tail
+    tail.prev = head
+    return LRUCache{capacity: capacity, hash: make(map[int]*ListNode), head: head, tail: tail}
+}
+
+// 获取LRUCache中key对应的value
+func (this *LRUCache) Get(key int) int {
+    if node, ok := this.hash[key]; ok {
+        this.moveToHead(node)
+        return node.value
+    } else {
+        return -1
+    }
+}
+
+// 添加/更新LRUCache中key-value，若超过容量则删除最久未使用节点
+func (this *LRUCache) Put(key int, value int) {
+    if node, ok := this.hash[key]; ok {
+        node.value = value
+        this.moveToHead(node)
+    } else {
+        node := &ListNode{key: key, value: value}
+        this.hash[key] = node
+        this.head.push(node)
+        if len(this.hash) > this.capacity {
+            delete(this.hash, this.tail.pop().key)
+        }
+    }
+}
+
+// 将节点移至链表头
+func (this *LRUCache) moveToHead(node *ListNode) {
+    node.prev.next = node.next
+    node.next.prev = node.prev
+    this.head.push(node)
+}
+
+func main() {
+    obj := Constructor(2)
+    obj.Put(1, 1)
+    obj.Put(2, 2)
+    fmt.Println(obj.Get(1)) // 1
+    obj.Put(3, 3)
+    fmt.Println(obj.Get(2)) // -1
+    obj.Put(4, 4)
+    fmt.Println(obj.Get(1)) // -1
+    fmt.Println(obj.Get(3)) // 3
+    fmt.Println(obj.Get(4)) // 4
+}
+```  <nil>} stop}] {214 606 820}}
+2023-06-27T21:32:12.513+0800	INFO	mq/trigger.go:34	请求openai耗时:109ns
+2023-06-27T21:32:12.513+0800	INFO	mq/trigger.go:40	>>>>>ANSWER<<<<<:package main
+
+import "fmt"
+
+type ListNode struct {
+    key, value int
+    prev, next *ListNode
+}
+
+type LRUCache struct {
+    capacity int
+    hash     map[int]*ListNode
+    head     *ListNode
+    tail     *ListNode
+}
+
+// 初始化双向链表（没有初始数据）
+func initList() *ListNode {
+    return &ListNode{}
+}
+
+// 向双向链表头插入节点
+func (list *ListNode) push(node *ListNode) {
+    node.next = list.next
+    list.next.prev = node
+    list.next = node
+    node.prev = list
+}
+
+// 删除双向链表尾节点
+func (list *ListNode) pop() *ListNode {
+    if list.prev != nil {
+        node := list.prev
+        node.prev.next = list
+        list.prev = node.prev
+        return node
+    }
+    return nil
+}
+
+// 创建并初始化LRUCache
+func Constructor(capacity int) LRUCache {
+    head := initList()
+    tail := initList()
+    head.next = tail
+    tail.prev = head
+    return LRUCache{capacity: capacity, hash: make(map[int]*ListNode), head: head, tail: tail}
+}
+
+// 获取LRUCache中key对应的value
+func (this *LRUCache) Get(key int) int {
+    if node, ok := this.hash[key]; ok {
+        this.moveToHead(node)
+        return node.value
+    } else {
+        return -1
+    }
+}
+
+// 添加/更新LRUCache中key-value，若超过容量则删除最久未使用节点
+func (this *LRUCache) Put(key int, value int) {
+    if node, ok := this.hash[key]; ok {
+        node.value = value
+        this.moveToHead(node)
+    } else {
+        node := &ListNode{key: key, value: value}
+        this.hash[key] = node
+        this.head.push(node)
+        if len(this.hash) > this.capacity {
+            delete(this.hash, this.tail.pop().key)
+        }
+    }
+}
+
+// 将节点移至链表头
+func (this *LRUCache) moveToHead(node *ListNode) {
+    node.prev.next = node.next
+    node.next.prev = node.prev
+    this.head.push(node)
+}
+
+func main() {
+    obj := Constructor(2)
+    obj.Put(1, 1)
+    obj.Put(2, 2)
+    fmt.Println(obj.Get(1)) // 1
+    obj.Put(3, 3)
+    fmt.Println(obj.Get(2)) // -1
+    obj.Put(4, 4)
+    fmt.Println(obj.Get(1)) // -1
+    fmt.Println(obj.Get(3)) // 3
+    fmt.Println(obj.Get(4)) // 4
+}
+```
+2023-06-27T21:32:12.513+0800	INFO	wechat/wechat.go:262	sendurl:[https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=63m5CR3tTsoIXuja23NiUPzgE5c_dt3rt0FLxFde_K_psO2E1Tf03-K-kj9x-KfKTZcNmqVy2OFdK7lC-VL9RSXt2CkBp0N_jgkPsVybwe5kAhgpFrSdsct_hZQTEcdsWa672POkojyM6rXyr4ZFGVP-MqiI5zYOWmHyFDMXFzaqk0cV7Q2pcRc729rgMiqksg-X5x0fvEX9gEFx5XDG1Q]
+2023-06-27T21:32:13.025+0800	INFO	wechat/wechat.go:270	WX Back:post:{"errcode":0,"errmsg":"ok","msgid":"mrVtVXE39it1tWVvd57npI0KYSaA1fMuOx6qQ1pueT5QMJxMuwYirjoWyOnEBIr-cJLuQqtWKMNO5qRjqAN22g"}, err:<nil>
+2023-06-27T21:32:13.025+0800	INFO	wechat/wechat.go:271	WX Back:{0 ok mrVtVXE39it1tWVvd57npI0KYSaA1fMuOx6qQ1pueT5QMJxMuwYirjoWyOnEBIr-cJLuQqtWKMNO5qRjqAN22g}
+2023-06-27T21:39:40.094+0800	INFO	big-genius/main.go:44	server is shutdown
+2023-06-27T21:39:43.052+0800	INFO	mq/mq.go:79	Waiting for messages...
+2023-06-27T21:40:15.570+0800	INFO	big-genius/main.go:44	server is shutdown
+2023-06-27T21:40:18.553+0800	INFO	mq/mq.go:79	Waiting for messages...
+2023-06-27T21:42:00.246+0800	INFO	controllers/wechat.go:39	wxsend:<xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><Encrypt><![CDATA[6xZxQHkoRz2fuIS5/jeFmanw46FLnSDbiPJn225Opj5xihZN7E8wRaGQwl24y24akcODx3pFKG2a48OKePq6NqP1p4zDBQFgiILejFwViWG77m3/z5u7Ui12xitfhzVUFYVAVLPqNjVDMWAUR04mU/oeZbj1uQ1D5qRwGaqUXhPx2Z1gyMzt/PPxibgcsQd47g68GjR8O8VMag8gMlJ/ZhOvwqj0co9k+4JERNuwnJTOSXFD0mvoMlp11+EKu10rNHavIKlmSVtduyRTuWeBdq9DunRy6vIo3P4FweskO6phBlN9Sc7f2P2QV+QskaaTzncG53wRZJvsbhIHMyGTV84tXccBJgNGj5DpyfeYySUWZroiJPXZh/d6jFAbntjetsCGEp/M/Ml6T2q8the5LQmJK2jk9ZyaHvjyYRO5HGrwg1cRYGTTEtxaDyEaHPyhB6k6y8OwbRZAYreK8+3x8/Q1VMmcJ7vvikJinGjxuubZ/YSeTCzAZ3XcN7ZwepVZa1cRn5ssp3KtropluIQJpLURyLvaMQ8Rdi5Z+K9Ep8w=]]></Encrypt><AgentID><![CDATA[1000002]]></AgentID></xml>
+2023-06-27T21:42:00.247+0800	INFO	wechat/wechat.go:94	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687873322</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[crontab 实现 每月第二周星期三每隔3小时15分钟执行一次]]></Content><MsgId>7249360719591417388</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-27T21:42:00.247+0800	INFO	wechat/wechat.go:102	Unmarshal data: {ww3e03cf4760de0bcd LiMingZe 1687873322 text crontab 实现 每月第二周星期三每隔3小时15分钟执行一次 7249360719591417388 0}
+2023-06-27T21:42:00.247+0800	INFO	wechat/wechat.go:137	xml.Marshal: <MsgContent><ToUserName>LiMingZe</ToUserName><FromUserName>ww3e03cf4760de0bcd</FromUserName><CreateTime>1687873322</CreateTime><MsgType>text</MsgType><Content></Content><MsgId>7249360719591417388</MsgId><AgentId>0</AgentId></MsgContent>
+2023-06-27T21:42:00.247+0800	INFO	wechat/wechat.go:144	after encrypt sEncryptMsg: <xml><Encrypt><![CDATA[siuqNoHeDaoCLC8oyrltWpfU8tI6G9ySsFBwZn8jwW/1BT9oSmzvn+Ul4NCm/FY/b/ms4D9MFcbKFV+SjNRKvqugVM1H7N51+Y5qIxgDSvD23F4Q/BroEZAVwKcIgct/SaRmz4ZBwH/1hhBH1HbKjYI11Gbv3S2y6xk8bQoZGu5dOu05vt1HNNfoInjnKHIn/nwkSJvrG/mdiaDWZkxD9ArVm+EaQSIt5DsmRhc1OWfkgfojowFDrGql8KlD0LKuEpKPfHRBdgVXghv9cVb1bGiTpC145rh1qlmBNLtOxa4Hwn07nwVF1Ix0b9myQBZ8aaT4g1zpEsuBVPXKDDYiL3P5Eg+E4JvNjQWu4U+mgwVDEOyOpZ4VZe3/51xDpqML]]></Encrypt><MsgSignature><![CDATA[77ab724a0a30beda288170318570844be0ec2dec]]></MsgSignature><TimeStamp>1687873322</TimeStamp><Nonce><![CDATA[1688030456]]></Nonce></xml>
+2023-06-27T21:42:00.248+0800	INFO	mq/trigger.go:64	SendMQMsg:{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687873322,"MsgType":"text","Content":"crontab 实现 每月第二周星期三每隔3小时15分钟执行一次","Msgid":"7249360719591417388","Agentid":0}
+2023-06-27T21:42:00.253+0800	INFO	mq/mq.go:43	ai.chatgpt ok
+2023-06-27T21:42:00.259+0800	INFO	mq/mq.go:74	Received a message: {"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687873322,"MsgType":"text","Content":"crontab 实现 每月第二周星期三每隔3小时15分钟执行一次","Msgid":"7249360719591417388","Agentid":0}
+2023-06-27T21:42:00.259+0800	INFO	mq/trigger.go:14	{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687873322,"MsgType":"text","Content":"crontab 实现 每月第二周星期三每隔3小时15分钟执行一次","Msgid":"7249360719591417388","Agentid":0}
+2023-06-27T21:42:11.941+0800	INFO	dao/openai.go:38	ChatCompletion resp: {chatcmpl-7W3FFw1ICBvUJo8nr8HaK8EEkO8Al chat.completion 1687873325 gpt-3.5-turbo-0613 [{0 {assistant 在 crontab 中，星期几的取值是 0 表示星期日，1 表示星期一，以此类推，6 表示星期六。因此，要实现每月第二周星期三执行任务，可以使用以下 crontab 表达式：
+
+```
+15 0-23/3 * * 3 [ "$(date '+\%W')" -eq "$(date -d '+2 week' '+\%W')" ] && [ "$(date '+\%u')" -eq 3 ] && command
+```
+
+其中 `[ "$(date '+\%W')" -eq "$(date -d '+2 week' '+\%W')" ]` 表示判断当前日期所在月份的第二个星期是否与当前所在的星期相等，`[ "$(date '+\%u')" -eq 3 ]` 表示判断当前的星期是否为星期三，`command` 是要执行的命令。
+
+注意需要将上述表达式中的 `command` 替换为实际要执行的命令。另外，可以将上述 crontab 表达式添加到 crontab 文件中，使用 `crontab -e` 命令编辑 crontab 文件，然后将上述表达式添加到文件中保存即可。  <nil>} stop}] {32 309 341}}
+2023-06-27T21:42:11.942+0800	INFO	mq/trigger.go:34	请求openai耗时:11ns
+2023-06-27T21:42:11.942+0800	INFO	mq/trigger.go:40	>>>>>ANSWER<<<<<:在 crontab 中，星期几的取值是 0 表示星期日，1 表示星期一，以此类推，6 表示星期六。因此，要实现每月第二周星期三执行任务，可以使用以下 crontab 表达式：
+
+```
+15 0-23/3 * * 3 [ "$(date '+\%W')" -eq "$(date -d '+2 week' '+\%W')" ] && [ "$(date '+\%u')" -eq 3 ] && command
+```
+
+其中 `[ "$(date '+\%W')" -eq "$(date -d '+2 week' '+\%W')" ]` 表示判断当前日期所在月份的第二个星期是否与当前所在的星期相等，`[ "$(date '+\%u')" -eq 3 ]` 表示判断当前的星期是否为星期三，`command` 是要执行的命令。
+
+注意需要将上述表达式中的 `command` 替换为实际要执行的命令。另外，可以将上述 crontab 表达式添加到 crontab 文件中，使用 `crontab -e` 命令编辑 crontab 文件，然后将上述表达式添加到文件中保存即可。
+2023-06-27T21:42:11.942+0800	INFO	wechat/wechat.go:262	sendurl:[https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=63m5CR3tTsoIXuja23NiUPzgE5c_dt3rt0FLxFde_K_psO2E1Tf03-K-kj9x-KfKTZcNmqVy2OFdK7lC-VL9RSXt2CkBp0N_jgkPsVybwe5kAhgpFrSdsct_hZQTEcdsWa672POkojyM6rXyr4ZFGVP-MqiI5zYOWmHyFDMXFzaqk0cV7Q2pcRc729rgMiqksg-X5x0fvEX9gEFx5XDG1Q]
+2023-06-27T21:42:12.350+0800	INFO	wechat/wechat.go:270	WX Back:post:{"errcode":0,"errmsg":"ok","msgid":"mrVtVXE39it1tWVvd57npI0KYSaA1fMuOx6qQ1pueT69yw_mrPBX_cxf474YLYm3IToCSiiVrgTCgKm_N66aqA"}, err:<nil>
+2023-06-27T21:42:12.350+0800	INFO	wechat/wechat.go:271	WX Back:{0 ok mrVtVXE39it1tWVvd57npI0KYSaA1fMuOx6qQ1pueT69yw_mrPBX_cxf474YLYm3IToCSiiVrgTCgKm_N66aqA}

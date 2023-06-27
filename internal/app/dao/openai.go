@@ -20,10 +20,10 @@ func (ai *OpenAIDAO) CreateChatCompletion(ctx context.Context, msg string) (*ope
 	resp, err := ai.client.CreateChatCompletion(
 		ctx,
 		openai.ChatCompletionRequest{
-			Model: openai.GPT3Dot5Turbo,
+			Model: openai.GPT3Dot5Turbo0613,
 			Messages: []openai.ChatCompletionMessage{
 				{
-					Role:    openai.ChatMessageRoleUser,
+					Role:    openai.ChatMessageRoleSystem,
 					Content: msg,
 				},
 			},

@@ -251,9 +251,9 @@ type SendResp struct {
 func SendMsg(toUser, msg string, token string) (int, error) {
 	req := SendReq{
 		ToUser:  toUser,
-		MsgType: "markdown",
+		MsgType: "text",
 		AgentID: config.GlobalConfig.WeChat.AgentID,
-		Markdown: SendReqMarkdown{
+		Text: SendReqText{
 			Content: msg,
 		},
 	}
