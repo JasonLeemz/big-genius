@@ -3,7 +3,7 @@ app:
 
 log:
   path: ./logs/big-genius.log
-  log_level: 1 #info
+  logLevel: 0 #info
 
 database:
   host: mariadb.ybdx.xyz
@@ -12,5 +12,43 @@ database:
   password: root
   db: genius
 
+redis:
+  host: 192.168.31.21
+  port: 6379
+  password:
+  db: 0
+
+mq:
+  schema: amqp
+  host: 192.168.31.99
+  port: 5672
+  username: admin
+  password:
+
 openai:
-  token: 123456789
+  timeout: 60
+  chatgpt:
+    token:
+    baseURL: https://api.openai.com/v1
+  azure:
+    token:
+    baseURL: https://gpt.openai.azure.com
+    deployments:
+    apiVersion: 2023-03-15-preview
+#    baseURL: https://gpt.openai.azure.com/openai/deployments//chat/completions?api-version=2023-03-15-preview
+
+proxy:
+  schema: http
+  host: 192.168.31.60
+  port: 7890
+
+wechat:
+  getAccessTokenUrl: https://qyapi.weixin.qq.com/cgi-bin/gettoken
+  proxyHost:
+  sendMsgPath: /cgi-bin/message/send
+  sendMsgUrl: https://qyapi.weixin.qq.com/cgi-bin/message/send
+  corpSecret:
+  token:
+  corpID:
+  encodingAesKey:
+  agentid:

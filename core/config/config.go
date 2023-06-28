@@ -78,6 +78,9 @@ type WeChatCfg struct {
 	GetAccessTokenUrl string `yaml:"getAccessTokenUrl"`
 	SendMsgUrl        string `yaml:"sendMsgUrl"`
 	AgentID           int    `yaml:"agentid"`
+
+	ProxyHost   string `yaml:"proxyHost"`
+	SendMsgPath string `yaml:"sendMsgPath"`
 }
 
 func Init() {

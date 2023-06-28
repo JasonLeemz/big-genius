@@ -2562,3 +2562,197 @@ fmt.Println(elapsedStr)
 2023-06-28T12:52:28.833+0800	INFO	big-genius/main.go:44	server is shutdown
 2023-06-28T12:52:32.012+0800	INFO	mq/mq.go:79	Waiting for messages...
 2023-06-28T12:54:08.304+0800	INFO	big-genius/main.go:44	server is shutdown
+2023-06-28T13:58:18.407+0800	INFO	mq/mq.go:79	Waiting for messages...
+2023-06-28T13:58:29.192+0800	INFO	controllers/wechat.go:39	wxsend:<xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><Encrypt><![CDATA[3jCWKqwuAUJpHP1g2NAxhg2Y7fFCLWORkmg7noZ31o0vml3J1d6DKeowBIG0v+tDCr/XrJmZeFu2cImeVqyPOEk0xzXgIqDzYmKrf7uIDNdsAcJDPHWrXsOGAM8q0bNEk9D10s1f/Ik9nMSbRi9mz+ni7A77JZtsYgAm2zPZ1NEC9Vk6hNL7Oz11pOgKCMIizJ4/4qT7MU+7xqea6v4LGQZt0KPkOeJq5MbucEMFzUESJwIC1zp2ZnzlY50a001u6rOuXVpOWmcHjK6L4QfEr1vqacFUkwcTnA+cVuWM1GJxUecx/eV5OcH84YBX69PTpv6nztIPaS25AxKU/KcFFHekPgIXc2qiEaxL6re8ZlAriPuItRa/s/Npdyh3LCa2Wng+AiLosxqLe2BVnZalb/TMUsRj2sL7bRDTBNbN3iw=]]></Encrypt><AgentID><![CDATA[1000002]]></AgentID></xml>
+2023-06-28T13:58:29.193+0800	INFO	wechat/wechat.go:94	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687931910</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[hi]]></Content><MsgId>7249612353644698668</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-28T13:58:29.193+0800	INFO	wechat/wechat.go:102	Unmarshal data: {ww3e03cf4760de0bcd LiMingZe 1687931910 text hi 7249612353644698668 0}
+2023-06-28T13:58:29.193+0800	INFO	wechat/wechat.go:137	xml.Marshal: <MsgContent><ToUserName>LiMingZe</ToUserName><FromUserName>ww3e03cf4760de0bcd</FromUserName><CreateTime>1687931910</CreateTime><MsgType>text</MsgType><Content></Content><MsgId>7249612353644698668</MsgId><AgentId>0</AgentId></MsgContent>
+2023-06-28T13:58:29.194+0800	INFO	wechat/wechat.go:144	after encrypt sEncryptMsg: <xml><Encrypt><![CDATA[PgjeB1oMDyz+chXo7w43ZkqbNA1178liXyK7eY+DR4pT3njw2VRlWVc1urVlRmuuEgQ1pukWvdwAr9SxalF3SZsbAXyauw00165ePpmzAVWKMrPKbWsgVeLZSqCEgRqwBkFhEn3WR2zxjskA8z7ANYwHk2U+IxXbfyWXnRURY4wlh6WMQMxhar3HsQmDkibyZrvNZ7z9O/ofQuJFFOSGtlmNOTAWNfUIWTu6cD8TX5GARNs73ncFVu0lU4EfA+YXLRNifFwONKgaR+awXEcJoKFWaCPyM5VJtysbt5/KpEgwIJRVb9JUpe0uLLaXTYInAQy8Z786my2/LBJFW8EKd2YvmqDBR/U/BrMjF+Hr5ke7eCxeKIXhopq77X3F+NrE]]></Encrypt><MsgSignature><![CDATA[3aec8452985afd772f41d1ce0fbe63c89d8ffe3e]]></MsgSignature><TimeStamp>1687931910</TimeStamp><Nonce><![CDATA[1687306381]]></Nonce></xml>
+2023-06-28T13:58:29.194+0800	INFO	mq/trigger.go:64	SendMQMsg:{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687931910,"MsgType":"text","Content":"hi","Msgid":"7249612353644698668","Agentid":0}
+2023-06-28T13:58:29.199+0800	INFO	mq/mq.go:43	ai.chatgpt ok
+2023-06-28T13:58:29.203+0800	INFO	mq/mq.go:74	Received a message: {"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687931910,"MsgType":"text","Content":"hi","Msgid":"7249612353644698668","Agentid":0}
+2023-06-28T13:58:29.203+0800	INFO	mq/trigger.go:14	{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687931910,"MsgType":"text","Content":"hi","Msgid":"7249612353644698668","Agentid":0}
+2023-06-28T13:58:29.726+0800	INFO	wechat/wechat.go:206	GetAccessToken:[{"errcode":0,"errmsg":"ok","access_token":"9_4w5kLV147vR6Q3KIMLk_-Zy3QsFvE4docYlvwlTgBelpxJkfjHvsffse-2uEqqkTKp2DuXnEns7QYsCcDjrQ9Yfe1WmGWBDewlZRhnh8-vbgjBIPkhKffXEWokW5i1kkJWT9tYr-nt7LlU2qfanf8hlvbqvi0LXEOXBBpCTQxgIq48eo-dfISof9EvqxFGUJMDvDQ2FOe_qax3yy3WCw","expires_in":7200}]
+2023-06-28T13:58:29.742+0800	INFO	wechat/wechat.go:219	RedisSetNX bool:true, err:<nil>
+2023-06-28T13:58:31.336+0800	INFO	dao/openai.go:38	ChatCompletion resp: {chatcmpl-7WIUC2sBPKjCYKVSBsxA2CJQnqFpN chat.completion 1687931912 gpt-35-turbo [{0 {assistant Hello there, how may I assist you today?  <nil>} stop}] {9 10 19}}
+2023-06-28T13:58:31.336+0800	INFO	mq/trigger.go:34	请求openai耗时:2.13 seconds
+2023-06-28T13:58:31.336+0800	INFO	mq/trigger.go:40	>>>>>ANSWER<<<<<:Hello there, how may I assist you today?
+2023-06-28T13:58:31.336+0800	INFO	wechat/wechat.go:263	sendurl:[?access_token=9_4w5kLV147vR6Q3KIMLk_-Zy3QsFvE4docYlvwlTgBelpxJkfjHvsffse-2uEqqkTKp2DuXnEns7QYsCcDjrQ9Yfe1WmGWBDewlZRhnh8-vbgjBIPkhKffXEWokW5i1kkJWT9tYr-nt7LlU2qfanf8hlvbqvi0LXEOXBBpCTQxgIq48eo-dfISof9EvqxFGUJMDvDQ2FOe_qax3yy3WCw]
+2023-06-28T13:58:31.337+0800	INFO	wechat/wechat.go:271	WX Back:post:, err:Post "//%2F%3Faccess_token=9_4w5kLV147vR6Q3KIMLk_-Zy3QsFvE4docYlvwlTgBelpxJkfjHvsffse-2uEqqkTKp2DuXnEns7QYsCcDjrQ9Yfe1WmGWBDewlZRhnh8-vbgjBIPkhKffXEWokW5i1kkJWT9tYr-nt7LlU2qfanf8hlvbqvi0LXEOXBBpCTQxgIq48eo-dfISof9EvqxFGUJMDvDQ2FOe_qax3yy3WCw/?access_token=9_4w5kLV147vR6Q3KIMLk_-Zy3QsFvE4docYlvwlTgBelpxJkfjHvsffse-2uEqqkTKp2DuXnEns7QYsCcDjrQ9Yfe1WmGWBDewlZRhnh8-vbgjBIPkhKffXEWokW5i1kkJWT9tYr-nt7LlU2qfanf8hlvbqvi0LXEOXBBpCTQxgIq48eo-dfISof9EvqxFGUJMDvDQ2FOe_qax3yy3WCw": unsupported protocol scheme ""
+2023-06-28T13:58:31.337+0800	INFO	wechat/wechat.go:272	WX Back:{0  }
+2023-06-28T14:00:00.299+0800	INFO	big-genius/main.go:44	server is shutdown
+2023-06-28T14:00:10.836+0800	INFO	mq/mq.go:79	Waiting for messages...
+2023-06-28T14:00:35.662+0800	INFO	controllers/wechat.go:39	wxsend:<xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><Encrypt><![CDATA[BziOskQqVshM1wzIBCRhvhTW+WKUThtqhTiScKAPgsidGh4Se7leJ1v2arHeUOOMtXk9wW16+jhpT31kyeKlyjITsvuqbYLuARBcgR/Wze7c64Qx46tV0jHhLGtfpEchfdB+hGoE8jqO2xlHW00FbqIqNdm7C3LzAWOsjnzU3ukc9Z9VczD4mDlx5OpcCcP+xRFFDMvICnVhTDXOhr1cyNvfD+OhqRpG3n4iu3F9I0mtOT3s94T9kjmGl7hQ5nCPyUjoi/ATysd7AF29IaVQEdshdbh8ivzAjIEWuWDm9JbRZDYt1VzAF+4+yT4/RDxdaDjZUj5K75Jw2WOxeqIhIDcX146LizAt6wqLlYh/LMllrCJYj5YU7tPVvxpUCCI4MHlvFMFupRoyhq/PWke9NVvEvggXihLfmCmN0zupLPx0fOfP40Fd+bSpNcZjIO8REptF/NKgzZcSyV/p/mDFryftGQ5o9s3kHc6H6pOIvVp5lMMNrQqR5Me4iRnLxvxY]]></Encrypt><AgentID><![CDATA[1000002]]></AgentID></xml>
+2023-06-28T14:00:35.664+0800	INFO	wechat/wechat.go:94	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687932037</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[规划一个去美国旅游7天的计划]]></Content><MsgId>7249612898857319212</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-28T14:00:35.664+0800	INFO	wechat/wechat.go:102	Unmarshal data: {ww3e03cf4760de0bcd LiMingZe 1687932037 text 规划一个去美国旅游7天的计划 7249612898857319212 0}
+2023-06-28T14:00:35.665+0800	INFO	wechat/wechat.go:137	xml.Marshal: <MsgContent><ToUserName>LiMingZe</ToUserName><FromUserName>ww3e03cf4760de0bcd</FromUserName><CreateTime>1687932037</CreateTime><MsgType>text</MsgType><Content></Content><MsgId>7249612898857319212</MsgId><AgentId>0</AgentId></MsgContent>
+2023-06-28T14:00:35.665+0800	INFO	wechat/wechat.go:144	after encrypt sEncryptMsg: <xml><Encrypt><![CDATA[ghWNny81Znl7yyDnO8WY2bdThEx3F6d71Icu7mKYnVzFUnr1HQtcPBAVcLu6xTnehJ2rGxhkfTr3Vh0wqq20wKICQruSHmaf7aSupJLSD1JibFnFTHPXSHkmjuNUk2v4G8OicLmveckMCLK/YbB3rCzsx0iq79qmMU4V9Ds70KpHOliNveEulyTe8vFe6mvfCGuXg60yBSQNAtbi0gUP/v5rXDjew8yeRBHEp+OR57U1Qyfxa+ARY/+ngDr4Y1+u4kcl0YPVBoVcD8ECFGPbNPmF9oPoGK9+KveQuvE7l190GbSdg5+690jOJWlKdKY/912HxHofo8trwjvSusjaLCmemKtE2xEm7366Jo1H7V/RgSpv+839478SKTa8oAdt]]></Encrypt><MsgSignature><![CDATA[beee5079a71fe8efa0d17f204dad84cf297a258f]]></MsgSignature><TimeStamp>1687932037</TimeStamp><Nonce><![CDATA[1687388233]]></Nonce></xml>
+2023-06-28T14:00:35.665+0800	INFO	mq/trigger.go:64	SendMQMsg:{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687932037,"MsgType":"text","Content":"规划一个去美国旅游7天的计划","Msgid":"7249612898857319212","Agentid":0}
+2023-06-28T14:00:35.669+0800	INFO	mq/mq.go:43	ai.chatgpt ok
+2023-06-28T14:00:35.678+0800	INFO	mq/mq.go:74	Received a message: {"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687932037,"MsgType":"text","Content":"规划一个去美国旅游7天的计划","Msgid":"7249612898857319212","Agentid":0}
+2023-06-28T14:00:47.444+0800	INFO	mq/trigger.go:14	{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687932037,"MsgType":"text","Content":"规划一个去美国旅游7天的计划","Msgid":"7249612898857319212","Agentid":0}
+2023-06-28T14:01:01.558+0800	ERROR	dao/openai.go:34	ChatCompletion error: Post "https://mgpt.openai.azure.com/openai/deployments/big-genius/chat/completions?api-version=2023-03-15-preview": context deadline exceeded
+
+2023-06-28T14:01:01.558+0800	INFO	mq/trigger.go:34	请求openai耗时:14.11 seconds
+2023-06-28T14:01:01.558+0800	ERROR	mq/trigger.go:37	请求openai超时:Post "https://mgpt.openai.azure.com/openai/deployments/big-genius/chat/completions?api-version=2023-03-15-preview": context deadline exceeded
+2023-06-28T14:02:28.869+0800	INFO	wechat/wechat.go:263	sendurl:[?access_token=9_4w5kLV147vR6Q3KIMLk_-Zy3QsFvE4docYlvwlTgBelpxJkfjHvsffse-2uEqqkTKp2DuXnEns7QYsCcDjrQ9Yfe1WmGWBDewlZRhnh8-vbgjBIPkhKffXEWokW5i1kkJWT9tYr-nt7LlU2qfanf8hlvbqvi0LXEOXBBpCTQxgIq48eo-dfISof9EvqxFGUJMDvDQ2FOe_qax3yy3WCw]
+2023-06-28T14:02:28.869+0800	INFO	big-genius/main.go:44	server is shutdown
+2023-06-28T14:02:37.969+0800	INFO	mq/mq.go:79	Waiting for messages...
+2023-06-28T14:02:43.367+0800	INFO	controllers/wechat.go:39	wxsend:<xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><Encrypt><![CDATA[9511cS70a1i8yXsXahRXrMdJCrFGy5tVOGb1lrWRyscfqHmE8dyRH0NFW04hGSDP4FdeiKseh5Ggvc1PqryYTmVXPPmOIS/QNtMrhujOSQBKuW2Pztp6+Aqz/8ixwXsf5AQmF4nFOw4iC5ggl4r/hF91PED+0GzR9+hoy4+yHXe3kDVd6tvX5c6zOu7xLoHn+eeeSz94L8xd5GRfRRXo2Kdbb+8t89kUblOvBtzR08p1FvC654L4dY/Ar3aMRNpBj3FXwvnVTkK9JlhsjmjYf7fhOf11f/JWlQJ86fA/p8J2NifSwr09ojJHrLkH2K77STsRoYgwvpe4VLH8C4D6UyxoavMmnsAJuKvZHqPfgQzhsZ0Hmy3EsRWiV2taoMVvhwodOB68tnklDiMJO5YcfeJTf7x/gDvaw0x/voj4hSpFC9zaEPBCEmfjVLvqKspnHKJ6FcaUnwPrgLfdYMh+QIdmRs/NWeyFVLz/Sh32XQbp8frgrho88v8cqJW/LN4k]]></Encrypt><AgentID><![CDATA[1000002]]></AgentID></xml>
+2023-06-28T14:02:43.372+0800	INFO	wechat/wechat.go:94	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687932165</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[规划一个去美国旅游7天的计划]]></Content><MsgId>7249613447833203500</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-28T14:02:43.372+0800	INFO	wechat/wechat.go:102	Unmarshal data: {ww3e03cf4760de0bcd LiMingZe 1687932165 text 规划一个去美国旅游7天的计划 7249613447833203500 0}
+2023-06-28T14:02:43.372+0800	INFO	wechat/wechat.go:137	xml.Marshal: <MsgContent><ToUserName>LiMingZe</ToUserName><FromUserName>ww3e03cf4760de0bcd</FromUserName><CreateTime>1687932165</CreateTime><MsgType>text</MsgType><Content></Content><MsgId>7249613447833203500</MsgId><AgentId>0</AgentId></MsgContent>
+2023-06-28T14:02:43.372+0800	INFO	wechat/wechat.go:144	after encrypt sEncryptMsg: <xml><Encrypt><![CDATA[WE30Xr6wsjEXh3WYnJoIG4fXDxIQ7lyRd0ofjvhKbFUQ68AUqROuVBMaSgbFyG89PDpHM2i0vlFBWvM+srnmVhFlyUqDssTji0ShjJ92lCyYPlv6plQgQq178C61ZNnejwakkcRlXIYwg16ouXyesUdfnqt60gzNJIgzrHcnQ9GqXplMQjiT3VBBKkoR2UEl8mN+zh6yy0aB0SHPOi+fdJURAgcYiAm5huTfdfgDaplWYtwktTI+udS+hX/S3RoOzSGYCE8HSJHVQHo9ukNPrdA16Fb9TVXZozzknYnKPTOKjv/iGc+wdoudTKk1Hq3vAwKVoH7zKTMVR3+QCQ7cVAPm/lPb17o/qSQ8I6bNvc5YMEBErkrh63tBGwtyr/qV]]></Encrypt><MsgSignature><![CDATA[dabebc0817f258cec1902576cba873cabe6f566a]]></MsgSignature><TimeStamp>1687932165</TimeStamp><Nonce><![CDATA[1688134209]]></Nonce></xml>
+2023-06-28T14:02:43.373+0800	INFO	mq/trigger.go:64	SendMQMsg:{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687932165,"MsgType":"text","Content":"规划一个去美国旅游7天的计划","Msgid":"7249613447833203500","Agentid":0}
+2023-06-28T14:02:43.377+0800	INFO	mq/mq.go:43	ai.chatgpt ok
+2023-06-28T14:02:43.382+0800	INFO	mq/mq.go:74	Received a message: {"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687932165,"MsgType":"text","Content":"规划一个去美国旅游7天的计划","Msgid":"7249613447833203500","Agentid":0}
+2023-06-28T14:02:43.382+0800	INFO	mq/trigger.go:14	{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687932165,"MsgType":"text","Content":"规划一个去美国旅游7天的计划","Msgid":"7249613447833203500","Agentid":0}
+2023-06-28T14:02:53.383+0800	ERROR	dao/openai.go:34	ChatCompletion error: Post "https://mgpt.openai.azure.com/openai/deployments/big-genius/chat/completions?api-version=2023-03-15-preview": context deadline exceeded
+
+2023-06-28T14:02:53.383+0800	INFO	mq/trigger.go:34	请求openai耗时:10.00 seconds
+2023-06-28T14:02:53.383+0800	ERROR	mq/trigger.go:37	请求openai超时:Post "https://mgpt.openai.azure.com/openai/deployments/big-genius/chat/completions?api-version=2023-03-15-preview": context deadline exceeded
+2023-06-28T14:02:53.384+0800	INFO	wechat/wechat.go:263	sendurl:[https://wework.xiaolee.xyz//cgi-bin/message/send?access_token=9_4w5kLV147vR6Q3KIMLk_-Zy3QsFvE4docYlvwlTgBelpxJkfjHvsffse-2uEqqkTKp2DuXnEns7QYsCcDjrQ9Yfe1WmGWBDewlZRhnh8-vbgjBIPkhKffXEWokW5i1kkJWT9tYr-nt7LlU2qfanf8hlvbqvi0LXEOXBBpCTQxgIq48eo-dfISof9EvqxFGUJMDvDQ2FOe_qax3yy3WCw]
+2023-06-28T14:02:53.396+0800	INFO	wechat/wechat.go:271	WX Back:post:, err:Post "https://wework.xiaolee.xyz//cgi-bin/message/send?access_token=9_4w5kLV147vR6Q3KIMLk_-Zy3QsFvE4docYlvwlTgBelpxJkfjHvsffse-2uEqqkTKp2DuXnEns7QYsCcDjrQ9Yfe1WmGWBDewlZRhnh8-vbgjBIPkhKffXEWokW5i1kkJWT9tYr-nt7LlU2qfanf8hlvbqvi0LXEOXBBpCTQxgIq48eo-dfISof9EvqxFGUJMDvDQ2FOe_qax3yy3WCw": dial tcp: lookup wework.xiaolee.xyz: no such host
+2023-06-28T14:02:53.396+0800	INFO	wechat/wechat.go:272	WX Back:{0  }
+2023-06-28T14:03:11.057+0800	INFO	big-genius/main.go:44	server is shutdown
+2023-06-28T14:03:12.703+0800	INFO	mq/mq.go:79	Waiting for messages...
+2023-06-28T14:05:14.641+0800	INFO	big-genius/main.go:44	server is shutdown
+2023-06-28T14:05:15.574+0800	INFO	mq/mq.go:79	Waiting for messages...
+2023-06-28T14:05:22.039+0800	INFO	controllers/wechat.go:39	wxsend:<xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><Encrypt><![CDATA[BDDt3GDji6HH9usHm+oRzNmppmX3LpL2gF42u9eBqMxoxTAU0lmkO4p79UZRcTUQWUxDPZtCpKRZDCEZnMySBbu3nEDw3ATkBTkkT+IWlifDne5KAJqQ6LHkd9mg85w0KuiHmDjiH6d2ztYPdDhVHcei3S004Syqo7ie951upK/GG+5jRKGhsHE7N4nG8CTpbUJcOKTDnHquUOJs4FCCtswQrH+gWlZRPqxBVS+bg5pRp9a38d4hqY4fPNaelm8xKduOT+ANvGT6L8d4FzJEsHZiVuW1YbfC+JtjmwMW9F+8hmjIH1tn7rdtS1jhuAvuJ9LM6WA8+YvFwPdhSOS4OPe+ej+4P/5OCVMAOBKvE0cRE+NgCjfTJQ2DC88FatQMa1ltTqsmScVPkVbEFf4CZ8M905t4AZckf/oBkI6VQ1wMc8Worg7z2FQp0EfRyN6NE+xZwaba19ao9QgVq1NbKxFJrY83vCjF9V2hZBBKHVEHrMPeaG920mXa1dm7OKgK]]></Encrypt><AgentID><![CDATA[1000002]]></AgentID></xml>
+2023-06-28T14:05:22.041+0800	INFO	wechat/wechat.go:94	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687932323</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[规划一个去美国旅游7天的计划]]></Content><MsgId>7249614129149532204</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-28T14:05:22.041+0800	INFO	wechat/wechat.go:102	Unmarshal data: {ww3e03cf4760de0bcd LiMingZe 1687932323 text 规划一个去美国旅游7天的计划 7249614129149532204 0}
+2023-06-28T14:05:22.041+0800	INFO	wechat/wechat.go:137	xml.Marshal: <MsgContent><ToUserName>LiMingZe</ToUserName><FromUserName>ww3e03cf4760de0bcd</FromUserName><CreateTime>1687932323</CreateTime><MsgType>text</MsgType><Content></Content><MsgId>7249614129149532204</MsgId><AgentId>0</AgentId></MsgContent>
+2023-06-28T14:05:22.041+0800	INFO	wechat/wechat.go:144	after encrypt sEncryptMsg: <xml><Encrypt><![CDATA[IkXktwE57g5CfTqWbSbr0xnWbfHnhkVxcTEfjHB59Na50zGXcQRe865Mr8XUqE9YtSZBxvMKvFMhI3sGnCK+DMG8DNFp93wnMo2SMnNvNiV2/iQo6Ei1ZEN3Tu1elhBvj6ioH0P07axuRk5ix5I5bGSo2rY4vgZhDoFcmP0SwTF0U76LVDbSg4+8+QE98M4XVyGX98nHBIWCBrdK4mcM0xXuVDPTQT7xckOYvvQABZ1CZigy3Tj384a1e22z2x7+wk1fLyS3FPz4ce4Ytm+cN/vRkrl1mYji8zW3mm1S3PkhSaFq7AW535pIKYQwTkaeebqzdAEmF7dR7nZXJfU5+x3pPXNIFRoV2ESwzeqAmOs+SU66guN93cZT0m4Q9WuC]]></Encrypt><MsgSignature><![CDATA[9b7f38a640bb756ecb1149472cc2111181b8ae51]]></MsgSignature><TimeStamp>1687932323</TimeStamp><Nonce><![CDATA[1687494604]]></Nonce></xml>
+2023-06-28T14:05:22.042+0800	INFO	mq/trigger.go:64	SendMQMsg:{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687932323,"MsgType":"text","Content":"规划一个去美国旅游7天的计划","Msgid":"7249614129149532204","Agentid":0}
+2023-06-28T14:05:22.047+0800	INFO	mq/mq.go:43	ai.chatgpt ok
+2023-06-28T14:05:22.054+0800	INFO	mq/mq.go:74	Received a message: {"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687932323,"MsgType":"text","Content":"规划一个去美国旅游7天的计划","Msgid":"7249614129149532204","Agentid":0}
+2023-06-28T14:05:22.054+0800	INFO	mq/trigger.go:14	{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687932323,"MsgType":"text","Content":"规划一个去美国旅游7天的计划","Msgid":"7249614129149532204","Agentid":0}
+2023-06-28T14:05:42.056+0800	ERROR	dao/openai.go:34	ChatCompletion error: Post "https://mgpt.openai.azure.com/openai/deployments/big-genius/chat/completions?api-version=2023-03-15-preview": context deadline exceeded
+
+2023-06-28T14:05:42.056+0800	INFO	mq/trigger.go:34	请求openai耗时:20.00 seconds
+2023-06-28T14:05:42.056+0800	ERROR	mq/trigger.go:37	请求openai超时:Post "https://mgpt.openai.azure.com/openai/deployments/big-genius/chat/completions?api-version=2023-03-15-preview": context deadline exceeded
+2023-06-28T14:05:42.056+0800	INFO	wechat/wechat.go:263	sendurl:[https://wework.xiaolee.xyz//cgi-bin/message/send?access_token=9_4w5kLV147vR6Q3KIMLk_-Zy3QsFvE4docYlvwlTgBelpxJkfjHvsffse-2uEqqkTKp2DuXnEns7QYsCcDjrQ9Yfe1WmGWBDewlZRhnh8-vbgjBIPkhKffXEWokW5i1kkJWT9tYr-nt7LlU2qfanf8hlvbqvi0LXEOXBBpCTQxgIq48eo-dfISof9EvqxFGUJMDvDQ2FOe_qax3yy3WCw]
+2023-06-28T14:05:42.064+0800	INFO	wechat/wechat.go:271	WX Back:post:, err:Post "https://wework.xiaolee.xyz//cgi-bin/message/send?access_token=9_4w5kLV147vR6Q3KIMLk_-Zy3QsFvE4docYlvwlTgBelpxJkfjHvsffse-2uEqqkTKp2DuXnEns7QYsCcDjrQ9Yfe1WmGWBDewlZRhnh8-vbgjBIPkhKffXEWokW5i1kkJWT9tYr-nt7LlU2qfanf8hlvbqvi0LXEOXBBpCTQxgIq48eo-dfISof9EvqxFGUJMDvDQ2FOe_qax3yy3WCw": dial tcp: lookup wework.xiaolee.xyz: no such host
+2023-06-28T14:05:42.064+0800	INFO	wechat/wechat.go:272	WX Back:{0  }
+2023-06-28T14:08:17.250+0800	INFO	big-genius/main.go:44	server is shutdown
+2023-06-28T14:08:18.249+0800	INFO	mq/mq.go:79	Waiting for messages...
+2023-06-28T14:08:32.180+0800	INFO	controllers/wechat.go:39	wxsend:<xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><Encrypt><![CDATA[bp+Sg+2TEqMBzd8m5ZbssD9WoskCx3tNio6gdI0uTKAqFYii2hKZoKoMnEg8RasL5nPVQRYFRQxQvvdV41ZmsQ1vMK/E+htMol7Lkt7dMvxty5iQuR4nERU92GQSiBUXL51vSD16/bGXLypQYt+QmxppHkrVBIHE+OJtc4Y7dFNy5p+Ep8lGDWYxcAa3abF9PZv+VgscQt6nmUwQOZY4bhmQ+YTbydvHcL7rcm17c/5PFMppNd2aByz6NBShQoQ6zaOW3dRWLtNu/bdwabslT+gMF1qWjxAyCFR7Zmqs3t2QAQs+6HwHQ407zZxnUq6V8qlT0h7MYmsiDfvtVEE1tf4pwGtBw6pGjp9QZJ4aLqct3mjFWlNM8G5hqv+7pbcyrdsG+p4AmiV2WpvhySnq2PCrek4UEwaqiUDE91MF2kMUnGeEKClZ1UFaVe4sOi2P08oC6l6uKGO4tzFpuNSnDMI0hNyRI7GJjKbGXTVtJRuxb+X5ZYI+yx02ZIIJa6Rp]]></Encrypt><AgentID><![CDATA[1000002]]></AgentID></xml>
+2023-06-28T14:08:32.181+0800	INFO	wechat/wechat.go:94	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687932514</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[规划一个去美国旅游7天的计划]]></Content><MsgId>7249614945766642220</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-28T14:08:32.182+0800	INFO	wechat/wechat.go:102	Unmarshal data: {ww3e03cf4760de0bcd LiMingZe 1687932514 text 规划一个去美国旅游7天的计划 7249614945766642220 0}
+2023-06-28T14:08:32.182+0800	INFO	wechat/wechat.go:137	xml.Marshal: <MsgContent><ToUserName>LiMingZe</ToUserName><FromUserName>ww3e03cf4760de0bcd</FromUserName><CreateTime>1687932514</CreateTime><MsgType>text</MsgType><Content></Content><MsgId>7249614945766642220</MsgId><AgentId>0</AgentId></MsgContent>
+2023-06-28T14:08:32.182+0800	INFO	wechat/wechat.go:144	after encrypt sEncryptMsg: <xml><Encrypt><![CDATA[KH5fm1HexlHatRrTvD5BwnSDjMrzRVozyxu8a0Akx2qJrn7KkJAWoDzNzxykpo3Lj19wpePI/aDn3GP/iqH6Sh3GGYSe+P03AOUYuMDK9pNJL2kvOcrH6E8QComFUOrwftakqjXa2zVWAJTJiN91kTGoZPi1MnUjShUZ8LvW6h//ByhzGsAau36sABm63epZr+KVC8QdLGw21c62qoKWgLh+wQyrnphuXGITL0+/tyv/f25LL/nHvCcnDt6Qb4+Zj6OhiiW1lwCQEMoSIfT+zgFHb9tpAsMIM+I4D9AJLTdIer0t6YTj1SSBm51CIYUZrfv7i/dMxgL9aSZyZvIF66eQGa+97yOQR9pSjBAojJ0S+SbHV3+LtnlvQKycpCYD]]></Encrypt><MsgSignature><![CDATA[18b522e6b5a2ee9c4b64a45affcbd9d9ff1b5da3]]></MsgSignature><TimeStamp>1687932514</TimeStamp><Nonce><![CDATA[1687789612]]></Nonce></xml>
+2023-06-28T14:08:32.182+0800	INFO	mq/trigger.go:64	SendMQMsg:{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687932514,"MsgType":"text","Content":"规划一个去美国旅游7天的计划","Msgid":"7249614945766642220","Agentid":0}
+2023-06-28T14:08:32.187+0800	INFO	mq/mq.go:43	ai.chatgpt ok
+2023-06-28T14:08:32.192+0800	INFO	mq/mq.go:74	Received a message: {"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687932514,"MsgType":"text","Content":"规划一个去美国旅游7天的计划","Msgid":"7249614945766642220","Agentid":0}
+2023-06-28T14:08:32.192+0800	INFO	mq/trigger.go:14	{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687932514,"MsgType":"text","Content":"规划一个去美国旅游7天的计划","Msgid":"7249614945766642220","Agentid":0}
+2023-06-28T14:08:54.562+0800	INFO	dao/openai.go:38	ChatCompletion resp: {chatcmpl-7WIdwfRoVUVqbw5dc6mAuk2HHk7EN chat.completion 1687932516 gpt-35-turbo [{0 {assistant Day 1: 到达洛杉矶，逛逛好莱坞星光大道和比佛利山庄，且尝试当地的美食，比如墨西哥风味的烤玉米和肉质饼。
+
+Day 2: 前往旧金山，预约渔人码头的海豹观光平台和金门大桥。晚上可以去费什曼码头上的著名餐厅尝试海鲜。
+
+Day 3: 在旧金山，你可以逛逛旧金山艺术宫和 旧金山现代艺术博物馆，还有卡斯楚区的墨西哥街头美食，如果你喜欢购物，可以考虑去联合广场。
+
+Day 4: 前往黄石公园观赏熊、麋鹿和千年老树，在晚上去露营。
+
+Day 5: 拉斯维加斯，前往摩天轮，参观豪华赌场，尝试金碧辉煌的自助餐。
+
+Day 6: 沙漠之旅，前往内华达州中部的山谷，尝试滑翔或在沙丘上撒欢。
+
+Day 7: 最后一天可以在迪士尼乐园玩乐一整天，感受一下这个童话般的地方带来的欢乐。
+
+这一周的行程覆盖了南、北、中西部，可以尽可能地去感受不同地域的文化与风景。当然，这一周的行程可以根据个人喜好和时间做出适当的调整。  <nil>} stop}] {24 501 525}}
+2023-06-28T14:08:54.563+0800	INFO	mq/trigger.go:34	请求openai耗时:22.37 seconds
+2023-06-28T14:08:54.563+0800	INFO	mq/trigger.go:40	>>>>>ANSWER<<<<<:Day 1: 到达洛杉矶，逛逛好莱坞星光大道和比佛利山庄，且尝试当地的美食，比如墨西哥风味的烤玉米和肉质饼。
+
+Day 2: 前往旧金山，预约渔人码头的海豹观光平台和金门大桥。晚上可以去费什曼码头上的著名餐厅尝试海鲜。
+
+Day 3: 在旧金山，你可以逛逛旧金山艺术宫和 旧金山现代艺术博物馆，还有卡斯楚区的墨西哥街头美食，如果你喜欢购物，可以考虑去联合广场。
+
+Day 4: 前往黄石公园观赏熊、麋鹿和千年老树，在晚上去露营。
+
+Day 5: 拉斯维加斯，前往摩天轮，参观豪华赌场，尝试金碧辉煌的自助餐。
+
+Day 6: 沙漠之旅，前往内华达州中部的山谷，尝试滑翔或在沙丘上撒欢。
+
+Day 7: 最后一天可以在迪士尼乐园玩乐一整天，感受一下这个童话般的地方带来的欢乐。
+
+这一周的行程覆盖了南、北、中西部，可以尽可能地去感受不同地域的文化与风景。当然，这一周的行程可以根据个人喜好和时间做出适当的调整。
+2023-06-28T14:08:54.563+0800	INFO	wechat/wechat.go:263	sendurl:[https://wework.xiaolee.xyz/cgi-bin/message/send?access_token=9_4w5kLV147vR6Q3KIMLk_-Zy3QsFvE4docYlvwlTgBelpxJkfjHvsffse-2uEqqkTKp2DuXnEns7QYsCcDjrQ9Yfe1WmGWBDewlZRhnh8-vbgjBIPkhKffXEWokW5i1kkJWT9tYr-nt7LlU2qfanf8hlvbqvi0LXEOXBBpCTQxgIq48eo-dfISof9EvqxFGUJMDvDQ2FOe_qax3yy3WCw]
+2023-06-28T14:08:55.166+0800	INFO	wechat/wechat.go:271	WX Back:post:<html>
+<head><title>403 Forbidden</title></head>
+<body>
+<center><h1>403 Forbidden</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>, err:<nil>
+2023-06-28T14:08:55.166+0800	INFO	wechat/wechat.go:272	WX Back:{0  }
+2023-06-28T14:43:47.390+0800	INFO	controllers/wechat.go:39	wxsend:<xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><Encrypt><![CDATA[hC/q49kUd8mvQdk1wVlYYZZLDAhfEX4fKgNBUAQJs0s06lH47Cy3ADPGf2delbVDV66lcV6gowtnAqxCMu+hV6i1MwvwDqQNW//RvPgY5eT9Ut4bclZu5Wj9xD824DvtP4dHI+3JuQPBaxEOaG+YqSnAd72l6EF78sJBN53XcEK2qSmpT1y4NkiD+JSq179pHlgsT03D4C533In19jqoviqYisVxvDl0+5/3IVkrfY/eFhwEq7NFpnz//pzbg1Pe+RVQyqTNxFmo9QUE7t5PA+Yd4wrNrGH1blJh9oLMJmBF/ShlNLY0aRGM8qsL8eujtRMVb6oD28eA273Lun1HXlB5E5vXG9/klobKCbQmfGrTT1rwx/nGp76zMKYLu/vyXb758lCYso+AC6yb52mPqymL2xWQhz9hOqd3dPRBUxw2SNFop3jg8qebToTcr71ELGQr5e0rT9/CPnoYWaUomYRT8o09Q1aQelQQglnhvr5dErzYmMVFGCZB1Au3gJCRwEOyGYvV1umaHGIDa4p5595PCtna3HdFz49G3uD0cgQCp5Vg9A8TU1GQ+MqF0wnalWxm7lMiJCNpoMngLTmA5sDLJnGWufXu6vTOETbf7SvCwB7mRyyjuNK74qPd8kLe]]></Encrypt><AgentID><![CDATA[1000002]]></AgentID></xml>
+2023-06-28T14:43:47.396+0800	INFO	wechat/wechat.go:94	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687934628</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[使用nginx配置正向代理，要求将所有请求https://wework.xiaolee.xyz/cgi-bin/message/send的地址转到https://qyapi.weixin.qq.com/cgi-bin/message/send]]></Content><MsgId>7249624027832114732</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-28T14:43:47.397+0800	INFO	wechat/wechat.go:102	Unmarshal data: {ww3e03cf4760de0bcd LiMingZe 1687934628 text 使用nginx配置正向代理，要求将所有请求https://wework.xiaolee.xyz/cgi-bin/message/send的地址转到https://qyapi.weixin.qq.com/cgi-bin/message/send 7249624027832114732 0}
+2023-06-28T14:43:47.397+0800	INFO	wechat/wechat.go:137	xml.Marshal: <MsgContent><ToUserName>LiMingZe</ToUserName><FromUserName>ww3e03cf4760de0bcd</FromUserName><CreateTime>1687934628</CreateTime><MsgType>text</MsgType><Content></Content><MsgId>7249624027832114732</MsgId><AgentId>0</AgentId></MsgContent>
+2023-06-28T14:43:47.397+0800	INFO	wechat/wechat.go:144	after encrypt sEncryptMsg: <xml><Encrypt><![CDATA[bv5utB1MoKuX5si+uvlRLfDutC64HLkPyv1Yy8zeEHShSuD90vaBFvIhRsjFQmqO8Tgc2qbpBAs3a4KAeDRpZrihttzH6fsmz/wsGZnUkOLrWy3xR1/TEpCKhHr+UtQpKW7alWr0rbI9CB/Sbh2C4G9y3hKHwOO4y3DJ0P9I0zE9rJKGksUeTdbXF9e4W25BQoEY/D0Cs/ox7RN54TItxkTEmEareBfPzIn9AcizXMDjUdcYfmUEvGt9nMcj7WVpUgw4vafaSw2KPSefP/BRjEHXDXVhYW2Aj4xPYyjyBLdJETb+/yALHLgN7ase3yA7RQLpFt5amop6agw0wjb8F/HoSAx9B9PuGFynHHRo0dj8k51+gGcmiUX95rIfC2dJ]]></Encrypt><MsgSignature><![CDATA[66de5b035d1550e5cf00806273b793c8a8ccfcfa]]></MsgSignature><TimeStamp>1687934628</TimeStamp><Nonce><![CDATA[1687178979]]></Nonce></xml>
+2023-06-28T14:43:47.398+0800	INFO	mq/trigger.go:64	SendMQMsg:{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687934628,"MsgType":"text","Content":"使用nginx配置正向代理，要求将所有请求https://wework.xiaolee.xyz/cgi-bin/message/send的地址转到https://qyapi.weixin.qq.com/cgi-bin/message/send","Msgid":"7249624027832114732","Agentid":0}
+2023-06-28T14:43:47.403+0800	INFO	mq/mq.go:43	ai.chatgpt ok
+2023-06-28T14:43:47.410+0800	INFO	mq/mq.go:74	Received a message: {"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687934628,"MsgType":"text","Content":"使用nginx配置正向代理，要求将所有请求https://wework.xiaolee.xyz/cgi-bin/message/send的地址转到https://qyapi.weixin.qq.com/cgi-bin/message/send","Msgid":"7249624027832114732","Agentid":0}
+2023-06-28T14:43:47.410+0800	INFO	mq/trigger.go:14	{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687934628,"MsgType":"text","Content":"使用nginx配置正向代理，要求将所有请求https://wework.xiaolee.xyz/cgi-bin/message/send的地址转到https://qyapi.weixin.qq.com/cgi-bin/message/send","Msgid":"7249624027832114732","Agentid":0}
+2023-06-28T14:43:55.877+0800	INFO	dao/openai.go:38	ChatCompletion resp: {chatcmpl-7WJC36VN0qVeBo8sQgUiChPKISIEJ chat.completion 1687934631 gpt-35-turbo [{0 {assistant 在nginx的配置文件中添加以下内容：
+
+```
+server {
+    listen 443;
+    server_name wework.xiaolee.xyz;
+    
+    ssl_certificate /path/to/ssl_cert;
+    ssl_certificate_key /path/to/ssl_key;
+    
+    location /cgi-bin/message/send {
+        proxy_pass https://qyapi.weixin.qq.com;
+        proxy_set_header Host qyapi.weixin.qq.com;
+    }
+}
+```
+
+其中，`ssl_certificate`和`ssl_certificate_key`配置SSL证书；`location`中配置要转发的地址，并使用`proxy_pass`将其转发到目标地址，同时使用`proxy_set_header`将目标地址的主机名传递给代理服务器，保证请求头信息中的Host字段正确。  <nil>} stop}] {50 166 216}}
+2023-06-28T14:43:55.878+0800	INFO	mq/trigger.go:34	请求openai耗时:8.47 seconds
+2023-06-28T14:43:55.878+0800	INFO	mq/trigger.go:40	>>>>>ANSWER<<<<<:在nginx的配置文件中添加以下内容：
+
+```
+server {
+    listen 443;
+    server_name wework.xiaolee.xyz;
+    
+    ssl_certificate /path/to/ssl_cert;
+    ssl_certificate_key /path/to/ssl_key;
+    
+    location /cgi-bin/message/send {
+        proxy_pass https://qyapi.weixin.qq.com;
+        proxy_set_header Host qyapi.weixin.qq.com;
+    }
+}
+```
+
+其中，`ssl_certificate`和`ssl_certificate_key`配置SSL证书；`location`中配置要转发的地址，并使用`proxy_pass`将其转发到目标地址，同时使用`proxy_set_header`将目标地址的主机名传递给代理服务器，保证请求头信息中的Host字段正确。
+2023-06-28T14:43:55.878+0800	INFO	wechat/wechat.go:263	sendurl:[https://wework.xiaolee.xyz/cgi-bin/message/send?access_token=9_4w5kLV147vR6Q3KIMLk_-Zy3QsFvE4docYlvwlTgBelpxJkfjHvsffse-2uEqqkTKp2DuXnEns7QYsCcDjrQ9Yfe1WmGWBDewlZRhnh8-vbgjBIPkhKffXEWokW5i1kkJWT9tYr-nt7LlU2qfanf8hlvbqvi0LXEOXBBpCTQxgIq48eo-dfISof9EvqxFGUJMDvDQ2FOe_qax3yy3WCw]
+2023-06-28T14:43:56.098+0800	INFO	wechat/wechat.go:271	WX Back:post:<html>
+<head><title>403 Forbidden</title></head>
+<body>
+<center><h1>403 Forbidden</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>, err:<nil>
+2023-06-28T14:43:56.098+0800	INFO	wechat/wechat.go:272	WX Back:{0  }
+2023-06-28T14:49:31.025+0800	INFO	controllers/wechat.go:39	wxsend:<xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><Encrypt><![CDATA[lFM6vSrJrSBW/dK1DIP2YFqXfr6d48mhlruXxFIwpkrBuYTZ6Y9fvNRKaT/tU1151w3xKgOWNe0VbLBX5g0hAEcTDfUAyemybtJgTr2ACHrHm9Jr+C1H1/6vWGMrF0DMCnE9e1fkzVFRNDso6IBkisaZxdRQtjefBvpPn/ZtOeK2h4nXZ14znvpLInOng9vJ/kQC4SY5b1x/HKMkey0dj8YpRZtJe5YsoKA85CeAOXoEgEz2iSh9MCBhSNxKtD0MkVdNFoI/ARC0pZz7GMf867djke3b7N6nAkbmrtavqrMWrfWv2ZDk1X9c54K46LQb7pmRmgnwRP9TC+mYZZfyj37bn4Cyne6l6THl2HtJlpfiQ809iWlvUJnUjl4ntG6FB5f/iByyzRwy6aNpviFv5GC3tfSa6eFKZTAGgczc/xkNm3ZO+oUlUQyaCjSaFxlC6VC7jN3x63hYoMUK55thNg==]]></Encrypt><AgentID><![CDATA[1000002]]></AgentID></xml>
+2023-06-28T14:49:31.028+0800	INFO	wechat/wechat.go:94	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687934972</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[谢谢]]></Content><MsgId>7249625504281144108</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-28T14:49:31.028+0800	INFO	wechat/wechat.go:102	Unmarshal data: {ww3e03cf4760de0bcd LiMingZe 1687934972 text 谢谢 7249625504281144108 0}
+2023-06-28T14:49:31.028+0800	INFO	wechat/wechat.go:137	xml.Marshal: <MsgContent><ToUserName>LiMingZe</ToUserName><FromUserName>ww3e03cf4760de0bcd</FromUserName><CreateTime>1687934972</CreateTime><MsgType>text</MsgType><Content></Content><MsgId>7249625504281144108</MsgId><AgentId>0</AgentId></MsgContent>
+2023-06-28T14:49:31.028+0800	INFO	wechat/wechat.go:144	after encrypt sEncryptMsg: <xml><Encrypt><![CDATA[Fz0eRf5IX+aX8MGlZCC1477G8DVlI2xvhYEWbGlhtjQZm4falh47ShAPKvBeWawyOpaJtc7obyEZsLuJyiJvD3CNnJmnHePLFd+2VmRIlxjuXTWjsBK8Oux8m5RHr50hETu5BDge2IHCaIJT96oYS04M4uYBuEINkCNkvAqGD5uShzOQ13/QsO+rkxI4O/XPIanDo+EMlJEIstTWjKY+mE/E/K2PicT5mKU38jDI0xdhaAynmrDZoUCG3UEUZYCNDwOe/YX1NArwjk08YlpailpwDJDuV5vf3oQhUESgtUnic9FiIHQjbDx25ZX3I6Hk/0lS+M12Q3QyhOrhhNNC/xAT5vPXgAtXd9wlYSBrY0+8lyRahIumsrLZqAPp7yzG]]></Encrypt><MsgSignature><![CDATA[6be60fca46714954d204c27ec4e6a206a061e4e5]]></MsgSignature><TimeStamp>1687934972</TimeStamp><Nonce><![CDATA[1687976540]]></Nonce></xml>
+2023-06-28T14:49:31.029+0800	INFO	mq/trigger.go:64	SendMQMsg:{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687934972,"MsgType":"text","Content":"谢谢","Msgid":"7249625504281144108","Agentid":0}
+2023-06-28T14:49:31.033+0800	INFO	mq/mq.go:43	ai.chatgpt ok
+2023-06-28T14:49:31.038+0800	INFO	mq/mq.go:74	Received a message: {"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687934972,"MsgType":"text","Content":"谢谢","Msgid":"7249625504281144108","Agentid":0}
+2023-06-28T14:49:31.038+0800	INFO	mq/trigger.go:14	{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687934972,"MsgType":"text","Content":"谢谢","Msgid":"7249625504281144108","Agentid":0}
+2023-06-28T14:49:34.086+0800	INFO	dao/openai.go:38	ChatCompletion resp: {chatcmpl-7WJHbhhOrGIaZHHHsV6NskBTI9ZTE chat.completion 1687934975 gpt-35-turbo [{0 {assistant 不客气，请问有什么可以帮您的吗？  <nil>} stop}] {12 18 30}}
+2023-06-28T14:49:34.086+0800	INFO	mq/trigger.go:34	请求openai耗时:3.05 seconds
+2023-06-28T14:49:34.086+0800	INFO	mq/trigger.go:40	>>>>>ANSWER<<<<<:不客气，请问有什么可以帮您的吗？
+2023-06-28T14:49:34.086+0800	INFO	wechat/wechat.go:263	sendurl:[https://wework.xiaolee.xyz/cgi-bin/message/send?access_token=9_4w5kLV147vR6Q3KIMLk_-Zy3QsFvE4docYlvwlTgBelpxJkfjHvsffse-2uEqqkTKp2DuXnEns7QYsCcDjrQ9Yfe1WmGWBDewlZRhnh8-vbgjBIPkhKffXEWokW5i1kkJWT9tYr-nt7LlU2qfanf8hlvbqvi0LXEOXBBpCTQxgIq48eo-dfISof9EvqxFGUJMDvDQ2FOe_qax3yy3WCw]
+2023-06-28T14:49:34.465+0800	INFO	wechat/wechat.go:271	WX Back:post:{"errcode":0,"errmsg":"ok","msgid":"mrVtVXE39it1tWVvd57npGe6qXkaRHZQNUK-L7QwWoITkJzlpJxMwBi9l-dN4ZLrEMBEHj2LQW958VQBusSRZA"}, err:<nil>
+2023-06-28T14:49:34.466+0800	INFO	wechat/wechat.go:272	WX Back:{0 ok mrVtVXE39it1tWVvd57npGe6qXkaRHZQNUK-L7QwWoITkJzlpJxMwBi9l-dN4ZLrEMBEHj2LQW958VQBusSRZA}
+2023-06-28T14:51:58.298+0800	INFO	big-genius/main.go:44	server is shutdown

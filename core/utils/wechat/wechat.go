@@ -258,7 +258,8 @@ func SendMsg(toUser, msg string, token string) (int, error) {
 		},
 	}
 
-	url := fmt.Sprintf("%s?access_token=%s", config.GlobalConfig.WeChat.SendMsgUrl, token)
+	sendUrl := config.GlobalConfig.WeChat.ProxyHost + config.GlobalConfig.WeChat.SendMsgPath
+	url := fmt.Sprintf("%s?access_token=%s", sendUrl, token)
 	log.Logger.Infof("sendurl:[%s]", url)
 	// 发送 PostJson 请求
 	resp := SendResp{}
