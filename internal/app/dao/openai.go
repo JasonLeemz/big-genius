@@ -40,8 +40,13 @@ func (ai *OpenAIDAO) CreateChatCompletion(ctx context.Context, msg string) (*ope
 }
 
 func NewOpenAIDAO() *OpenAIDAO {
+	var client *openai.Client
+	if ai.ChatGPT != nil {
+		client = ai.ChatGPT
+	} else if ai.Azure != nil {
+		client = ai.Azure
+	}
 	return &OpenAIDAO{
-		//client: ai.ChatGPT,
-		client: ai.Azure,
+		client: client,
 	}
 }

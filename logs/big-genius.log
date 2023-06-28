@@ -2899,3 +2899,24 @@ $ sudo supervisorctl restart myprogram
 2023-06-28T15:07:02.616+0800	INFO	big-genius/main.go:44	server is shutdown
 2023-06-28T15:07:06.216+0800	INFO	mq/mq.go:79	Waiting for messages...
 2023-06-28T15:15:03.888+0800	INFO	big-genius/main.go:44	server is shutdown
+2023-06-28T15:20:01.975+0800	INFO	mq/mq.go:79	Waiting for messages...
+2023-06-28T15:21:24.283+0800	INFO	big-genius/main.go:44	server is shutdown
+2023-06-28T15:21:29.490+0800	INFO	mq/mq.go:79	Waiting for messages...
+2023-06-28T16:09:45.125+0800	INFO	big-genius/main.go:44	server is shutdown
+2023-06-28T18:39:36.029+0800	ERROR	mq/mq.go:106	Failed to register a consumer
+2023-06-28T18:39:36.031+0800	PANIC	mq/mq.go:107	Exception (404) Reason: "NOT_FOUND - no queue 'test' in vhost '/'"
+2023-06-28T18:40:27.646+0800	INFO	mq/mq.go:120	Waiting for messages...
+2023-06-28T18:41:08.496+0800	INFO	mq/mq.go:115	Received a message: ttt
+2023-06-28T20:18:12.945+0800	INFO	mq/mq.go:94	Waiting for messages...
+2023-06-28T20:18:24.302+0800	INFO	big-genius/main.go:44	server is shutdown
+2023-06-28T20:20:54.788+0800	INFO	mq/mq.go:94	Waiting for messages...
+2023-06-28T20:21:01.413+0800	INFO	big-genius/main.go:44	server is shutdown
+2023-06-28T20:22:46.980+0800	INFO	mq/mq.go:94	Waiting for messages...
+2023-06-28T20:22:58.916+0800	INFO	dao/openai.go:38	ChatCompletion resp: {chatcmpl-7WOU9bsoH83RIyLx76b0tq88RJ7BG chat.completion 1687954973 gpt-35-turbo [{0 {assistant 三七互娱近期爆出了一些争议事件：
+
+1. 有网友在社交媒体平台上称该公司游戏《心悦》存在赌博行为，公司被指违反中国相关法律法规。
+
+2. 该公司旗下游戏《绝地求生》被指存在侵权问题，被蓝洞公司起诉，目前案件正在审理中。
+
+以上事件引发了公众对于三七互娱的质疑和批评。  <nil>} stop}] {20 149 169}}
+2023-06-28T20:23:40.206+0800	INFO	big-genius/main.go:44	server is shutdown

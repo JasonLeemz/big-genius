@@ -5,6 +5,7 @@ import (
 	"big-genius/core/errors"
 	"big-genius/core/utils"
 	"big-genius/core/utils/wechat"
+	"big-genius/internal/app/services"
 	"big-genius/internal/app/services/mq"
 	"github.com/kataras/iris/v12/context"
 	"strings"
@@ -32,9 +33,9 @@ func Ask(ctx ctx.Context) {
 		}
 	}
 
-	//s := services.NewOpenAIService()
-	//answer, err := s.CreateChatCompletion(ctx, req.Question)
-	//ctx.Reply(answer, errors.GenErr(err))
+	s := services.NewOpenAIService()
+	answer, err := s.CreateChatCompletion(req.Question)
+	ctx.Reply(answer, errors.GenErr(err))
 }
 
 func MockWxWebhook(ctx *context.Context) {

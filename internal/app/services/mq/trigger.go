@@ -1,11 +1,13 @@
 package mq
 
 import (
+	"big-genius/core/config"
 	"big-genius/core/log"
 	"big-genius/core/utils/wechat"
 	"big-genius/internal/app/services"
 	ctx2 "context"
 	"encoding/json"
+	"fmt"
 	"sync"
 	"time"
 )
@@ -64,5 +66,15 @@ func SendMQMsg(msg wechat.MsgContent) {
 	log.Logger.Infof("SendMQMsg:%s", str)
 	s := NewMQService()
 	// ai ai.chatgpt
-	s.ProduceMessage(Exchange, RoutingKeyChatgpt, str)
+	if config.GlobalConfig.OpenAI.ChatGPT.Enable {
+		s.ProduceMessage(Exchange, RoutingKeyChatgpt, str)
+	}
+	if config.GlobalConfig.OpenAI.Azure.Enable {
+		s.ProduceMessage(Exchange, RoutingKeyAzure, str)
+	}
+
+}
+
+func Test(body []byte) {
+	fmt.Println(body)
 }

@@ -52,10 +52,12 @@ type LogCfg struct {
 
 type OpenAICfg struct {
 	ChatGPT struct {
+		Enable  bool   `yaml:"enable"`
 		Token   string `yaml:"token"`
 		BaseURL string `yaml:"baseURL"`
 	} `yaml:"chatgpt"`
 	Azure struct {
+		Enable      bool   `yaml:"enable"`
 		Token       string `yaml:"token"`
 		BaseURL     string `yaml:"baseURL"`
 		Deployments string `yaml:"deployments"`
