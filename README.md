@@ -1,2 +1,2 @@
-# git-genius
+# big-genius
 

@@ -2756,3 +2756,146 @@ server {
 2023-06-28T14:49:34.465+0800	INFO	wechat/wechat.go:271	WX Back:post:{"errcode":0,"errmsg":"ok","msgid":"mrVtVXE39it1tWVvd57npGe6qXkaRHZQNUK-L7QwWoITkJzlpJxMwBi9l-dN4ZLrEMBEHj2LQW958VQBusSRZA"}, err:<nil>
 2023-06-28T14:49:34.466+0800	INFO	wechat/wechat.go:272	WX Back:{0 ok mrVtVXE39it1tWVvd57npGe6qXkaRHZQNUK-L7QwWoITkJzlpJxMwBi9l-dN4ZLrEMBEHj2LQW958VQBusSRZA}
 2023-06-28T14:51:58.298+0800	INFO	big-genius/main.go:44	server is shutdown
+2023-06-28T14:54:48.659+0800	INFO	mq/mq.go:79	Waiting for messages...
+2023-06-28T14:55:17.431+0800	INFO	controllers/wechat.go:39	wxsend:<xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><Encrypt><![CDATA[Xh77OEGqVjs6cWBhHeJQG0gyYDf05Nj6tbnNjA7WIehPW/Nx1ZulLg8/m0HfHdkAYiBkUFuoYCrur3awxFhBzSN1u98tGUpnVm/yALYcgPAQRwtO11Mh23e6jv+LlVPzHZCFs62Py0cCq85b7YjIA5wXC66cgwIJ/OFwdiL2YNaUCj3bVCc0kcJI64aZQlNpd0Sg0vSUtUglzbHE0OZp0WYXy4Qw/JlpDSEQyisjix3btW01o2Ax/mqrxWYcgToTuyzrQDjOl0pohRM5cEpt0OoBFYUmqHSwpanWExQIDYSyawOFSaJ5OxovoS2uiYd3RWQNo3TYnYKpiss66OoK2FE+QuYssyu6jEDEUzTS43FWSvstyolady208W0O6VqvGQpFaVosAqTXWWIiu7sGcyvwvhd9gkL4T0qZfKuym5/n58JuHrMisALKyRJ/e93pSYy3Eh4Byp1miPxxnbzsr22xMs1Zyr9ss5emYEW+oe1r2BnlS5xO5L05cdOzfcWb]]></Encrypt><AgentID><![CDATA[1000002]]></AgentID></xml>
+2023-06-28T14:55:17.433+0800	INFO	wechat/wechat.go:94	after decrypt msg: <xml><ToUserName><![CDATA[ww3e03cf4760de0bcd]]></ToUserName><FromUserName><![CDATA[LiMingZe]]></FromUserName><CreateTime>1687935319</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[怎样使用supervistor托管运行服务器上的go程序]]></Content><MsgId>7249626993079983148</MsgId><AgentID>1000002</AgentID></xml>
+2023-06-28T14:55:17.433+0800	INFO	wechat/wechat.go:102	Unmarshal data: {ww3e03cf4760de0bcd LiMingZe 1687935319 text 怎样使用supervistor托管运行服务器上的go程序 7249626993079983148 0}
+2023-06-28T14:55:17.433+0800	INFO	wechat/wechat.go:137	xml.Marshal: <MsgContent><ToUserName>LiMingZe</ToUserName><FromUserName>ww3e03cf4760de0bcd</FromUserName><CreateTime>1687935319</CreateTime><MsgType>text</MsgType><Content></Content><MsgId>7249626993079983148</MsgId><AgentId>0</AgentId></MsgContent>
+2023-06-28T14:55:17.433+0800	INFO	wechat/wechat.go:144	after encrypt sEncryptMsg: <xml><Encrypt><![CDATA[6xZ5Kv3/n23Gh4cJMOz2m68PIQ1PTXHy2v41+UDklPz1vwWRjbMp4FIys7inulmRmHLQxtGhU8Hx4x8By4guJQ1IVKgatFXxZsU8ganJzLipn+RZ9msRsFe6SiKwF3eMAOIa5uePDAlLuvGFPgTm1Pqe7HCpehGWDYHGJkYsIO6PZIomEl0vJZ6u9zzE2J+vMgNLx+G3jvD7OYcr83KYVUb2mlL7FkySfdwK8UiJSAYe2FISDvvnvg6gYgLbRk03M0vOgGPWLFJ/3KFsIBaK8/DBnozFcEZcvqrwHxN4VYKN8RliuM/2UuxZMqUnU/QwELfFKf7jqnXBnWU7ISsX0keM9vODWojzd4ylDyjNqKszRWSNAiKB/t2YAetAQG3w]]></Encrypt><MsgSignature><![CDATA[1101cc4a89282d5520c8a8104e00ea4edc1da5a3]]></MsgSignature><TimeStamp>1687935319</TimeStamp><Nonce><![CDATA[1687855217]]></Nonce></xml>
+2023-06-28T14:55:17.433+0800	INFO	mq/trigger.go:64	SendMQMsg:{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687935319,"MsgType":"text","Content":"怎样使用supervistor托管运行服务器上的go程序","Msgid":"7249626993079983148","Agentid":0}
+2023-06-28T14:55:17.443+0800	INFO	mq/mq.go:43	ai.chatgpt ok
+2023-06-28T14:55:17.448+0800	INFO	mq/mq.go:74	Received a message: {"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687935319,"MsgType":"text","Content":"怎样使用supervistor托管运行服务器上的go程序","Msgid":"7249626993079983148","Agentid":0}
+2023-06-28T14:55:17.448+0800	INFO	mq/trigger.go:14	{"ToUsername":"LiMingZe","FromUsername":"ww3e03cf4760de0bcd","CreateTime":1687935319,"MsgType":"text","Content":"怎样使用supervistor托管运行服务器上的go程序","Msgid":"7249626993079983148","Agentid":0}
+2023-06-28T14:55:41.105+0800	INFO	dao/openai.go:38	ChatCompletion resp: {chatcmpl-7WJNBlvcgHGjmSfNvnGoCr7fV7eFL chat.completion 1687935321 gpt-35-turbo [{0 {assistant Supervisor是一个可以用来管理和监控进程的工具，可以方便地启动、停止、重启进程以及查看运行状态和日志。
+
+下面是使用Supervisor托管运行服务器上的go程序的步骤：
+
+1. 安装Supervisor
+
+在Linux下，可以使用以下命令安装Supervisor：
+
+```
+$ sudo apt-get install supervisor
+```
+
+2. 配置Supervisor
+
+在Linux下，Supervisor的主配置文件为`/etc/supervisor/supervisord.conf`。
+
+可以使用以下命令查看当前配置文件的路径：
+
+```
+$ sudo supervisorctl echo_supervisord_conf
+```
+
+一般情况下，我们不需要修改Supervisor的主配置文件。而是在`/etc/supervisor/conf.d/`目录下添加我们要托管的进程的配置文件。
+
+比如：
+
+```
+$ sudo touch /etc/supervisor/conf.d/myprogram.conf
+```
+
+然后打开`/etc/supervisor/conf.d/myprogram.conf`，编辑以下内容：
+
+```
+[program:myprogram]
+command=/path/to/your/go/program  # 运行go程序的命令，需要修改为实际的路径
+directory=/path/to/your/go/program  # go程序的目录，需要修改为实际的路径
+user=yourusername  # 以哪个用户身份运行程序，需要修改为实际的用户名
+autostart=true  # 启动Supervisor时是否自动启动该进程
+autorestart=true  # 程序崩溃时是否自动重启该进程
+redirect_stderr=true  # 是否将标准错误重定向到日志文件
+stdout_logfile=/tmp/myprogram.log  # 标准输出的日志文件路径，需要修改为实际的路径
+```
+
+保存配置文件后，使用以下命令让Supervisor重新加载配置：
+
+```
+$ sudo supervisorctl reread
+$ sudo supervisorctl update
+```
+
+现在，我们的go程序已经被Supervisor托管起来了。可以使用以下命令查看程序的状态：
+
+```
+$ sudo supervisorctl status myprogram
+```
+
+也可以使用以下命令启动、停止或重启程序：
+
+```
+$ sudo supervisorctl start myprogram
+$ sudo supervisorctl stop myprogram
+$ sudo supervisorctl restart myprogram
+```  <nil>} stop}] {25 564 589}}
+2023-06-28T14:55:41.106+0800	INFO	mq/trigger.go:34	请求openai耗时:23.66 seconds
+2023-06-28T14:55:41.106+0800	INFO	mq/trigger.go:40	>>>>>ANSWER<<<<<:Supervisor是一个可以用来管理和监控进程的工具，可以方便地启动、停止、重启进程以及查看运行状态和日志。
+
+下面是使用Supervisor托管运行服务器上的go程序的步骤：
+
+1. 安装Supervisor
+
+在Linux下，可以使用以下命令安装Supervisor：
+
+```
+$ sudo apt-get install supervisor
+```
+
+2. 配置Supervisor
+
+在Linux下，Supervisor的主配置文件为`/etc/supervisor/supervisord.conf`。
+
+可以使用以下命令查看当前配置文件的路径：
+
+```
+$ sudo supervisorctl echo_supervisord_conf
+```
+
+一般情况下，我们不需要修改Supervisor的主配置文件。而是在`/etc/supervisor/conf.d/`目录下添加我们要托管的进程的配置文件。
+
+比如：
+
+```
+$ sudo touch /etc/supervisor/conf.d/myprogram.conf
+```
+
+然后打开`/etc/supervisor/conf.d/myprogram.conf`，编辑以下内容：
+
+```
+[program:myprogram]
+command=/path/to/your/go/program  # 运行go程序的命令，需要修改为实际的路径
+directory=/path/to/your/go/program  # go程序的目录，需要修改为实际的路径
+user=yourusername  # 以哪个用户身份运行程序，需要修改为实际的用户名
+autostart=true  # 启动Supervisor时是否自动启动该进程
+autorestart=true  # 程序崩溃时是否自动重启该进程
+redirect_stderr=true  # 是否将标准错误重定向到日志文件
+stdout_logfile=/tmp/myprogram.log  # 标准输出的日志文件路径，需要修改为实际的路径
+```
+
+保存配置文件后，使用以下命令让Supervisor重新加载配置：
+
+```
+$ sudo supervisorctl reread
+$ sudo supervisorctl update
+```
+
+现在，我们的go程序已经被Supervisor托管起来了。可以使用以下命令查看程序的状态：
+
+```
+$ sudo supervisorctl status myprogram
+```
+
+也可以使用以下命令启动、停止或重启程序：
+
+```
+$ sudo supervisorctl start myprogram
+$ sudo supervisorctl stop myprogram
+$ sudo supervisorctl restart myprogram
+```
+2023-06-28T14:55:41.106+0800	INFO	wechat/wechat.go:263	sendurl:[https://wework.xiaolee.xyz/cgi-bin/message/send?access_token=9_4w5kLV147vR6Q3KIMLk_-Zy3QsFvE4docYlvwlTgBelpxJkfjHvsffse-2uEqqkTKp2DuXnEns7QYsCcDjrQ9Yfe1WmGWBDewlZRhnh8-vbgjBIPkhKffXEWokW5i1kkJWT9tYr-nt7LlU2qfanf8hlvbqvi0LXEOXBBpCTQxgIq48eo-dfISof9EvqxFGUJMDvDQ2FOe_qax3yy3WCw]
+2023-06-28T14:55:41.460+0800	INFO	wechat/wechat.go:271	WX Back:post:{"errcode":0,"errmsg":"ok","msgid":"mrVtVXE39it1tWVvd57npGe6qXkaRHZQNUK-L7QwWoLyW7BNWB9RX3FXY9Zv5cihGHKJicgoqpIuMHl1W2Z9FQ"}, err:<nil>
+2023-06-28T14:55:41.460+0800	INFO	wechat/wechat.go:272	WX Back:{0 ok mrVtVXE39it1tWVvd57npGe6qXkaRHZQNUK-L7QwWoLyW7BNWB9RX3FXY9Zv5cihGHKJicgoqpIuMHl1W2Z9FQ}
+2023-06-28T15:07:02.616+0800	INFO	big-genius/main.go:44	server is shutdown
+2023-06-28T15:07:06.216+0800	INFO	mq/mq.go:79	Waiting for messages...
+2023-06-28T15:15:03.888+0800	INFO	big-genius/main.go:44	server is shutdown
