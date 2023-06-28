@@ -66,6 +66,6 @@ func initComponents() {
 	//proxy.Init()
 
 	// 初始化OpenAI
-	openai.InitChatGPT()
-	//openai.InitAzure()
+	//openai.InitChatGPT()
+	openai.InitAzure()
 }

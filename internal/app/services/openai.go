@@ -1,6 +1,7 @@
 package services
 
 import (
+	"big-genius/core/config"
 	"big-genius/internal/app/dao"
 	"context"
 	"time"
@@ -20,14 +21,13 @@ func NewOpenAIService() *OpenAIService {
 }
 
 func (s *OpenAIService) CreateChatCompletion(msg string) (string, error) {
-	timeout := 200 * time.Second
+	timeout := config.GlobalConfig.OpenAI.TimeOut * time.Second
 	ctx, cancel := context.WithTimeout(context.Background(), timeout)
 	defer cancel()
 
 	resp, err := s.OpenAIDAO.CreateChatCompletion(ctx, msg)
 
 	if err != nil {
-		// TODO
 		return err.Error(), err
 	}
 

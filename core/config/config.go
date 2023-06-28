@@ -3,6 +3,7 @@ package config
 import (
 	"fmt"
 	"github.com/spf13/viper"
+	"time"
 )
 
 var GlobalConfig *Config
@@ -55,9 +56,12 @@ type OpenAICfg struct {
 		BaseURL string `yaml:"baseURL"`
 	} `yaml:"chatgpt"`
 	Azure struct {
-		Token   string `yaml:"token"`
-		BaseURL string `yaml:"baseURL"`
+		Token       string `yaml:"token"`
+		BaseURL     string `yaml:"baseURL"`
+		Deployments string `yaml:"deployments"`
+		ApiVersion  string `yaml:"apiVersion"`
 	} `yaml:"azure"`
+	TimeOut time.Duration `yaml:"timeout"`
 }
 
 type ProxyCfg struct {

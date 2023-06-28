@@ -4,10 +4,17 @@ import (
 	"big-genius/core/errors"
 	"big-genius/core/log"
 	"github.com/kataras/iris/v12"
+	"github.com/kataras/iris/v12/context"
 )
 
 type Context struct {
 	iris.Context
+}
+
+type Ctx context.Context
+
+func (r Ctx) My() {
+	println("ok")
 }
 
 type reply struct {

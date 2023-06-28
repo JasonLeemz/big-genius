@@ -20,7 +20,7 @@ func (ai *OpenAIDAO) CreateChatCompletion(ctx context.Context, msg string) (*ope
 	resp, err := ai.client.CreateChatCompletion(
 		ctx,
 		openai.ChatCompletionRequest{
-			Model: openai.GPT3Dot5Turbo0613,
+			Model: openai.GPT3Dot5Turbo,
 			Messages: []openai.ChatCompletionMessage{
 				{
 					Role:    openai.ChatMessageRoleSystem,
@@ -41,7 +41,7 @@ func (ai *OpenAIDAO) CreateChatCompletion(ctx context.Context, msg string) (*ope
 
 func NewOpenAIDAO() *OpenAIDAO {
 	return &OpenAIDAO{
-		client: ai.ChatGPT,
-		//client: ai.Azure,
+		//client: ai.ChatGPT,
+		client: ai.Azure,
 	}
 }
