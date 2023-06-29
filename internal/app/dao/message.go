@@ -12,11 +12,10 @@ type MessageDAO struct {
 }
 
 func (dao *MessageDAO) Add(data dto.MessageDTO) (int64, error) {
-	m := models.Message{
-		User:      data.User,
-		Question:  data.Question,
-		MessageID: data.MessageID,
-		TraceId:   0,
+	m := map[string]interface{}{
+		"user":       data.User,
+		"question":   data.Question,
+		"message_id": data.MessageID,
 	}
 	tx := dao.db.Table(tblMessage).Create(m)
 
@@ -24,8 +23,10 @@ func (dao *MessageDAO) Add(data dto.MessageDTO) (int64, error) {
 }
 
 func (dao *MessageDAO) Update(data dto.MessageDTO) (int64, error) {
-
-	tx := dao.db.Table(tblMessage).Where("message_id = ?", data.MessageID).Updates(data)
+	m := map[string]interface{}{
+		"answer": data.Answer,
+	}
+	tx := dao.db.Table(tblMessage).Where("message_id = ?", data.MessageID).Updates(m)
 	return tx.RowsAffected, tx.Error
 }
 
