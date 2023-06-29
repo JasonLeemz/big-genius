@@ -42,6 +42,11 @@ func SendWxMsg(msg []byte) {
 			log.Logger.Infof(">>>>>ANSWER<<<<<:%s", answer)
 			msgCont.Content = answer
 		}
+
+		// 入库
+		ms := services.NewMessageService()
+		rows, err := ms.Answer(msgCont)
+		log.Logger.Infof("DB:update[%d], err:[%v]", rows, err)
 	}()
 
 	// 获取wxToken可能会请求网络
@@ -64,6 +69,11 @@ func SendWxMsg(msg []byte) {
 func SendMQMsg(msg wechat.MsgContent) {
 	str, _ := json.Marshal(msg)
 	log.Logger.Infof("SendMQMsg:%s", str)
+
+	ms := services.NewMessageService()
+	rows, err := ms.Ask(msg)
+	log.Logger.Infof("DB:add[%d], err:[%v]", rows, err)
+
 	s := NewMQService()
 	// ai ai.chatgpt
 	if config.GlobalConfig.OpenAI.ChatGPT.Enable {
