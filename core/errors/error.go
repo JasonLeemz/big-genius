@@ -3,12 +3,20 @@ package errors
 import (
 	"big-genius/core/log"
 	"encoding/json"
+	"runtime"
 )
 
 type Error struct {
-	err error
-	no  int32  `json:"no"`
-	msg string `json:"msg"`
+	err   error
+	no    int32  `json:"no"`
+	msg   string `json:"msg"`
+	stack []uintptr
+}
+
+func callers() []uintptr {
+	var pcs [32]uintptr
+	l := runtime.Callers(3, pcs[:])
+	return pcs[:l]
 }
 
 func (e *Error) ErrNo() int32 {
@@ -98,6 +106,8 @@ func GenErr(e error, codes ...int32) *Error {
 		}
 		err.SetError(e.Error())
 	}
+
+	err.stack = callers()
 	return err
 }
 
